@@ -112,7 +112,7 @@ const Footer = () => {
               <span>e muito ☕</span>
             </div>
             <div className="text-xs text-muted-foreground">
-              <span className="font-mono">v1.0.0 | React + TypeScript + Tailwind</span>
+              <span className="font-mono">v1.0.0 | Em Desenvolvimento</span>
             </div>
           </div>
         </div>

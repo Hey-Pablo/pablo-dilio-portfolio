@@ -1,7 +1,9 @@
-
-import { User, Code, Book, Settings } from "lucide-react";
+import { User, Code, Book, Settings, Loader2 } from "lucide-react";
+import { useBackgroundRemoval } from '@/hooks/useBackgroundRemoval';
 
 const AboutSection = () => {
+  const { processedImageUrl, isProcessing } = useBackgroundRemoval('/lovable-uploads/dae0db69-f0ba-4df7-a5f1-4a644c162c01.png');
+
   const highlights = [
     {
       icon: Book,
@@ -38,20 +40,25 @@ const AboutSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Profile Image */}
           <div className="flex justify-center animate-fade-in">
             <div className="relative">
               <div className="w-96 h-96 rounded-2xl bg-gradient-to-br from-tech-blue/10 to-tech-green/10 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/lovable-uploads/dae0db69-f0ba-4df7-a5f1-4a644c162c01.png" 
-                  alt="Pablo Dilio - Foto Pessoal"
-                  className="w-80 h-80 rounded-xl object-cover"
-                />
+                {isProcessing ? (
+                  <div className="flex flex-col items-center gap-2">
+                    <Loader2 className="h-8 w-8 animate-spin text-tech-blue" />
+                    <span className="text-xs text-muted-foreground">Processando...</span>
+                  </div>
+                ) : (
+                  <img 
+                    src={processedImageUrl || '/lovable-uploads/dae0db69-f0ba-4df7-a5f1-4a644c162c01.png'} 
+                    alt="Pablo Dilio - Foto Pessoal"
+                    className="w-80 h-80 rounded-xl object-cover"
+                  />
+                )}
               </div>
             </div>
           </div>
 
-          {/* Content */}
           <div className="animate-slide-in-left">
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-4">Minha Trajetória</h3>
@@ -75,7 +82,6 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Highlights Grid */}
             <div className="grid sm:grid-cols-2 gap-4">
               {highlights.map((item, index) => (
                 <div key={index} className="tech-card">

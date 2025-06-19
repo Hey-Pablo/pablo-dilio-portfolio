@@ -1,9 +1,11 @@
-
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Download, Loader2 } from "lucide-react";
 import jsPDF from 'jspdf';
+import { useBackgroundRemoval } from '@/hooks/useBackgroundRemoval';
 
 const HeroSection = () => {
+  const { processedImageUrl, isProcessing } = useBackgroundRemoval('/lovable-uploads/bc60a79a-a663-40ce-b8c2-79fa0644866a.png');
+
   const handleDownloadCV = () => {
     const doc = new jsPDF();
     
@@ -131,11 +133,18 @@ const HeroSection = () => {
           <div className="flex justify-center lg:justify-end animate-fade-in">
             <div className="relative">
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-tech-blue/20 to-tech-green/20 flex items-center justify-center animate-float overflow-hidden">
-                <img 
-                  src="/lovable-uploads/bc60a79a-a663-40ce-b8c2-79fa0644866a.png" 
-                  alt="Pablo Dilio"
-                  className="w-72 h-72 rounded-full object-cover"
-                />
+                {isProcessing ? (
+                  <div className="flex flex-col items-center gap-2">
+                    <Loader2 className="h-8 w-8 animate-spin text-tech-blue" />
+                    <span className="text-xs text-muted-foreground">Processando...</span>
+                  </div>
+                ) : (
+                  <img 
+                    src={processedImageUrl || '/lovable-uploads/bc60a79a-a663-40ce-b8c2-79fa0644866a.png'} 
+                    alt="Pablo Dilio"
+                    className="w-72 h-72 rounded-full object-cover"
+                  />
+                )}
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-tech-green rounded-full animate-pulse"></div>

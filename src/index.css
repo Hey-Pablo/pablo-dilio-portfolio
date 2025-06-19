@@ -81,6 +81,23 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
 }
 
 @layer components {
@@ -97,7 +114,7 @@
   }
 
   .tech-card {
-    @apply bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:border-tech-blue/30;
+    @apply bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:border-tech-blue/30 hover:-translate-y-1;
   }
 
   .skill-bar {
@@ -107,4 +124,80 @@
   .skill-progress {
     @apply h-full bg-gradient-to-r from-tech-blue to-tech-green rounded-full transition-all duration-1000 ease-out;
   }
+
+  /* Background gradient animation */
+  .bg-200\% {
+    background-size: 200% 200%;
+  }
+
+  /* Parallax scrolling effect */
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Neon glow effect */
+  .neon-glow {
+    box-shadow: 
+      0 0 5px theme('colors.tech.blue'),
+      0 0 10px theme('colors.tech.blue'),
+      0 0 15px theme('colors.tech.blue'),
+      0 0 20px theme('colors.tech.blue');
+  }
+
+  /* Interactive hover effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/25;
+  }
+
+  /* Stagger animation delay utility */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
+/* Intersection Observer animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.skeleton {
+  animation: shimmer 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
 }

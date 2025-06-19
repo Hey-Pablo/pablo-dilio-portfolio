@@ -1,4 +1,3 @@
-
 import { Calendar, Award, ExternalLink, Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -60,6 +59,19 @@ const CertificatesSection = () => {
     }
   ];
 
+  // COMO PREENCHER OS ESPAÇOS VAZIOS:
+  // Para adicionar novos certificados, substitua os objetos em futureCertificates
+  // por objetos com a mesma estrutura dos certificados acima.
+  // Exemplo:
+  // {
+  //   id: 7,
+  //   title: "Nome do Novo Certificado",
+  //   institution: "Nome da Instituição",
+  //   date: "MM/AAAA",
+  //   status: "Concluído" | "Em Andamento" | "Previsto",
+  //   skills: ["Skill1", "Skill2", "Skill3"],
+  //   description: "Descrição do certificado..."
+  // }
   const futureCertificates = [
     {
       id: 'future-1',
@@ -139,6 +151,8 @@ const CertificatesSection = () => {
           ))}
 
           {/* Espaços para Futuros Certificados */}
+          {/* INSTRUÇÕES: Para preencher estes espaços, mova os novos certificados 
+              do array futureCertificates para o array certificates acima */}
           {futureCertificates.map((future) => (
             <div key={future.id} className="tech-card border-dashed border-2 border-muted-foreground/30 group hover:border-primary/50 transition-colors duration-300">
               <div className="flex flex-col items-center justify-center h-full min-h-[200px] text-center">
@@ -172,7 +186,7 @@ const CertificatesSection = () => {
           </div>
           <div className="text-center">
             <div className="text-2xl font-bold text-tech-blue mb-1">2024</div>
-            <div className="text-sm text-muted-foreground">Ano Ativo</div>
+            <div className="text-sm text-muted-foreground">Início</div>
           </div>
         </div>
       </div>

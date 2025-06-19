@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -16,15 +15,6 @@ const ProjectsSection = () => {
       category: "fullstack",
       technologies: ["JavaScript", "HTML/CSS", "MySQL", "Dashboard"],
       status: "Em Desenvolvimento"
-    },
-    {
-      id: 2,
-      title: "Sistema de Suporte TID",
-      description: "Plataforma de suporte interno para auxiliar usuários do sistema TID Software, com mapeamento de funcionalidades e guias de uso.",
-      image: "/placeholder-support.jpg",
-      category: "frontend",
-      technologies: ["Suporte Técnico", "Mapeamento", "Documentação"],
-      status: "Profissional"
     },
     {
       id: 3,

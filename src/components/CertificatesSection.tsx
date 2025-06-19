@@ -1,5 +1,5 @@
 
-import { Calendar, Award, ExternalLink } from "lucide-react";
+import { Calendar, Award, ExternalLink, Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const CertificatesSection = () => {
@@ -57,6 +57,19 @@ const CertificatesSection = () => {
       status: "Concluído",
       skills: ["Gestão", "Processos", "Qualidade", "Liderança"],
       description: "Formação técnica em administração com foco em gestão de processos."
+    }
+  ];
+
+  const futureCertificates = [
+    {
+      id: 'future-1',
+      title: "Em Breve",
+      placeholder: true
+    },
+    {
+      id: 'future-2', 
+      title: "Em Breve",
+      placeholder: true
     }
   ];
 
@@ -121,6 +134,23 @@ const CertificatesSection = () => {
                     </Badge>
                   ))}
                 </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Espaços para Futuros Certificados */}
+          {futureCertificates.map((future) => (
+            <div key={future.id} className="tech-card border-dashed border-2 border-muted-foreground/30 group hover:border-primary/50 transition-colors duration-300">
+              <div className="flex flex-col items-center justify-center h-full min-h-[200px] text-center">
+                <div className="p-3 bg-muted/50 rounded-lg mb-4 group-hover:bg-primary/10 transition-colors">
+                  <Plus size={24} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <h3 className="text-lg font-medium text-muted-foreground group-hover:text-primary transition-colors mb-2">
+                  {future.title}
+                </h3>
+                <p className="text-sm text-muted-foreground/70">
+                  Novo certificado será adicionado aqui
+                </p>
               </div>
             </div>
           ))}

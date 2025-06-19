@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -21,7 +22,7 @@ const ProjectsSection = () => {
       title: "Sistema de Suporte TID",
       description: "Plataforma de suporte interno para auxiliar usuários do sistema TID Software, com mapeamento de funcionalidades e guias de uso.",
       image: "/placeholder-support.jpg",
-      category: "web",
+      category: "frontend",
       technologies: ["Suporte Técnico", "Mapeamento", "Documentação"],
       status: "Profissional"
     },
@@ -39,8 +40,7 @@ const ProjectsSection = () => {
   const categories = [
     { id: "all", label: "Todos" },
     { id: "fullstack", label: "Full Stack" },
-    { id: "frontend", label: "Frontend" },
-    { id: "web", label: "Web Apps" }
+    { id: "frontend", label: "Frontend" }
   ];
 
   const filteredProjects = selectedFilter === "all" 

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Projector } from "lucide-react";
+import { Projector } from "lucide-react";
 
 const ProjectsSection = () => {
   const [selectedFilter, setSelectedFilter] = useState("all");
@@ -15,8 +15,6 @@ const ProjectsSection = () => {
       image: "/placeholder-finance.jpg",
       category: "fullstack",
       technologies: ["JavaScript", "HTML/CSS", "MySQL", "Dashboard"],
-      github: "https://github.com/Hey-Pablo",
-      demo: "[Link do Site - Adicionar aqui]",
       status: "Em Desenvolvimento"
     },
     {
@@ -26,8 +24,6 @@ const ProjectsSection = () => {
       image: "/placeholder-support.jpg",
       category: "web",
       technologies: ["Suporte Técnico", "Mapeamento", "Documentação"],
-      github: "#",
-      demo: "#",
       status: "Profissional"
     },
     {
@@ -37,8 +33,6 @@ const ProjectsSection = () => {
       image: "/placeholder-portfolio.jpg",
       category: "frontend",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive"],
-      github: "https://github.com/Hey-Pablo",
-      demo: "#",
       status: "Concluído"
     }
   ];
@@ -116,19 +110,6 @@ const ProjectsSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            Quer ver mais projetos ou colaborar em algo novo?
-          </p>
-          <Button asChild>
-            <a href="https://github.com/Hey-Pablo" target="_blank" rel="noopener noreferrer">
-              <Github className="mr-2 h-4 w-4" />
-              Ver GitHub Completo
-            </a>
-          </Button>
         </div>
       </div>
     </section>

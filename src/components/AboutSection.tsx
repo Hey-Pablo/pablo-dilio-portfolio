@@ -38,16 +38,15 @@ const AboutSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Profile Image Placeholder */}
+          {/* Profile Image */}
           <div className="flex justify-center animate-fade-in">
             <div className="relative">
-              <div className="w-96 h-96 rounded-2xl bg-gradient-to-br from-tech-blue/10 to-tech-green/10 flex items-center justify-center">
-                <div className="w-80 h-80 rounded-xl bg-muted flex items-center justify-center">
-                  <User size={100} className="text-muted-foreground" />
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/90 px-3 py-1 rounded-full text-xs font-mono text-muted-foreground">
-                    Foto Pessoal
-                  </div>
-                </div>
+              <div className="w-96 h-96 rounded-2xl bg-gradient-to-br from-tech-blue/10 to-tech-green/10 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/lovable-uploads/dae0db69-f0ba-4df7-a5f1-4a644c162c01.png" 
+                  alt="Pablo Dilio - Foto Pessoal"
+                  className="w-80 h-80 rounded-xl object-cover"
+                />
               </div>
             </div>
           </div>

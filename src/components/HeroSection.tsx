@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, User, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
 import jsPDF from 'jspdf';
 
 const HeroSection = () => {
@@ -127,16 +127,15 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Profile Image Placeholder */}
+          {/* Profile Image */}
           <div className="flex justify-center lg:justify-end animate-fade-in">
             <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-tech-blue/20 to-tech-green/20 flex items-center justify-center animate-float">
-                <div className="w-72 h-72 rounded-full bg-muted flex items-center justify-center">
-                  <User size={120} className="text-muted-foreground" />
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-background/90 px-3 py-1 rounded-full text-xs font-mono text-muted-foreground">
-                    Foto de Perfil
-                  </div>
-                </div>
+              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-tech-blue/20 to-tech-green/20 flex items-center justify-center animate-float overflow-hidden">
+                <img 
+                  src="/lovable-uploads/bc60a79a-a663-40ce-b8c2-79fa0644866a.png" 
+                  alt="Pablo Dilio"
+                  className="w-72 h-72 rounded-full object-cover"
+                />
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-tech-green rounded-full animate-pulse"></div>

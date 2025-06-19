@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -33,7 +32,7 @@ const ProjectsSection = () => {
       image: "/placeholder-portfolio.jpg",
       category: "frontend",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive"],
-      status: "Concluído"
+      status: "Em Desenvolvimento"
     }
   ];
 

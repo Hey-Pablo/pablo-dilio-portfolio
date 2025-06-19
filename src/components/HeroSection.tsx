@@ -1,10 +1,52 @@
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, User } from "lucide-react";
+import { Github, Linkedin, Mail, User, Download } from "lucide-react";
+import jsPDF from 'jspdf';
 
 const HeroSection = () => {
   const handleDownloadCV = () => {
-    // Aqui seria implementado o download do CV
+    const doc = new jsPDF();
+    
+    // Configuração do documento
+    doc.setFontSize(20);
+    doc.text('Pablo Adriano Maciel Dilio', 20, 30);
+    
+    doc.setFontSize(14);
+    doc.text('Desenvolvedor Full Stack', 20, 40);
+    
+    doc.setFontSize(12);
+    doc.text('Email: dilio.pablo@gmail.com', 20, 55);
+    doc.text('Telefone: (19) 99269-8202', 20, 65);
+    doc.text('Localização: Piracicaba, SP', 20, 75);
+    doc.text('LinkedIn: https://www.linkedin.com/in/pablo-dilio-4063991b2', 20, 85);
+    doc.text('GitHub: https://github.com/Hey-Pablo', 20, 95);
+    
+    doc.setFontSize(14);
+    doc.text('FORMAÇÃO ACADÊMICA', 20, 115);
+    doc.setFontSize(10);
+    doc.text('Análise e Desenvolvimento de Sistemas - Centro Universitário Descomplica', 20, 125);
+    doc.text('4º semestre (2023 - Cursando)', 20, 135);
+    
+    doc.setFontSize(14);
+    doc.text('EXPERIÊNCIA PROFISSIONAL', 20, 155);
+    doc.setFontSize(10);
+    doc.text('TID Software - Auxiliar de Informática Jr. (07/2024 - Atualmente)', 20, 165);
+    doc.text('• Suporte ao sistema TID e mapeamento interno', 20, 175);
+    doc.text('• Instrução e auxílio nas demandas de suporte ao usuário', 20, 185);
+    
+    doc.text('Caterpillar Brasil - Aprendiz Administrativo (02/2023 – 06/2024)', 20, 200);
+    doc.text('• Conferência de Notas Fiscais (sistemas RED-E e RIS)', 20, 210);
+    doc.text('• Transferências de itens entre filiais (sistema SAP)', 20, 220);
+    
+    doc.setFontSize(14);
+    doc.text('HABILIDADES TÉCNICAS', 20, 240);
+    doc.setFontSize(10);
+    doc.text('• Linguagens: JavaScript, HTML/CSS, SQL', 20, 250);
+    doc.text('• Ferramentas: MySQL, SQL Server, Corel Draw, Photoshop', 20, 260);
+    doc.text('• Desenvolvimento: Frontend/Backend em formação', 20, 270);
+    
+    // Salvar o PDF
+    doc.save('CV_Pablo_Dilio.pdf');
     console.log("Download CV iniciado");
   };
 
@@ -45,7 +87,7 @@ const HeroSection = () => {
                 onClick={handleDownloadCV}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
-                <User className="mr-2 h-4 w-4" />
+                <Download className="mr-2 h-4 w-4" />
                 Download CV
               </Button>
               <Button 

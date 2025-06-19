@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Projector, ExternalLink, Calendar } from "lucide-react";
+import { Projector } from "lucide-react";
 
 const ProjectsSection = () => {
   const [selectedFilter, setSelectedFilter] = useState("all");
@@ -15,9 +15,7 @@ const ProjectsSection = () => {
       image: "/placeholder-finance.jpg",
       category: "fullstack",
       technologies: ["JavaScript", "HTML/CSS", "MySQL", "Dashboard"],
-      status: "Em Desenvolvimento",
-      link: "https://xn--finanaspro-s6a.net/",
-      expirationDate: "2026-06-18"
+      status: "Em Desenvolvimento"
     },
     {
       id: 3,
@@ -99,34 +97,6 @@ const ProjectsSection = () => {
                     </Badge>
                   ))}
                 </div>
-
-                {/* Project Link and Expiration */}
-                {project.link && (
-                  <div className="space-y-2 pt-2">
-                    <Button 
-                      asChild 
-                      variant="outline" 
-                      size="sm" 
-                      className="w-full"
-                    >
-                      <a 
-                        href={project.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2"
-                      >
-                        <ExternalLink size={14} />
-                        Acessar Projeto
-                      </a>
-                    </Button>
-                    {project.expirationDate && (
-                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                        <Calendar size={12} />
-                        <span>Expira em: {new Date(project.expirationDate).toLocaleDateString('pt-BR')}</span>
-                      </div>
-                    )}
-                  </div>
-                )}
               </div>
             </div>
           ))}

@@ -1,11 +1,9 @@
+
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Download, Loader2 } from "lucide-react";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
 import jsPDF from 'jspdf';
-import { useBackgroundRemoval } from '@/hooks/useBackgroundRemoval';
 
 const HeroSection = () => {
-  const { processedImageUrl, isProcessing } = useBackgroundRemoval('/lovable-uploads/bc60a79a-a663-40ce-b8c2-79fa0644866a.png');
-
   const handleDownloadCV = () => {
     const doc = new jsPDF();
     
@@ -55,9 +53,9 @@ const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center section-padding bg-gradient-to-br from-background via-background to-muted/20">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex justify-center items-center">
           {/* Content */}
-          <div className="text-center lg:text-left animate-slide-in-left">
+          <div className="text-center animate-slide-in-left max-w-4xl">
             <div className="mb-6">
               <p className="text-tech-blue font-mono text-sm mb-2">
                 &lt;developer&gt;
@@ -76,14 +74,14 @@ const HeroSection = () => {
               <h2 className="text-xl md:text-2xl font-semibold text-tech-gray mb-4">
                 Desenvolvedor Full Stack
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+              <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
                 Estudante de ADS no 4º semestre, apaixonado por tecnologia e desenvolvimento completo. 
                 Atualmente trabalhando como Auxiliar de Informática Jr. na TID Software, 
                 focado em expandir conhecimentos em frontend e backend.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center">
               <Button 
                 size="lg" 
                 onClick={handleDownloadCV}
@@ -103,7 +101,7 @@ const HeroSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start gap-4">
+            <div className="flex justify-center gap-4">
               <a 
                 href="https://github.com/Hey-Pablo" 
                 target="_blank" 
@@ -126,29 +124,6 @@ const HeroSection = () => {
               >
                 <Mail size={20} />
               </a>
-            </div>
-          </div>
-
-          {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end animate-fade-in">
-            <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-tech-blue/20 to-tech-green/20 flex items-center justify-center animate-float overflow-hidden">
-                {isProcessing ? (
-                  <div className="flex flex-col items-center gap-2">
-                    <Loader2 className="h-8 w-8 animate-spin text-tech-blue" />
-                    <span className="text-xs text-muted-foreground">Processando...</span>
-                  </div>
-                ) : (
-                  <img 
-                    src={processedImageUrl || '/lovable-uploads/bc60a79a-a663-40ce-b8c2-79fa0644866a.png'} 
-                    alt="Pablo Dilio"
-                    className="w-72 h-72 rounded-full object-cover"
-                  />
-                )}
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-tech-green rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-tech-blue rounded-full animate-pulse delay-1000"></div>
             </div>
           </div>
         </div>

@@ -1,9 +1,7 @@
-import { User, Code, Book, Settings, Loader2 } from "lucide-react";
-import { useBackgroundRemoval } from '@/hooks/useBackgroundRemoval';
+
+import { User, Code, Book, Settings } from "lucide-react";
 
 const AboutSection = () => {
-  const { processedImageUrl, isProcessing } = useBackgroundRemoval('/lovable-uploads/dae0db69-f0ba-4df7-a5f1-4a644c162c01.png');
-
   const highlights = [
     {
       icon: Book,
@@ -39,26 +37,7 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="flex justify-center animate-fade-in">
-            <div className="relative">
-              <div className="w-96 h-96 rounded-2xl bg-gradient-to-br from-tech-blue/10 to-tech-green/10 flex items-center justify-center overflow-hidden">
-                {isProcessing ? (
-                  <div className="flex flex-col items-center gap-2">
-                    <Loader2 className="h-8 w-8 animate-spin text-tech-blue" />
-                    <span className="text-xs text-muted-foreground">Processando...</span>
-                  </div>
-                ) : (
-                  <img 
-                    src={processedImageUrl || '/lovable-uploads/dae0db69-f0ba-4df7-a5f1-4a644c162c01.png'} 
-                    alt="Pablo Dilio - Foto Pessoal"
-                    className="w-80 h-80 rounded-xl object-cover"
-                  />
-                )}
-              </div>
-            </div>
-          </div>
-
+        <div className="max-w-4xl mx-auto">
           <div className="animate-slide-in-left">
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-4">Minha Trajetória</h3>

@@ -1,3 +1,4 @@
+
 import { Calendar, Award, ExternalLink, Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -185,7 +186,7 @@ const CertificatesSection = () => {
             <div className="text-sm text-muted-foreground">Gestão</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-tech-blue mb-1">2024</div>
+            <div className="text-2xl font-bold text-tech-blue mb-1">2018</div>
             <div className="text-sm text-muted-foreground">Início</div>
           </div>
         </div>

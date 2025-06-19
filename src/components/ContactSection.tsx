@@ -1,60 +1,7 @@
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/hooks/use-toast";
 import { Mail, User, Github, Linkedin, Calendar } from "lucide-react";
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulação de envio do formulário
-    try {
-      // Aqui seria implementada a lógica real de envio
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "Mensagem enviada!",
-        description: "Obrigado pelo contato. Responderei em breve!",
-      });
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
-      });
-    } catch (error) {
-      toast({
-        title: "Erro ao enviar",
-        description: "Tente novamente ou entre em contato diretamente.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   const contactInfo = [
     {
       icon: Mail,
@@ -109,86 +56,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <div className="animate-slide-in-left">
-            <div className="tech-card">
-              <h3 className="text-xl font-semibold mb-6">Envie uma Mensagem</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Nome *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Seu nome completo"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="seu@email.com"
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                    Assunto *
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="Assunto da mensagem"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Mensagem *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Descreva como posso ajudá-lo..."
-                    rows={6}
-                  />
-                </div>
-                
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  disabled={isSubmitting}
-                  className="w-full"
-                >
-                  {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
-                </Button>
-              </form>
-            </div>
-          </div>
-
+        <div className="grid lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {/* Contact Information */}
           <div className="animate-fade-in">
             {/* Contact Details */}
@@ -258,6 +126,20 @@ const ContactSection = () => {
                 <p className="text-xs text-muted-foreground">
                   Tempo de resposta: Geralmente dentro de 24 horas
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Professional Image Placeholder */}
+          <div className="animate-slide-in-left">
+            <div className="tech-card h-full flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-48 h-48 bg-gradient-to-br from-tech-blue/20 to-tech-green/20 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <User size={64} className="text-muted-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Pablo Adriano Maciel Dilio</h3>
+                <p className="text-muted-foreground">Desenvolvedor Full Stack</p>
+                <p className="text-sm text-muted-foreground mt-2">Piracicaba, SP</p>
               </div>
             </div>
           </div>

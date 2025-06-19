@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Projector, User } from "lucide-react";
+import { Github, Projector } from "lucide-react";
 
 const ProjectsSection = () => {
   const [selectedFilter, setSelectedFilter] = useState("all");
@@ -112,22 +112,6 @@ const ProjectsSection = () => {
                       {tech}
                     </Badge>
                   ))}
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2 pt-2">
-                  <Button size="sm" variant="outline" asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github size={14} className="mr-1" />
-                      Código
-                    </a>
-                  </Button>
-                  <Button size="sm" asChild>
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <Projector size={14} className="mr-1" />
-                      Demo
-                    </a>
-                  </Button>
                 </div>
               </div>
             </div>

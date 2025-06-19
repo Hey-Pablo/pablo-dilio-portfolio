@@ -1,5 +1,5 @@
 
-import { Book, Calendar, User } from "lucide-react";
+import { Book, Calendar, User, GraduationCap, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const EducationSection = () => {
@@ -33,6 +33,86 @@ const EducationSection = () => {
     }
   ];
 
+  const technicalCourses = [
+    {
+      institution: "SENAI",
+      course: "Técnico em Administração",
+      period: "06/2023",
+      status: "Concluído",
+      highlights: ["Gestão", "Processos", "Qualidade", "Liderança"]
+    },
+    {
+      institution: "Digital Innovation One",
+      course: "Backend Developer",
+      period: "12/2024",
+      status: "Concluído",
+      highlights: ["APIs", "Server-side", "Database", "Security"]
+    },
+    {
+      institution: "Digital Innovation One",
+      course: "Object-Oriented Developer",
+      period: "09/2024",
+      status: "Concluído",
+      highlights: ["OOP", "Design Patterns", "SOLID", "Clean Code"]
+    },
+    {
+      institution: "Digital Innovation One",
+      course: "Programmer",
+      period: "05/2024",
+      status: "Concluído",
+      highlights: ["Logic", "Algorithms", "Data Structures"]
+    },
+    {
+      institution: "Digital Innovation One",
+      course: "Basic Frontend",
+      period: "03/2024",
+      status: "Concluído",
+      highlights: ["HTML5", "CSS3", "JavaScript", "Responsive"]
+    },
+    {
+      institution: "Certificação",
+      course: "Auxiliar Mecânico de Manutenção",
+      period: "08/2022",
+      status: "Concluído",
+      highlights: ["Manutenção", "Mecânica", "Equipamentos"]
+    },
+    {
+      institution: "People",
+      course: "Robótica",
+      period: "2019",
+      status: "Concluído",
+      highlights: ["Automação", "Programação", "Eletrônica"]
+    },
+    {
+      institution: "Microlins",
+      course: "Montagem e Manutenção de Computadores e Redes",
+      period: "2019",
+      status: "Concluído",
+      highlights: ["Hardware", "Redes", "Manutenção", "Infraestrutura"]
+    },
+    {
+      institution: "Microlins",
+      course: "Design Gráfico e Multimídia",
+      period: "2019",
+      status: "Concluído",
+      highlights: ["Corel Draw", "Photoshop", "Flash", "After Effects", "3D Studio Max"]
+    },
+    {
+      institution: "Micropro",
+      course: "Profissional Administrativo Tecnológico",
+      period: "2018",
+      status: "Concluído",
+      highlights: ["Administração", "Tecnologia", "Gestão"]
+    },
+    {
+      institution: "Micropro",
+      course: "Contabilidade / Secretariado / Departamento Pessoal",
+      period: "2018",
+      status: "Concluído",
+      highlights: ["Contabilidade", "RH", "Secretariado", "Legislação"]
+    }
+  ];
+
   return (
     <section id="education" className="section-padding">
       <div className="container-custom">
@@ -41,11 +121,17 @@ const EducationSection = () => {
             Formação <span className="gradient-text">Acadêmica</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Minha trajetória educacional focada em tecnologia e desenvolvimento de sistemas
+            Minha trajetória educacional focada em tecnologia e desenvolvimento profissional
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        {/* Formação Acadêmica */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="flex items-center mb-8">
+            <GraduationCap className="mr-3 text-primary" size={24} />
+            <h3 className="text-xl font-semibold">Formação Acadêmica</h3>
+          </div>
+
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:transform md:-translate-x-0.5"></div>
@@ -97,6 +183,51 @@ const EducationSection = () => {
                         ))}
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Cursos Técnicos e Profissionalizantes */}
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center mb-8">
+            <Award className="mr-3 text-primary" size={24} />
+            <h3 className="text-xl font-semibold">Cursos Técnicos e Profissionalizantes</h3>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {technicalCourses.map((course, index) => (
+              <div key={index} className="tech-card group hover:scale-105 transition-transform duration-300">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Award size={16} className="text-primary" />
+                  </div>
+                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                    {course.status}
+                  </Badge>
+                </div>
+
+                {/* Content */}
+                <div className="space-y-3">
+                  <h4 className="text-sm font-semibold group-hover:text-primary transition-colors">
+                    {course.course}
+                  </h4>
+
+                  <div className="flex items-center text-xs text-muted-foreground">
+                    <Calendar size={12} className="mr-2" />
+                    <span>{course.institution} • {course.period}</span>
+                  </div>
+
+                  {/* Skills Tags */}
+                  <div className="flex flex-wrap gap-1">
+                    {course.highlights.map((skill, idx) => (
+                      <Badge key={idx} variant="outline" className="text-xs">
+                        {skill}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
               </div>

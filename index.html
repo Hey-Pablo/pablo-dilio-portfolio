@@ -1,107 +1,15 @@
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pablo Adriano Maciel Dilio - Desenvolvedor Full Stack | Portfólio</title>
-    <meta name="description" content="Pablo Adriano Maciel Dilio - Desenvolvedor Full Stack, estudante de ADS especializado em desenvolvimento frontend e backend. Portfólio profissional com projetos e experiências." />
-    <meta name="author" content="Pablo Adriano Maciel Dilio" />
-    <meta name="keywords" content="desenvolvedor, full stack, frontend, backend, análise desenvolvimento sistemas, piracicaba, react, javascript, python, java, mysql" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="Portuguese" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="rating" content="general" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pablo-dilio.lovable.app/" />
-    <meta property="og:title" content="Pablo Adriano Maciel Dilio - Desenvolvedor Full Stack" />
-    <meta property="og:description" content="Portfólio profissional de Pablo Dilio - Desenvolvedor Full Stack, estudante de ADS com experiência em TI" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://pablo-dilio.lovable.app/" />
-    <meta property="twitter:title" content="Pablo Adriano Maciel Dilio - Desenvolvedor Full Stack" />
-    <meta property="twitter:description" content="Portfólio profissional de Pablo Dilio - Desenvolvedor Full Stack" />
-    <meta property="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    <meta name="twitter:site" content="@pablo_dilio" />
-
-    <!-- PWA -->
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#0066CC" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Pablo Dilio" />
-    <link rel="apple-touch-icon" href="/lovable-uploads/a8966897-694c-4c3e-8f47-2092df2a8983.png" />
-    
-    <link rel="icon" href="/lovable-uploads/a8966897-694c-4c3e-8f47-2092df2a8983.png" type="image/png">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Pablo Adriano Maciel Dilio",
-      "jobTitle": "Desenvolvedor Full Stack",
-      "url": "https://pablo-dilio.lovable.app",
-      "sameAs": [
-        "https://www.linkedin.com/in/pablo-dilio-4063991b2",
-        "https://github.com/Hey-Pablo"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "TID Software"
-      },
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Centro Universitário União das Américas Descomplica"
-      }
-    }
-    </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>FinançasPro</title>
   </head>
-
   <body>
     <div id="root"></div>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Register Service Worker -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then((registration) => {
-              console.log('SW registered: ', registration);
-            })
-            .catch((registrationError) => {
-              console.log('SW registration failed: ', registrationError);
-            });
-        });
-      }
-    </script>
-
-    <!-- Simple Analytics -->
-    <script>
-      // Basic analytics tracking
-      function trackEvent(eventName, eventData = {}) {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', eventName, eventData);
-        }
-        console.log('Event tracked:', eventName, eventData);
-      }
-      
-      // Track page views
-      window.addEventListener('load', () => {
-        trackEvent('page_view', {
-          page_title: document.title,
-          page_location: window.location.href
-        });
-      });
-    </script>
   </body>
 </html>

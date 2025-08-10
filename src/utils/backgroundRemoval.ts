@@ -1,4 +1,4 @@
-import { pipeline, env } from '@huggingface/transformers';
+import { pipeline, env } from '@xenova/transformers';
 
 // Configure transformers.js to always download models
 env.allowLocalModels = false;
@@ -34,9 +34,7 @@ function resizeImageIfNeeded(canvas: HTMLCanvasElement, ctx: CanvasRenderingCont
 export const removeBackground = async (imageElement: HTMLImageElement): Promise<Blob> => {
   try {
     console.log('Starting background removal process...');
-    const segmenter = await pipeline('image-segmentation', 'Xenova/segformer-b0-finetuned-ade-512-512', {
-      device: 'webgpu',
-    });
+    const segmenter = await pipeline('image-segmentation', 'Xenova/segformer-b0-finetuned-ade-512-512');
     
     // Convert HTMLImageElement to canvas
     const canvas = document.createElement('canvas');

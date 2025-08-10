@@ -10,12 +10,14 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Sistema de Controle de Finanças",
-      description: "Site para gestão financeira pessoal com dashboard interativo, relatórios detalhados e controle de gastos. Desenvolvido com foco na experiência do usuário.",
+      title: "App Web para controle de Leitura",
+      description: "Site para gestão de Manwhas/Weebton pessoal com dashboard interativo. Desenvolvido com foco na experiência do usuário.",
       image: "/placeholder-finance.jpg",
       category: "fullstack",
-      technologies: ["JavaScript", "HTML/CSS", "MySQL", "Dashboard"],
-      status: "Em Desenvolvimento"
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui"],
+      status: "Em Desenvolvimento",
+      link: "https://imperiodopablao.site/#",
+      expiresText: "Até do dia 15/05/2026."
     },
     {
       id: 3,
@@ -97,6 +99,25 @@ const ProjectsSection = () => {
                     </Badge>
                   ))}
                 </div>
+
+                {/* Optional link and expiration text */}
+                {project.link && (
+                  <p className="text-sm">
+                    <span className="font-medium">Link:</span>{" "}
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline break-all"
+                      aria-label={`Abrir link do projeto ${project.title}`}
+                    >
+                      {project.link}
+                    </a>
+                  </p>
+                )}
+                {project.expiresText && (
+                  <p className="text-xs text-muted-foreground">{project.expiresText}</p>
+                )}
               </div>
             </div>
           ))}

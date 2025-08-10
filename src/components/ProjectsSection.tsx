@@ -27,6 +27,15 @@ const ProjectsSection = () => {
       category: "frontend",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive"],
       status: "Em Desenvolvimento"
+    },
+    {
+      id: 4,
+      title: "Brasil Dev Tools",
+      description: "Coleção de ferramentas para devs brasileiros inspirada no 4Devs: geradores, validadores e utilitários para testes.",
+      image: "/placeholder-portfolio.jpg",
+      category: "frontend",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      status: "Em Desenvolvimento"
     }
   ];
 

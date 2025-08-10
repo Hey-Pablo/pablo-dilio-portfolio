@@ -66,6 +66,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				tech: {
+					blue: 'hsl(var(--tech-blue))',
+					green: 'hsl(var(--tech-green))',
+					gray: 'hsl(var(--tech-gray))'
+				},
 				// Cores personalizadas para o sistema financeiro
 				finance: {
 					primary: '#1e40af',

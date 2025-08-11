@@ -16,8 +16,6 @@ const ProjectsSection = () => {
       category: "fullstack",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui"],
       status: "Em Desenvolvimento",
-      link: "https://imperiodopablao.site/#",
-      expiresText: "Até do dia 15/05/2026."
     },
     {
       id: 3,

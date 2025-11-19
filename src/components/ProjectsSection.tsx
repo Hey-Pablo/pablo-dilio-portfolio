@@ -4,10 +4,22 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Projector } from "lucide-react";
 
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  technologies: string[];
+  status: string;
+  link?: string;
+  expiresText?: string;
+}
+
 const ProjectsSection = () => {
   const [selectedFilter, setSelectedFilter] = useState("all");
 
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
       title: "App Web para controle de Leitura",

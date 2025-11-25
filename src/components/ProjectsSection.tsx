@@ -30,6 +30,15 @@ const ProjectsSection = () => {
       status: "Em Desenvolvimento",
     },
     {
+      id: 2,
+      title: "Açaí Control – Sistema Web de Gestão de Vendas e Estoque",
+      description: "Criação de um sistema completo de gestão para estabelecimentos de açaí, com autenticação segura, dashboard, vendas integradas ao estoque, relatórios e cadastro de produtos. Construído com React, TailwindCSS e Supabase, incluindo RLS e cálculos automáticos de custos e lucros.",
+      image: "/placeholder-finance.jpg",
+      category: "fullstack",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase", "RLS"],
+      status: "Em Desenvolvimento"
+    },
+    {
       id: 3,
       title: "Portfólio Pessoal",
       description: "Portfólio responsivo desenvolvido com React e TypeScript, apresentando projetos e habilidades de forma interativa e moderna.",

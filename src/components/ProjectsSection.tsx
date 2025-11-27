@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Projector } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Projector, ExternalLink, Calendar, Code2 } from "lucide-react";
 
 interface Project {
   id: number;
@@ -18,6 +19,7 @@ interface Project {
 
 const ProjectsSection = () => {
   const [selectedFilter, setSelectedFilter] = useState("all");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const projects: Project[] = [
     {
@@ -105,7 +107,11 @@ const ProjectsSection = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="tech-card group hover:scale-105 transition-transform duration-300">
+            <div 
+              key={project.id} 
+              className="tech-card group hover:scale-105 transition-transform duration-300 cursor-pointer"
+              onClick={() => setSelectedProject(project)}
+            >
               {/* Project Image Placeholder */}
               <div className="relative mb-4 h-48 bg-gradient-to-br from-tech-blue/10 to-tech-green/10 rounded-lg overflow-hidden">
                 <div className="w-full h-full bg-muted flex items-center justify-center">
@@ -159,6 +165,97 @@ const ProjectsSection = () => {
             </div>
           ))}
         </div>
+
+        {/* Project Details Modal */}
+        <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
+          <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+            {selectedProject && (
+              <>
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold gradient-text">
+                    {selectedProject.title}
+                  </DialogTitle>
+                  <DialogDescription className="flex items-center gap-2 mt-2">
+                    <Badge variant="secondary" className="text-sm">
+                      {selectedProject.status}
+                    </Badge>
+                    <Badge variant="outline" className="text-sm">
+                      {selectedProject.category === "fullstack" ? "Full Stack" : "Frontend"}
+                    </Badge>
+                  </DialogDescription>
+                </DialogHeader>
+
+                <div className="space-y-6 mt-4">
+                  {/* Project Image */}
+                  <div className="relative h-64 bg-gradient-to-br from-tech-blue/10 to-tech-green/10 rounded-lg overflow-hidden">
+                    <div className="w-full h-full bg-muted flex items-center justify-center">
+                      <Projector size={64} className="text-muted-foreground" />
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold flex items-center gap-2">
+                      <Code2 size={20} />
+                      Sobre o Projeto
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {selectedProject.description}
+                    </p>
+                  </div>
+
+                  {/* Technologies */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold flex items-center gap-2">
+                      <Code2 size={20} />
+                      Tecnologias Utilizadas
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.technologies.map((tech, index) => (
+                        <Badge key={index} variant="outline" className="text-sm px-3 py-1">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Status and Link */}
+                  <div className="space-y-3 pt-4 border-t">
+                    <div className="flex items-center gap-2">
+                      <Calendar size={18} className="text-muted-foreground" />
+                      <span className="text-sm">
+                        <span className="font-medium">Status:</span> {selectedProject.status}
+                      </span>
+                    </div>
+                    
+                    {selectedProject.link && (
+                      <div className="flex items-start gap-2">
+                        <ExternalLink size={18} className="text-muted-foreground mt-0.5" />
+                        <div className="flex-1">
+                          <span className="text-sm font-medium block mb-1">Link do Projeto:</span>
+                          <a
+                            href={selectedProject.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline text-sm break-all"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {selectedProject.link}
+                          </a>
+                          {selectedProject.expiresText && (
+                            <p className="text-xs text-muted-foreground mt-1">
+                              {selectedProject.expiresText}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

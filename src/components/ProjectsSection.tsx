@@ -55,6 +55,15 @@ const ProjectsSection = () => {
       category: "frontend",
       technologies: ["React", "TypeScript", "Tailwind CSS"],
       status: "Em Desenvolvimento"
+    },
+    {
+      id: 5,
+      title: "FinanceFlow — Sistema de Gestão Financeira Pessoal",
+      description: "Aplicação web para controle completo de finanças pessoais, incluindo receitas, despesas, investimentos e dividendos. Possui dashboard interativo, acompanhamento de ações em tempo real e design moderno focado em usabilidade.",
+      image: "/placeholder-finance.jpg",
+      category: "fullstack",
+      technologies: ["React 18", "TypeScript", "Tailwind CSS", "Supabase", "React Query", "Recharts", "Framer Motion"],
+      status: "Concluído"
     }
   ];
 

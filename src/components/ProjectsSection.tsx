@@ -66,6 +66,15 @@ const ProjectsSection = () => {
       category: "fullstack",
       technologies: ["React 18", "TypeScript", "Tailwind CSS", "Supabase", "React Query", "Recharts", "Framer Motion"],
       status: "Concluído"
+    },
+    {
+      id: 6,
+      title: "Suporte do Pablão — Base de Conhecimento e Help Desk",
+      description: "Aplicação web para gestão de documentação técnica e artigos de suporte, permitindo que empresas organizem conteúdos em uma Base de Conhecimento com controle de acesso, busca inteligente e um painel administrativo completo.",
+      image: "/placeholder-portfolio.jpg",
+      category: "fullstack",
+      technologies: ["React 18", "TypeScript", "Tailwind CSS", "Supabase", "Tiptap", "shadcn/ui"],
+      status: "Concluído"
     }
   ];
 

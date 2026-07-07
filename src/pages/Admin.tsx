@@ -75,11 +75,11 @@ const AdminContent = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Visualização somente-leitura. Edição via interface em breve — por ora, edite os arquivos JSON em <code>src/data/</code>.
             </p>
-            <TabsContent value="projects"><Section items={projects as any[]} /></TabsContent>
-            <TabsContent value="education"><Section items={education as any[]} /></TabsContent>
-            <TabsContent value="certificates"><Section items={certificates as any[]} /></TabsContent>
-            <TabsContent value="experience"><Section items={experience as any[]} /></TabsContent>
-            <TabsContent value="skills"><Section items={skills as any[]} keyField="name" /></TabsContent>
+            <TabsContent value="projects"><Section items={projects} /></TabsContent>
+            <TabsContent value="education"><Section items={education} /></TabsContent>
+            <TabsContent value="certificates"><Section items={certificates} /></TabsContent>
+            <TabsContent value="experience"><Section items={experience} /></TabsContent>
+            <TabsContent value="skills"><Section items={skills} keyField="name" /></TabsContent>
           </div>
         </Tabs>
       </div>

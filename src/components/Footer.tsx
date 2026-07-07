@@ -1,8 +1,11 @@
 
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { useState } from "react";
+import { Github, Linkedin, Mail, Heart, LogIn } from "lucide-react";
+import FooterLogin from "./FooterLogin";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [showLogin, setShowLogin] = useState(false);
 
   const quickLinks = [
     { label: "Sobre", href: "#about" },

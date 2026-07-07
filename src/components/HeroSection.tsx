@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download, ArrowRight, Rocket } from "lucide-react";
 import jsPDF from "jspdf";
-import SpaceBackground from "@/components/SpaceBackground";
+
 
 const HeroSection = () => {
   const handleDownloadCV = () => {
@@ -43,7 +43,7 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16"
     >
-      <SpaceBackground showPlanet />
+      {/* Global SpaceBackground is rendered once in Index.tsx (fixed layer). */}
 
       <div className="container-custom relative z-10">
         <div className="max-w-3xl">

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "App Web para controle de Leitura",
+    "description": "Site para gestão de Manwhas/Weebton pessoal com dashboard interativo. Desenvolvido com foco na experiência do usuário.",
+    "category": "fullstack",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui"],
+    "status": "Em Desenvolvimento",
+    "images": []
+  },
+  {
+    "id": 2,
+    "title": "Açaí Control – Sistema Web de Gestão de Vendas e Estoque",
+    "description": "Criação de um sistema completo de gestão para estabelecimentos de açaí, com autenticação segura, dashboard, vendas integradas ao estoque, relatórios e cadastro de produtos. Construído com React, TailwindCSS e Supabase, incluindo RLS e cálculos automáticos de custos e lucros.",
+    "category": "fullstack",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase", "RLS"],
+    "status": "Em Desenvolvimento",
+    "images": []
+  },
+  {
+    "id": 3,
+    "title": "Portfólio Pessoal",
+    "description": "Portfólio responsivo desenvolvido com React e TypeScript, apresentando projetos e habilidades de forma interativa e moderna.",
+    "category": "frontend",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Responsive"],
+    "status": "Em Desenvolvimento",
+    "images": []
+  },
+  {
+    "id": 4,
+    "title": "Brasil Dev Tools",
+    "description": "Coleção de ferramentas para devs brasileiros inspirada no 4Devs: geradores, validadores e utilitários para testes.",
+    "category": "frontend",
+    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "status": "Em Desenvolvimento",
+    "images": []
+  },
+  {
+    "id": 5,
+    "title": "FinanceFlow — Sistema de Gestão Financeira Pessoal",
+    "description": "Aplicação web para controle completo de finanças pessoais, incluindo receitas, despesas, investimentos e dividendos. Possui dashboard interativo, acompanhamento de ações em tempo real e design moderno focado em usabilidade.",
+    "category": "fullstack",
+    "technologies": ["React 18", "TypeScript", "Tailwind CSS", "Supabase", "React Query", "Recharts", "Framer Motion"],
+    "status": "Concluído",
+    "images": []
+  },
+  {
+    "id": 6,
+    "title": "Suporte do Pablão — Base de Conhecimento e Help Desk",
+    "description": "Aplicação web para gestão de documentação técnica e artigos de suporte, permitindo que empresas organizem conteúdos em uma Base de Conhecimento com controle de acesso, busca inteligente e um painel administrativo completo.",
+    "category": "fullstack",
+    "technologies": ["React 18", "TypeScript", "Tailwind CSS", "Supabase", "Tiptap", "shadcn/ui"],
+    "status": "Concluído",
+    "images": []
+  }
+]

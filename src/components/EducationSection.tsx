@@ -1,117 +1,13 @@
-
-import { Book, Calendar, User, GraduationCap, Award } from "lucide-react";
+import { Book, Calendar, GraduationCap, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import educationData from "@/data/education.json";
+import type { EducationItem, TechnicalCourse } from "@/data/types";
+
+const education = educationData.academic as EducationItem[];
+const technicalCourses = educationData.technicalCourses as TechnicalCourse[];
 
 const EducationSection = () => {
-  const education = [
-    {
-      institution: "Centro Universitário União das Américas Descomplica",
-      course: "Análise e Desenvolvimento de Sistemas",
-      period: "01/2023 - Cursando",
-      status: "4º semestre",
-      description: "Foco em desenvolvimento full stack e análise de sistemas. Aprendendo sobre modelagem de dados, programação orientada a objetos, desenvolvimento web e metodologias ágeis.",
-      highlights: [
-        "Desenvolvimento Full Stack",
-        "Análise de Sistemas", 
-        "Modelagem de Dados",
-        "Metodologias Ágeis",
-        "Programação Orientada a Objetos"
-      ]
-    },
-    {
-      institution: "Colégio Mello Ayres",
-      course: "Ensino Médio Completo",
-      period: "2017 - 2019",
-      status: "Concluído",
-      description: "Formação básica com foco em exatas e preparação para ensino superior. Base sólida em matemática e ciências que contribuiu para o interesse em tecnologia.",
-      highlights: [
-        "Formação em Exatas",
-        "Preparação Vestibular",
-        "Base Matemática",
-        "Ciências"
-      ]
-    }
-  ];
 
-  const technicalCourses = [
-    {
-      institution: "SENAI",
-      course: "Técnico em Administração",
-      period: "06/2023",
-      status: "Concluído",
-      highlights: ["Gestão", "Processos", "Qualidade", "Liderança"]
-    },
-    {
-      institution: "Digital Innovation One",
-      course: "Backend Developer",
-      period: "12/2024",
-      status: "Concluído",
-      highlights: ["APIs", "Server-side", "Database", "Security"]
-    },
-    {
-      institution: "Digital Innovation One",
-      course: "Object-Oriented Developer",
-      period: "09/2024",
-      status: "Concluído",
-      highlights: ["OOP", "Design Patterns", "SOLID", "Clean Code"]
-    },
-    {
-      institution: "Digital Innovation One",
-      course: "Programmer",
-      period: "05/2024",
-      status: "Concluído",
-      highlights: ["Logic", "Algorithms", "Data Structures"]
-    },
-    {
-      institution: "Digital Innovation One",
-      course: "Basic Frontend",
-      period: "03/2024",
-      status: "Concluído",
-      highlights: ["HTML5", "CSS3", "JavaScript", "Responsive"]
-    },
-    {
-      institution: "Certificação",
-      course: "Auxiliar Mecânico de Manutenção",
-      period: "08/2022",
-      status: "Concluído",
-      highlights: ["Manutenção", "Mecânica", "Equipamentos"]
-    },
-    {
-      institution: "People",
-      course: "Robótica",
-      period: "2019",
-      status: "Concluído",
-      highlights: ["Automação", "Programação", "Eletrônica"]
-    },
-    {
-      institution: "Microlins",
-      course: "Montagem e Manutenção de Computadores e Redes",
-      period: "2019",
-      status: "Concluído",
-      highlights: ["Hardware", "Redes", "Manutenção", "Infraestrutura"]
-    },
-    {
-      institution: "Microlins",
-      course: "Design Gráfico e Multimídia",
-      period: "2019",
-      status: "Concluído",
-      highlights: ["Corel Draw", "Photoshop", "Flash", "After Effects", "3D Studio Max"]
-    },
-    {
-      institution: "Micropro",
-      course: "Profissional Administrativo Tecnológico",
-      period: "2018",
-      status: "Concluído",
-      highlights: ["Administração", "Tecnologia", "Gestão"]
-    },
-    {
-      institution: "Micropro",
-      course: "Contabilidade / Secretariado / Departamento Pessoal",
-      period: "2018",
-      status: "Concluído",
-      highlights: ["Contabilidade", "RH", "Secretariado", "Legislação"]
-    }
-  ];
 
   return (
     <section id="education" className="section-padding">

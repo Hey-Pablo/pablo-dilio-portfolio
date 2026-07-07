@@ -1,0 +1,92 @@
+import { memo, useEffect, useState } from "react";
+import { Projector } from "lucide-react";
+
+interface Props {
+  images?: string[];
+  fallbackGradient: string;
+  interval?: number;
+  className?: string;
+  alt?: string;
+}
+
+/**
+ * Cross-fade slideshow of project images.
+ * Falls back to a gradient "planet" when no images are provided.
+ */
+const ProjectImageCarousel = memo(
+  ({ images, fallbackGradient, interval = 3500, className = "", alt = "" }: Props) => {
+    const list = images?.filter(Boolean) ?? [];
+    const hasImages = list.length > 0;
+    const [index, setIndex] = useState(0);
+    const [paused, setPaused] = useState(false);
+
+    useEffect(() => {
+      if (!hasImages || list.length < 2 || paused) return;
+      const id = window.setInterval(() => {
+        setIndex((i) => (i + 1) % list.length);
+      }, interval);
+      return () => window.clearInterval(id);
+    }, [hasImages, list.length, paused, interval]);
+
+    if (!hasImages) {
+      return (
+        <div
+          className={`relative overflow-hidden ${className}`}
+          aria-hidden="true"
+        >
+          <div className={`absolute inset-0 bg-gradient-to-br ${fallbackGradient} opacity-80`} />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.35),transparent_55%)]" />
+          <div className="absolute -bottom-16 -right-10 h-40 w-40 rounded-full bg-black/40 blur-2xl" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="h-24 w-24 rounded-full bg-gradient-to-br from-white/30 to-transparent border border-white/20 backdrop-blur-sm animate-float flex items-center justify-center">
+              <Projector size={32} className="text-white drop-shadow-lg" />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div
+        className={`relative overflow-hidden ${className}`}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        {list.map((src, i) => (
+          <img
+            key={src + i}
+            src={src}
+            alt={alt}
+            loading="lazy"
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out ${
+              i === index ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+        {/* subtle overlay for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+        {list.length > 1 && (
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+            {list.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={`Ir para imagem ${i + 1}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIndex(i);
+                }}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === index ? "w-5 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"
+                }`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
+);
+
+ProjectImageCarousel.displayName = "ProjectImageCarousel";
+export default ProjectImageCarousel;

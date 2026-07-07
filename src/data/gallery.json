@@ -1,0 +1,8 @@
+[
+  { "id": 1, "title": "Cosmic UI Concepts", "category": "UI Design", "description": "Explorações de interfaces com estética espacial e glassmorphism.", "gradient": "from-[#7C3AED] via-[#D946EF] to-[#EC4899]" },
+  { "id": 2, "title": "AI Generated Art", "category": "IA / Arte", "description": "Composições criadas com modelos generativos.", "gradient": "from-[#38BDF8] via-[#7C3AED] to-[#D946EF]" },
+  { "id": 3, "title": "Product Mockups", "category": "Branding", "description": "Mockups de produto e identidade visual.", "gradient": "from-[#EC4899] via-[#7C3AED] to-[#38BDF8]" },
+  { "id": 4, "title": "Motion Reels", "category": "Vídeo", "description": "Reels curtos e animações de interface.", "gradient": "from-[#D946EF] via-[#38BDF8] to-[#7C3AED]" },
+  { "id": 5, "title": "Cyber Illustrations", "category": "Ilustração", "description": "Ilustrações digitais com estética cyber/futurista.", "gradient": "from-[#7C3AED] to-[#38BDF8]" },
+  { "id": 6, "title": "Experimentos 3D", "category": "3D", "description": "Experimentos com renderização e cenas 3D.", "gradient": "from-[#EC4899] to-[#7C3AED]" }
+]

@@ -1,0 +1,40 @@
+{
+  "technical": [
+    { "name": "JavaScript", "level": 85, "category": "Frontend" },
+    { "name": "HTML/CSS", "level": 90, "category": "Frontend" },
+    { "name": "React.js", "level": 75, "category": "Frontend" },
+    { "name": "Java", "level": 70, "category": "Backend" },
+    { "name": "MySQL", "level": 80, "category": "Database" },
+    { "name": "SQL Server", "level": 75, "category": "Database" },
+    { "name": "Python", "level": 65, "category": "Backend" },
+    { "name": "C#", "level": 60, "category": "Backend" }
+  ],
+  "tools": [
+    { "name": "Git/GitHub", "level": 85, "category": "Tools" },
+    { "name": "VS Code", "level": 90, "category": "Tools" },
+    { "name": "Photoshop", "level": 80, "category": "Design" },
+    { "name": "Corel Draw", "level": 85, "category": "Design" },
+    { "name": "SAP", "level": 70, "category": "Enterprise" },
+    { "name": "Docker", "level": 50, "category": "Tools" }
+  ],
+  "soft": [
+    "Resolução de problemas complexos",
+    "Visão analítica de negócios",
+    "Capacidade de aprendizado rápido",
+    "Comunicação técnica eficaz",
+    "Trabalho em equipe",
+    "Análise crítica",
+    "Adaptabilidade",
+    "Organização"
+  ],
+  "methodologies": [
+    "Scrum/Kanban",
+    "Análise de Requisitos",
+    "Modelagem de Dados",
+    "UML",
+    "Prototipagem",
+    "5S e FIFO",
+    "REST APIs",
+    "Levantamento de requisitos"
+  ]
+}

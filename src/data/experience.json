@@ -1,0 +1,64 @@
+[
+  {
+    "company": "TID Software",
+    "position": "Auxiliar de Informática Jr.",
+    "period": "07/2024 - Atualmente",
+    "type": "ti",
+    "description": "Atuo no suporte técnico e desenvolvimento, sendo responsável por introduzir usuários ao sistema TID, realizar mapeamento de sistemas internos e atender demandas de suporte. Faço visitas a empresas para atender demandas específicas de clientes.",
+    "responsibilities": [
+      "Introdução ao usuário e suporte para uso geral do sistema TID",
+      "Mapeamento do sistema interno do cliente",
+      "Suporte ao usuário em demandas diversas",
+      "Visitas a empresas para atendimento de demandas",
+      "Documentação de processos e sistemas"
+    ],
+    "technologies": ["Sistemas TID", "Suporte Técnico", "Mapeamento", "Documentação"],
+    "achievements": [
+      "Implementação de processos de suporte mais eficientes",
+      "Redução no tempo de resposta ao cliente",
+      "Melhoria na documentação de sistemas"
+    ]
+  },
+  {
+    "company": "Caterpillar Brasil",
+    "position": "Aprendiz Administrativo",
+    "period": "02/2023 - 06/2024",
+    "type": "administrativo",
+    "description": "Trabalhei com conferência de Notas Fiscais, classificação para depreciação e transferências entre filiais. Utilizei sistemas como RED-E, RIS e SAP, além de elaborar relatórios mensais de depreciação.",
+    "responsibilities": [
+      "Conferência de Notas Fiscais e classificação para depreciação mensal e anual",
+      "Operação dos sistemas RED-E e RIS",
+      "Transferências de itens entre filiais via sistema SAP",
+      "Elaboração de lista de depreciação mensal",
+      "Controle de processos administrativos"
+    ],
+    "technologies": ["SAP", "RED-E", "RIS", "Excel", "Processos Administrativos"],
+    "achievements": [
+      "Otimização do processo de depreciação",
+      "Redução de erros em transferências",
+      "Melhoria na organização de documentos fiscais"
+    ]
+  },
+  {
+    "company": "Magazine Luiza",
+    "position": "Assistente de Vendas Jr.",
+    "period": "04/2022 - 01/2023",
+    "type": "vendas",
+    "description": "Responsável pelo controle e organização de estoque, aplicação de metodologias 5S e FIFO, atendimento ao público e controle digital. Gerenciei saída de pedidos e elaborei relatórios de inventário.",
+    "responsibilities": [
+      "Controle e organização de estoque de produtos",
+      "Aplicação dos 5S e FIFO",
+      "Atendimento ao público e controle digital",
+      "Classificação de itens via sistema",
+      "Relatórios e controle de inventário",
+      "Recebimento e conferência de materiais",
+      "Gerenciamento de saída de pedidos por loja e site"
+    ],
+    "technologies": ["Sistema de Vendas", "Controle de Estoque", "5S", "FIFO"],
+    "achievements": [
+      "Implementação de processos 5S no setor",
+      "Melhoria na organização do estoque",
+      "Redução de perdas por organização eficiente"
+    ]
+  }
+]

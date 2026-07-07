@@ -116,8 +116,15 @@ const Footer = () => {
               <Heart size={14} className="text-red-500 fill-current" />
               <span>e muito ☕</span>
             </div>
-            <div className="text-xs text-muted-foreground">
+            <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <span className="font-mono">v1.0.0 | Em Desenvolvimento</span>
+              <button
+                onClick={() => setShowLogin((v) => !v)}
+                aria-label="Login"
+                className="p-1.5 rounded-md opacity-40 hover:opacity-100 hover:text-primary transition-all"
+              >
+                <LogIn size={14} />
+              </button>
             </div>
           </div>
         </div>

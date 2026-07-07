@@ -1,25 +1,11 @@
 import { useState } from "react";
-import { Sparkles, Image as ImageIcon, Video, Palette } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import galleryData from "@/data/gallery.json";
+import type { GalleryItem } from "@/data/types";
 
-interface Creation {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  icon: typeof Sparkles;
-  gradient: string;
-  media?: string; // future image/video url
-}
+const creations = galleryData as GalleryItem[];
 
-const creations: Creation[] = [
-  { id: 1, title: "Cosmic UI Concepts", category: "UI Design", description: "Explorações de interfaces com estética espacial e glassmorphism.", icon: Palette, gradient: "from-[#7C3AED] via-[#D946EF] to-[#EC4899]" },
-  { id: 2, title: "AI Generated Art", category: "IA / Arte", description: "Composições criadas com modelos generativos.", icon: Sparkles, gradient: "from-[#38BDF8] via-[#7C3AED] to-[#D946EF]" },
-  { id: 3, title: "Product Mockups", category: "Branding", description: "Mockups de produto e identidade visual.", icon: ImageIcon, gradient: "from-[#EC4899] via-[#7C3AED] to-[#38BDF8]" },
-  { id: 4, title: "Motion Reels", category: "Vídeo", description: "Reels curtos e animações de interface.", icon: Video, gradient: "from-[#D946EF] via-[#38BDF8] to-[#7C3AED]" },
-  { id: 5, title: "Cyber Illustrations", category: "Ilustração", description: "Ilustrações digitais com estética cyber/futurista.", icon: Palette, gradient: "from-[#7C3AED] to-[#38BDF8]" },
-  { id: 6, title: "Experimentos 3D", category: "3D", description: "Experimentos com renderização e cenas 3D.", icon: Sparkles, gradient: "from-[#EC4899] to-[#7C3AED]" },
-];
 
 const GallerySection = () => {
   const [active, setActive] = useState<number | null>(null);

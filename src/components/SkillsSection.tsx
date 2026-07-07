@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Code, Settings, User, Book, BarChart3 } from "lucide-react";
 import SkillChart from "./SkillChart";
+import skillsData from "@/data/skills.json";
+import type { Skill } from "@/data/types";
 
 const SkillsSection = () => {
   const [activeTab, setActiveTab] = useState("technical");
@@ -15,47 +17,11 @@ const SkillsSection = () => {
     { id: "methodologies", label: "Metodologias", icon: Book }
   ];
 
-  const technicalSkills = [
-    { name: "JavaScript", level: 85, category: "Frontend" },
-    { name: "HTML/CSS", level: 90, category: "Frontend" },
-    { name: "React.js", level: 75, category: "Frontend" },
-    { name: "Java", level: 70, category: "Backend" },
-    { name: "MySQL", level: 80, category: "Database" },
-    { name: "SQL Server", level: 75, category: "Database" },
-    { name: "Python", level: 65, category: "Backend" },
-    { name: "C#", level: 60, category: "Backend" }
-  ];
+  const technicalSkills = skillsData.technical as Skill[];
+  const tools = skillsData.tools as Skill[];
+  const softSkills = skillsData.soft as string[];
+  const methodologies = skillsData.methodologies as string[];
 
-  const tools = [
-    { name: "Git/GitHub", level: 85, category: "Tools" },
-    { name: "VS Code", level: 90, category: "Tools" },
-    { name: "Photoshop", level: 80, category: "Design" },
-    { name: "Corel Draw", level: 85, category: "Design" },
-    { name: "SAP", level: 70, category: "Enterprise" },
-    { name: "Docker", level: 50, category: "Tools" }
-  ];
-
-  const softSkills = [
-    "Resolução de problemas complexos",
-    "Visão analítica de negócios",
-    "Capacidade de aprendizado rápido",
-    "Comunicação técnica eficaz",
-    "Trabalho em equipe",
-    "Análise crítica",
-    "Adaptabilidade",
-    "Organização"
-  ];
-
-  const methodologies = [
-    "Scrum/Kanban",
-    "Análise de Requisitos",
-    "Modelagem de Dados",
-    "UML",
-    "Prototipagem",
-    "5S e FIFO",
-    "REST APIs",
-    "Levantamento de requisitos"
-  ];
 
   const SkillBar = ({ skill }: { skill: { name: string; level: number; category?: string } }) => (
     <div className="mb-4 group">

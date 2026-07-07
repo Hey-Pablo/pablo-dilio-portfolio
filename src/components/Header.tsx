@@ -90,7 +90,7 @@ const Header = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-1 glass rounded-full px-2 py-1.5">
-            {menuItemsFull.map((item) => (
+            {menuItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -131,7 +131,7 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 mt-2 mx-4 rounded-2xl glass-strong animate-fade-in">
             <div className="py-3 px-2">
-              {menuItemsFull.map((item) => (
+              {menuItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}

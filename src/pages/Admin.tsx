@@ -4,11 +4,30 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { useAuth } from "@/hooks/useAuth";
-import projects from "@/data/projects.json";
-import education from "@/data/education.json";
-import certificates from "@/data/certificates.json";
-import experience from "@/data/experience.json";
-import skills from "@/data/skills.json";
+import projectsData from "@/data/projects.json";
+import educationData from "@/data/education.json";
+import certificatesData from "@/data/certificates.json";
+import experienceData from "@/data/experience.json";
+import skillsData from "@/data/skills.json";
+
+const projects = projectsData as any[];
+const certificates = certificatesData as any[];
+const experience = experenceFlatten(experienceData);
+const education = [
+  ...(((educationData as any).academic ?? []) as any[]),
+  ...(((educationData as any).technicalCourses ?? []) as any[]),
+].map((e) => ({ title: e.course, description: `${e.institution} — ${e.period}` }));
+const skills = [
+  ...(((skillsData as any).technical ?? []) as any[]),
+  ...(((skillsData as any).tools ?? []) as any[]),
+  ...(((skillsData as any).soft ?? []) as string[]).map((s) => ({ name: s })),
+  ...(((skillsData as any).methodologies ?? []) as string[]).map((s) => ({ name: s })),
+];
+
+function experenceFlatten(d: any): any[] {
+  if (Array.isArray(d)) return d;
+  return Object.values(d ?? {}).flat() as any[];
+}
 
 const Section = ({ items, keyField = "title" }: { items: any[]; keyField?: string }) => (
   <div className="grid gap-3">

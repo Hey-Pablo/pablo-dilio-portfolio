@@ -58,7 +58,6 @@ const Header = () => {
     }
   };
 
-  const scrollToSection = (href: string) => {
 
   return (
     <header

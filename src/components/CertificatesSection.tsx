@@ -1,90 +1,16 @@
-
-import { Calendar, Award, ExternalLink, Plus } from "lucide-react";
+import { Calendar, Award, Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import certificatesData from "@/data/certificates.json";
+import type { Certificate } from "@/data/types";
+
+const certificates = certificatesData as Certificate[];
+
+const futureCertificates = [
+  { id: "future-1", title: "Em Breve", placeholder: true },
+  { id: "future-2", title: "Em Breve", placeholder: true },
+];
 
 const CertificatesSection = () => {
-  const certificates = [
-    {
-      id: 1,
-      title: "Full Stack Developer",
-      institution: "Digital Innovation One",
-      date: "05/2025",
-      status: "Concluído",
-      skills: ["Full Stack", "Frontend", "Backend", "Database"],
-      description: "Certificação completa em desenvolvimento full stack com foco em tecnologias modernas."
-    },
-    {
-      id: 2,
-      title: "Backend Developer",
-      institution: "Digital Innovation One", 
-      date: "12/2024",
-      status: "Concluído",
-      skills: ["APIs", "Server-side", "Database", "Security"],
-      description: "Especialização em desenvolvimento backend com foco em APIs e arquitetura de sistemas."
-    },
-    {
-      id: 3,
-      title: "Object-Oriented Developer",
-      institution: "Digital Innovation One",
-      date: "09/2024",
-      status: "Concluído",
-      skills: ["OOP", "Design Patterns", "SOLID", "Clean Code"],
-      description: "Fundamentos sólidos de programação orientada a objetos e boas práticas."
-    },
-    {
-      id: 4,
-      title: "Programmer",
-      institution: "Digital Innovation One",
-      date: "05/2024", 
-      status: "Concluído",
-      skills: ["Logic", "Algorithms", "Data Structures", "Problem Solving"],
-      description: "Base fundamental em lógica de programação e estruturas de dados."
-    },
-    {
-      id: 5,
-      title: "Basic Frontend",
-      institution: "Digital Innovation One",
-      date: "03/2024",
-      status: "Concluído", 
-      skills: ["HTML5", "CSS3", "JavaScript", "Responsive"],
-      description: "Introdução ao desenvolvimento frontend com tecnologias essenciais."
-    },
-    {
-      id: 6,
-      title: "Técnico em Administração",
-      institution: "SENAI",
-      date: "06/2023",
-      status: "Concluído",
-      skills: ["Gestão", "Processos", "Qualidade", "Liderança"],
-      description: "Formação técnica em administração com foco em gestão de processos."
-    }
-  ];
-
-  // COMO PREENCHER OS ESPAÇOS VAZIOS:
-  // Para adicionar novos certificados, substitua os objetos em futureCertificates
-  // por objetos com a mesma estrutura dos certificados acima.
-  // Exemplo:
-  // {
-  //   id: 7,
-  //   title: "Nome do Novo Certificado",
-  //   institution: "Nome da Instituição",
-  //   date: "MM/AAAA",
-  //   status: "Concluído" | "Em Andamento" | "Previsto",
-  //   skills: ["Skill1", "Skill2", "Skill3"],
-  //   description: "Descrição do certificado..."
-  // }
-  const futureCertificates = [
-    {
-      id: 'future-1',
-      title: "Em Breve",
-      placeholder: true
-    },
-    {
-      id: 'future-2', 
-      title: "Em Breve",
-      placeholder: true
-    }
-  ];
 
   const getStatusColor = (status: string) => {
     switch (status) {

@@ -9,7 +9,6 @@ Cada arquivo `.json` deste diretório alimenta uma seção do site. Edite aqui p
 - **certificates.json** — Certificados e Formações.
 - **experience.json** — Experiência Profissional.
 - **skills.json** — Habilidades (técnicas, ferramentas, soft, metodologias).
-- **gallery.json** — Criações Digitais (galeria).
 
 ## Como adicionar um projeto com imagens
 

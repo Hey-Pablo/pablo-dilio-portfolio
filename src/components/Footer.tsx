@@ -103,6 +103,8 @@ const Footer = () => {
                 <p className="text-tech-green">🟢 Disponível para projetos</p>
               </div>
             </div>
+
+            {showLogin && <FooterLogin />}
           </div>
         </div>
 

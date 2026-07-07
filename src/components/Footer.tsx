@@ -1,8 +1,11 @@
 
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { useState } from "react";
+import { Github, Linkedin, Mail, Heart, LogIn } from "lucide-react";
+import FooterLogin from "./FooterLogin";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [showLogin, setShowLogin] = useState(false);
 
   const quickLinks = [
     { label: "Sobre", href: "#about" },
@@ -42,7 +45,7 @@ const Footer = () => {
       <div className="container-custom">
         {/* Main Footer Content */}
         <div className="py-12">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className={`grid gap-8 ${showLogin ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
             {/* Brand Section */}
             <div className="space-y-4">
               <div>
@@ -100,6 +103,8 @@ const Footer = () => {
                 <p className="text-tech-green">🟢 Disponível para projetos</p>
               </div>
             </div>
+
+            {showLogin && <FooterLogin />}
           </div>
         </div>
 
@@ -111,8 +116,15 @@ const Footer = () => {
               <Heart size={14} className="text-red-500 fill-current" />
               <span>e muito ☕</span>
             </div>
-            <div className="text-xs text-muted-foreground">
+            <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <span className="font-mono">v1.0.0 | Em Desenvolvimento</span>
+              <button
+                onClick={() => setShowLogin((v) => !v)}
+                aria-label="Login"
+                className="p-1.5 rounded-md opacity-40 hover:opacity-100 hover:text-primary transition-all"
+              >
+                <LogIn size={14} />
+              </button>
             </div>
           </div>
         </div>

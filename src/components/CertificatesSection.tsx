@@ -26,7 +26,7 @@ const CertificatesSection = () => {
   };
 
   return (
-    <section id="certificates" className="section-padding bg-background">
+    <section id="certificates" className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

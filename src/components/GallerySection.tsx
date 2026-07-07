@@ -27,7 +27,6 @@ const GallerySection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {creations.map((item, i) => {
-            const Icon = item.icon;
             return (
               <div
                 key={item.id}
@@ -36,14 +35,20 @@ const GallerySection = () => {
                 className="group relative aspect-[4/5] rounded-2xl overflow-hidden glass hover-lift cursor-pointer"
                 style={{ animationDelay: `${i * 0.08}s` }}
               >
-                {/* Media placeholder / gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-70 group-hover:opacity-90 transition-opacity duration-500`} />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.25),transparent_60%)]" />
+                {item.image ? (
+                  <img src={item.image} alt={item.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                ) : (
+                  <>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-70 group-hover:opacity-90 transition-opacity duration-500`} />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.25),transparent_60%)]" />
+                  </>
+                )}
 
                 {/* Floating icon */}
                 <div className="absolute top-4 left-4 h-11 w-11 rounded-xl glass-strong flex items-center justify-center">
-                  <Icon size={20} className="text-white" />
+                  <Sparkles size={20} className="text-white" />
                 </div>
+
 
                 <Badge className="absolute top-4 right-4 glass-strong border-white/20 text-white text-xs">
                   {item.category}

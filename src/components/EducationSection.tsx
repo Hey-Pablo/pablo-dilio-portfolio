@@ -1,145 +1,152 @@
 import { Book, Calendar, GraduationCap, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { useList, useUpsertItem, useDeleteItem } from "@/hooks/useContent";
-import SectionHeader from "@/components/admin/SectionHeader";
-import AdminControls, { AddItemButton } from "@/components/admin/AdminControls";
-import ItemEditorDialog from "@/components/admin/ItemEditorDialog";
-import { schemas } from "@/components/admin/fieldSchemas";
-import { useState } from "react";
+import educationData from "@/data/education.json";
+import type { EducationItem, TechnicalCourse } from "@/data/types";
 
-interface EduRow {
-  id: string;
-  kind: "academic" | "technical";
-  institution: string;
-  course: string;
-  period: string;
-  status: string;
-  description?: string | null;
-  highlights: string[];
-  order_index: number;
-}
+const education = educationData.academic as EducationItem[];
+const technicalCourses = educationData.technicalCourses as TechnicalCourse[];
 
 const EducationSection = () => {
-  const { data: items = [] } = useList<EduRow>("education_items");
-  const upsert = useUpsertItem("education_items");
-  const del = useDeleteItem("education_items");
 
-  const academic = items.filter((i) => i.kind === "academic");
-  const technical = items.filter((i) => i.kind === "technical");
-
-  const [openKind, setOpenKind] = useState<null | "academic" | "technical">(null);
-  const [editing, setEditing] = useState<EduRow | null>(null);
-
-  const openAdd = (kind: "academic" | "technical") => {
-    setEditing(null);
-    setOpenKind(kind);
-  };
-  const openEdit = (row: EduRow) => {
-    setEditing(row);
-    setOpenKind(row.kind);
-  };
 
   return (
     <section id="education" className="section-padding">
       <div className="container-custom">
-        <SectionHeader
-          sectionKey="education"
-          fallback={{
-            title_prefix: "Formação",
-            title_highlight: "Acadêmica",
-            subtitle:
-              "Minha jornada educacional e cursos técnicos que moldaram meu conhecimento em tecnologia e gestão",
-          }}
-        />
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Formação <span className="gradient-text">Acadêmica</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Minha trajetória educacional focada em tecnologia e desenvolvimento profissional
+          </p>
+        </div>
 
         {/* Formação Acadêmica */}
-        <div className="mb-16 max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto mb-16">
           <div className="flex items-center mb-8">
-            <GraduationCap className="text-primary mr-3" size={24} />
-            <h3 className="text-2xl font-bold">Formação Acadêmica</h3>
+            <GraduationCap className="mr-3 text-primary" size={24} />
+            <h3 className="text-xl font-semibold">Formação Acadêmica</h3>
           </div>
 
-          <div className="space-y-6">
-            {academic.map((edu, idx) => (
-              <div key={edu.id} className="tech-card relative">
-                <AdminControls
-                  onEdit={() => openEdit(edu)}
-                  onDelete={() => del.mutate(edu.id)}
-                  itemLabel={`"${edu.course}"`}
-                />
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                  <div>
-                    <h4 className="text-xl font-semibold">{edu.course}</h4>
-                    <p className="text-primary font-medium">{edu.institution}</p>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:transform md:-translate-x-0.5"></div>
+
+            {education.map((item, index) => (
+              <div key={index} className={`relative flex items-center mb-12 ${
+                index % 2 === 0 ? 'md:flex-row-reverse' : ''
+              }`}>
+                {/* Timeline dot */}
+                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full md:transform md:-translate-x-1.5 z-10"></div>
+
+                {/* Content */}
+                <div className={`ml-12 md:ml-0 md:w-1/2 ${
+                  index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
+                }`}>
+                  <div className="tech-card animate-fade-in">
+                    {/* Header */}
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-lg font-semibold mb-1">{item.course}</h3>
+                        <p className="text-tech-blue font-medium text-sm">{item.institution}</p>
+                      </div>
+                      <div className="text-right">
+                        <Badge variant={item.status === "Concluído" ? "default" : "secondary"}>
+                          {item.status}
+                        </Badge>
+                      </div>
+                    </div>
+
+                    {/* Period */}
+                    <div className="flex items-center text-sm text-muted-foreground mb-3">
+                      <Calendar size={14} className="mr-2" />
+                      {item.period}
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      {item.description}
+                    </p>
+
+                    {/* Highlights */}
+                    <div className="space-y-2">
+                      <h4 className="text-sm font-medium">Principais áreas:</h4>
+                      <div className="flex flex-wrap gap-1">
+                        {item.highlights.map((highlight, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs">
+                            {highlight}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center mt-2 md:mt-0">
-                    <Calendar size={16} className="text-muted-foreground mr-2" />
-                    <span className="text-sm text-muted-foreground">{edu.period}</span>
-                    <Badge className="ml-3">{edu.status}</Badge>
-                  </div>
-                </div>
-                {edu.description && (
-                  <p className="text-muted-foreground leading-relaxed mb-4">{edu.description}</p>
-                )}
-                <div className="flex flex-wrap gap-2">
-                  {edu.highlights.map((h, i) => (
-                    <Badge key={i} variant="outline" className="text-xs">
-                      {h}
-                    </Badge>
-                  ))}
                 </div>
               </div>
             ))}
           </div>
-          <AddItemButton onClick={() => openAdd("academic")} label="Adicionar Formação Acadêmica" />
         </div>
 
-        {/* Cursos Técnicos */}
+        {/* Cursos Técnicos e Profissionalizantes */}
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center mb-8">
-            <Award className="text-primary mr-3" size={24} />
-            <h3 className="text-2xl font-bold">Cursos Técnicos e Profissionalizantes</h3>
+            <Award className="mr-3 text-primary" size={24} />
+            <h3 className="text-xl font-semibold">Cursos Técnicos e Profissionalizantes</h3>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {technical.map((c) => (
-              <div key={c.id} className="tech-card relative">
-                <AdminControls
-                  onEdit={() => openEdit(c)}
-                  onDelete={() => del.mutate(c.id)}
-                  itemLabel={`"${c.course}"`}
-                />
-                <div className="flex items-start mb-3">
-                  <Book size={18} className="text-primary mr-2 mt-0.5" />
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-sm">{c.course}</h4>
-                    <p className="text-primary text-xs">{c.institution}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {technicalCourses.map((course, index) => (
+              <div key={index} className="tech-card group hover:scale-105 transition-transform duration-300">
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Award size={16} className="text-primary" />
                   </div>
+                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                    {course.status}
+                  </Badge>
                 </div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs text-muted-foreground">{c.period}</span>
-                  <Badge className="text-xs">{c.status}</Badge>
-                </div>
-                <div className="flex flex-wrap gap-1">
-                  {c.highlights.slice(0, 3).map((h, i) => (
-                    <Badge key={i} variant="outline" className="text-xs">
-                      {h}
-                    </Badge>
-                  ))}
+
+                {/* Content */}
+                <div className="space-y-3">
+                  <h4 className="text-sm font-semibold group-hover:text-primary transition-colors">
+                    {course.course}
+                  </h4>
+
+                  <div className="flex items-center text-xs text-muted-foreground">
+                    <Calendar size={12} className="mr-2" />
+                    <span>{course.institution} • {course.period}</span>
+                  </div>
+
+                  {/* Skills Tags */}
+                  <div className="flex flex-wrap gap-1">
+                    {course.highlights.map((skill, idx) => (
+                      <Badge key={idx} variant="outline" className="text-xs">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <AddItemButton onClick={() => openAdd("technical")} label="Adicionar Curso Técnico" />
         </div>
 
-        <ItemEditorDialog
-          open={openKind !== null}
-          onOpenChange={(v) => !v && setOpenKind(null)}
-          schema={openKind === "technical" ? schemas.education_technical : schemas.education_academic}
-          initial={editing ?? undefined}
-          onSave={(data) => upsert.mutateAsync(data)}
-        />
+        {/* Current Status */}
+        <div className="text-center mt-16">
+          <div className="tech-card max-w-2xl mx-auto">
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                <Book size={20} className="text-primary" />
+              </div>
+            </div>
+            <h3 className="text-lg font-semibold mb-2">Status Atual</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Atualmente no 4º semestre de ADS, com previsão de conclusão em 2025. 
+              Focado em projetos práticos que integram desenvolvimento frontend e backend, 
+              sempre buscando aplicar os conhecimentos teóricos em situações reais de trabalho.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

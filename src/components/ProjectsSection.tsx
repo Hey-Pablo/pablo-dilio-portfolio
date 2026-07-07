@@ -1,32 +1,12 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ExternalLink, Calendar, Code2 } from "lucide-react";
+import projectsData from "@/data/projects.json";
+import type { Project } from "@/data/types";
 import ProjectImageCarousel from "@/components/ProjectImageCarousel";
-import { useList, useUpsertItem, useDeleteItem, useReorderItem } from "@/hooks/useContent";
-import SectionHeader from "@/components/admin/SectionHeader";
-import AdminControls, { AddItemButton } from "@/components/admin/AdminControls";
-import ItemEditorDialog from "@/components/admin/ItemEditorDialog";
-import { schemas } from "@/components/admin/fieldSchemas";
 
-interface ProjectRow {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  technologies: string[];
-  status: string;
-  images: string[] | null;
-  link?: string | null;
-  expires_text?: string | null;
-  order_index: number;
-}
+const projects = projectsData as Project[];
 
 const gradients = [
   "from-[#7C3AED] via-[#D946EF] to-[#EC4899]",
@@ -38,15 +18,8 @@ const gradients = [
 ];
 
 const ProjectsSection = () => {
-  const { data: projects = [] } = useList<ProjectRow>("projects");
-  const upsert = useUpsertItem("projects");
-  const del = useDeleteItem("projects");
-  const reorder = useReorderItem("projects");
-
   const [selectedFilter, setSelectedFilter] = useState("all");
-  const [selectedProject, setSelectedProject] = useState<ProjectRow | null>(null);
-  const [editorOpen, setEditorOpen] = useState(false);
-  const [editing, setEditing] = useState<ProjectRow | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const categories = [
     { id: "all", label: "Todos" },
@@ -54,85 +27,55 @@ const ProjectsSection = () => {
     { id: "frontend", label: "Frontend" },
   ];
 
-  const filteredProjects = useMemo(
-    () =>
-      selectedFilter === "all"
-        ? projects
-        : projects.filter((p) => p.category === selectedFilter),
-    [selectedFilter, projects]
-  );
-
-  const openAdd = () => {
-    setEditing(null);
-    setEditorOpen(true);
-  };
-  const openEdit = (p: ProjectRow) => {
-    setEditing(p);
-    setEditorOpen(true);
-  };
-
-  const move = (p: ProjectRow, dir: -1 | 1) => {
-    const idx = projects.findIndex((x) => x.id === p.id);
-    const target = projects[idx + dir];
-    if (!target) return;
-    reorder.mutate({ id: p.id, order_index: target.order_index });
-    reorder.mutate({ id: target.id, order_index: p.order_index });
-  };
+  const filteredProjects =
+    selectedFilter === "all" ? projects : projects.filter((p) => p.category === selectedFilter);
 
   return (
     <section id="projects" className="section-padding relative overflow-hidden">
       <div className="container-custom relative z-10">
-        <SectionHeader
-          sectionKey="projects"
-          showKicker
-          fallback={{
-            kicker: "<projects_galaxy/>",
-            title_prefix: "Meus",
-            title_highlight: "Projetos",
-            subtitle:
-              "Cada projeto é um planeta neste universo digital. Explore, orbite e clique para ver detalhes.",
-          }}
-        />
+        <div className="text-center mb-14">
+          <p className="text-sm font-mono text-[hsl(var(--nebula-blue))] mb-3 tracking-widest">
+            &lt;projects_galaxy/&gt;
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Meus <span className="gradient-text">Projetos</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Cada projeto é um planeta neste universo digital. Explore, orbite e clique para ver detalhes.
+          </p>
+        </div>
 
+        {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center mb-12 gap-2">
-          {categories.map((c) => {
-            const active = selectedFilter === c.id;
+          {categories.map((category) => {
+            const active = selectedFilter === category.id;
             return (
               <button
-                key={c.id}
-                onClick={() => setSelectedFilter(c.id)}
+                key={category.id}
+                onClick={() => setSelectedFilter(category.id)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   active ? "neon-btn" : "glass text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
-                {c.label}
+                {category.label}
               </button>
             );
           })}
         </div>
 
+        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, idx) => {
             const grad = gradients[idx % gradients.length];
-            const globalIdx = projects.findIndex((x) => x.id === project.id);
             return (
               <article
                 key={project.id}
-                className="tech-card group cursor-pointer flex flex-col relative"
+                className="tech-card group cursor-pointer flex flex-col"
                 onClick={() => setSelectedProject(project)}
               >
-                <AdminControls
-                  onEdit={() => openEdit(project)}
-                  onDelete={() => del.mutate(project.id)}
-                  onMoveUp={() => move(project, -1)}
-                  onMoveDown={() => move(project, 1)}
-                  canMoveUp={globalIdx > 0}
-                  canMoveDown={globalIdx < projects.length - 1}
-                  itemLabel={`o projeto "${project.title}"`}
-                />
                 <div className="relative mb-5 h-48 rounded-xl overflow-hidden">
                   <ProjectImageCarousel
-                    images={project.images ?? []}
+                    images={project.images}
                     fallbackGradient={grad}
                     alt={project.title}
                     className="absolute inset-0 h-full w-full"
@@ -146,31 +89,27 @@ const ProjectsSection = () => {
                   <h3 className="text-lg font-semibold text-white group-hover:text-[hsl(var(--nebula-magenta))] transition-colors">
                     {project.title}
                   </h3>
+
                   <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
+
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {project.technologies.slice(0, 5).map((tech, index) => (
-                      <Badge
-                        key={index}
-                        variant="outline"
-                        className="text-xs border-white/15 bg-white/5 text-white/85"
-                      >
+                      <Badge key={index} variant="outline" className="text-xs border-white/15 bg-white/5 text-white/85">
                         {tech}
                       </Badge>
                     ))}
                     {project.technologies.length > 5 && (
-                      <Badge
-                        variant="outline"
-                        className="text-xs border-white/15 bg-white/5 text-white/60"
-                      >
+                      <Badge variant="outline" className="text-xs border-white/15 bg-white/5 text-white/60">
                         +{project.technologies.length - 5}
                       </Badge>
                     )}
                   </div>
+
                   <div className="pt-3 mt-auto flex items-center justify-between">
                     <span className="text-xs font-mono text-white/40">
-                      #{String(globalIdx + 1).padStart(2, "0")}
+                      #{String(project.id).padStart(2, "0")}
                     </span>
                     <span className="text-xs font-medium text-[hsl(var(--nebula-blue))] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                       Ver detalhes <ExternalLink size={12} />
@@ -182,16 +121,7 @@ const ProjectsSection = () => {
           })}
         </div>
 
-        <AddItemButton onClick={openAdd} label="Adicionar Projeto" />
-
-        <ItemEditorDialog
-          open={editorOpen}
-          onOpenChange={setEditorOpen}
-          schema={schemas.projects}
-          initial={editing}
-          onSave={(data) => upsert.mutateAsync(data)}
-        />
-
+        {/* Project Details Modal */}
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
           <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
             {selectedProject && (
@@ -205,7 +135,7 @@ const ProjectsSection = () => {
                       {selectedProject.status}
                     </Badge>
                     <Badge variant="outline" className="text-sm">
-                      {selectedProject.category === "fullstack" ? "Full Stack" : selectedProject.category}
+                      {selectedProject.category === "fullstack" ? "Full Stack" : "Frontend"}
                     </Badge>
                   </DialogDescription>
                 </DialogHeader>
@@ -213,23 +143,25 @@ const ProjectsSection = () => {
                 <div className="space-y-6 mt-4">
                   <div className="relative h-64 rounded-lg overflow-hidden">
                     <ProjectImageCarousel
-                      images={selectedProject.images ?? []}
-                      fallbackGradient={gradients[0]}
+                      images={selectedProject.images}
+                      fallbackGradient={gradients[(selectedProject.id - 1) % gradients.length]}
                       alt={selectedProject.title}
                       className="absolute inset-0 h-full w-full"
                     />
                   </div>
+
                   <div className="space-y-2">
                     <h3 className="text-lg font-semibold flex items-center gap-2">
-                      <Code2 size={20} /> Sobre o Projeto
+                      <Code2 size={20} />
+                      Sobre o Projeto
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {selectedProject.description}
-                    </p>
+                    <p className="text-muted-foreground leading-relaxed">{selectedProject.description}</p>
                   </div>
+
                   <div className="space-y-2">
                     <h3 className="text-lg font-semibold flex items-center gap-2">
-                      <Code2 size={20} /> Tecnologias Utilizadas
+                      <Code2 size={20} />
+                      Tecnologias Utilizadas
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.technologies.map((tech, index) => (
@@ -239,6 +171,7 @@ const ProjectsSection = () => {
                       ))}
                     </div>
                   </div>
+
                   <div className="space-y-3 pt-4 border-t">
                     <div className="flex items-center gap-2">
                       <Calendar size={18} className="text-muted-foreground" />
@@ -246,6 +179,7 @@ const ProjectsSection = () => {
                         <span className="font-medium">Status:</span> {selectedProject.status}
                       </span>
                     </div>
+
                     {selectedProject.link && (
                       <div className="flex items-start gap-2">
                         <ExternalLink size={18} className="text-muted-foreground mt-0.5" />
@@ -260,10 +194,8 @@ const ProjectsSection = () => {
                           >
                             {selectedProject.link}
                           </a>
-                          {selectedProject.expires_text && (
-                            <p className="text-xs text-muted-foreground mt-1">
-                              {selectedProject.expires_text}
-                            </p>
+                          {selectedProject.expiresText && (
+                            <p className="text-xs text-muted-foreground mt-1">{selectedProject.expiresText}</p>
                           )}
                         </div>
                       </div>

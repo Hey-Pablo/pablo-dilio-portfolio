@@ -1,119 +1,82 @@
-import { User, Code, Book, Settings, LucideIcon } from "lucide-react";
-import { useSiteContent, useUpdateSiteContent } from "@/hooks/useContent";
-import EditableText from "@/components/admin/EditableText";
 
-const iconMap: Record<string, LucideIcon> = { User, Code, Book, Settings };
-
-const DEFAULTS = {
-  title_prefix: "Sobre",
-  title_highlight: "Mim",
-  subtitle: "Conheça minha trajetória de crescimento profissional e acadêmico na área de tecnologia",
-  story_title: "Minha Trajetória",
-  story_paragraphs: [
-    "Sou Pablo Adriano Maciel Dilio, um desenvolvedor em formação apaixonado por tecnologia e resolução de problemas.",
-    "Minha experiência profissional inclui passagens por diversas empresas.",
-    "Meus valores profissionais são baseados no aprendizado contínuo.",
-  ],
-  highlights: [
-    { icon: "Book", title: "Formação Acadêmica", description: "" },
-    { icon: "Code", title: "Experiência Atual", description: "" },
-    { icon: "Settings", title: "Especialização", description: "" },
-    { icon: "User", title: "Objetivo", description: "" },
-  ],
-};
+import { User, Code, Book, Settings } from "lucide-react";
 
 const AboutSection = () => {
-  const { data } = useSiteContent<typeof DEFAULTS>("about");
-  const update = useUpdateSiteContent();
-  const a = { ...DEFAULTS, ...(data || {}) };
-
-  const save = (field: string, v: any) =>
-    update.mutateAsync({ key: "about", value: { ...a, [field]: v } });
-
-  const saveParagraph = (idx: number) => (v: string) => {
-    const next = [...a.story_paragraphs];
-    next[idx] = v;
-    return save("story_paragraphs", next);
-  };
-  const saveHighlight = (idx: number, field: "title" | "description") => (v: string) => {
-    const next = a.highlights.map((h: any, i: number) =>
-      i === idx ? { ...h, [field]: v } : h
-    );
-    return save("highlights", next);
-  };
+  const highlights = [
+    {
+      icon: Book,
+      title: "Formação Acadêmica",
+      description: "4º semestre de ADS - Centro Universitário União das Américas Descomplica"
+    },
+    {
+      icon: Code,
+      title: "Experiência Atual",
+      description: "Auxiliar de Informática Jr. na TID Software - Suporte e desenvolvimento"
+    },
+    {
+      icon: Settings,
+      title: "Especialização",
+      description: "Desenvolvimento Full Stack com foco em sistemas web e análise"
+    },
+    {
+      icon: User,
+      title: "Objetivo",
+      description: "Consolidar conhecimentos e me tornar um desenvolvedor full stack completo"
+    }
+  ];
 
   return (
     <section id="about" className="section-padding bg-muted/30">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <EditableText value={a.title_prefix} onSave={(v) => save("title_prefix", v)} />{" "}
-            <EditableText
-              value={a.title_highlight}
-              onSave={(v) => save("title_highlight", v)}
-              className="gradient-text"
-            />
+            Sobre <span className="gradient-text">Mim</span>
           </h2>
-          <EditableText
-            as="p"
-            multiline
-            value={a.subtitle}
-            onSave={(v) => save("subtitle", v)}
-            className="text-muted-foreground text-lg max-w-2xl mx-auto block"
-          />
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Conheça minha trajetória de crescimento profissional e acadêmico na área de tecnologia
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <div className="animate-slide-in-left">
             <div className="mb-8">
-              <EditableText
-                as="h3"
-                value={a.story_title}
-                onSave={(v) => save("story_title", v)}
-                className="text-2xl font-semibold mb-4 block"
-              />
+              <h3 className="text-2xl font-semibold mb-4">Minha Trajetória</h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                {a.story_paragraphs.map((p: string, i: number) => (
-                  <EditableText
-                    key={i}
-                    as="p"
-                    multiline
-                    value={p}
-                    onSave={saveParagraph(i)}
-                    className="block"
-                  />
-                ))}
+                <p>
+                  Sou Pablo Adriano Maciel Dilio, um desenvolvedor em formação apaixonado por tecnologia 
+                  e resolução de problemas. Atualmente no 4º semestre de Análise e Desenvolvimento de 
+                  Sistemas, tenho uma trajetória única que me levou da área de vendas até a TI.
+                </p>
+                <p>
+                  Minha experiência profissional inclui passagens pela Magazine Luiza, Caterpillar Brasil 
+                  e atualmente na TID Software, onde atuo como Auxiliar de Informática Jr. Essa progressão 
+                  me proporcionou uma visão ampla de negócios e a capacidade de entender as necessidades 
+                  reais dos usuários.
+                </p>
+                <p>
+                  Meus valores profissionais são baseados no aprendizado contínuo, resolução de problemas 
+                  complexos e na busca constante por conhecimento técnico. Estou focado em me tornar um 
+                  desenvolvedor full stack completo, combinando frontend e backend.
+                </p>
               </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              {a.highlights.map((item: any, i: number) => {
-                const Icon = iconMap[item.icon] ?? User;
-                return (
-                  <div key={i} className="tech-card">
-                    <div className="flex items-start space-x-3">
-                      <div className="p-2 bg-primary/10 rounded-lg">
-                        <Icon size={20} className="text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <EditableText
-                          as="h4"
-                          value={item.title}
-                          onSave={saveHighlight(i, "title")}
-                          className="font-semibold text-sm mb-1 block"
-                        />
-                        <EditableText
-                          as="p"
-                          multiline
-                          value={item.description}
-                          onSave={saveHighlight(i, "description")}
-                          className="text-xs text-muted-foreground leading-relaxed block"
-                        />
-                      </div>
+              {highlights.map((item, index) => (
+                <div key={index} className="tech-card">
+                  <div className="flex items-start space-x-3">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <item.icon size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-1">{item.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </div>

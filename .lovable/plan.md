@@ -1,89 +1,100 @@
+# Plano — Portfólio Galáctico v2
 
-# Modo Admin do Portfólio com Lovable Cloud
+Manter a paleta atual (roxo #7C3AED / magenta #D946EF / azul #38BDF8 / fundo deep space) e a stack existente. Nada de recriar do zero — só refinar visual, adicionar carrossel, parallax de fundo e mover conteúdo para JSON.
 
-## Objetivo
-Transformar o portfólio em um mini CMS: você faz login, ativa o modo edição e altera qualquer conteúdo (Hero, Sobre, Projetos, Formação, Certificados, Experiências, Habilidades, títulos das seções, links sociais) direto pela interface. As mudanças são salvas no backend e ficam permanentes para todos os visitantes.
+## 1. Dados em JSON editável
 
-Como o projeto ainda não tem backend, o primeiro passo é ativar o **Lovable Cloud** (backend gerenciado com banco, autenticação e storage — sem contas externas).
+Criar `src/data/` com um arquivo por seção. Cada componente passa a ler dali (sem UI de admin — você edita o `.json` no código).
 
-## Pré-requisito
-Ativar **Lovable Cloud** — sem isso não há como persistir dados nem autenticar admin.
+```
+src/data/
+  projects.json          // id, title, description, category, technologies[], status, images[], link
+  education.json         // instituição, curso, período, descrição
+  certificates.json      // título, emissor, data, link
+  experience.json        // empresa, cargo, período, descrição, tecnologias
+  skills.json            // nome, nível, categoria
+  gallery.json           // título, imagem, descrição
+```
 
-## Controle de acesso
-- Autenticação via email/senha (Lovable Cloud Auth)
-- Tabela `user_roles` + enum `app_role` (`admin`, `user`) — roles nunca ficam na tabela de perfil (segurança)
-- Função `has_role(uid, role)` (SECURITY DEFINER) usada nas policies
-- Botão flutuante de "Modo Edição" só aparece se o usuário logado for admin
-- Todas as mutations (INSERT/UPDATE/DELETE) protegidas por RLS: só `admin` grava; leitura é pública
-- Primeiro admin: cadastro seu email → rodo migration que promove esse email a `admin`
+Componentes afetados: `ProjectsSection`, `EducationSection`, `CertificatesSection`, `ExperienceSection`, `SkillsSection`, `GallerySection`. Tipos TS ficam em `src/data/types.ts`. Para adicionar/remover item: editar o JSON — pronto.
 
-## Modelo de dados (tabelas no Cloud)
-Todas as tabelas terão `id uuid`, `order_index int`, `is_active bool`, `created_at`, `updated_at`.
+Imagens dos projetos: array `images: string[]` apontando para `/public/projects/<slug>/*.jpg` (você deposita os arquivos ali).
 
-- **`hero_content`** (single-row): name, role, bio, cta_primary_label, cta_primary_link, cta_secondary_label, cta_secondary_link
-- **`about_content`** (single-row): title, subtitle, body (markdown/texto), highlights[]
-- **`section_titles`**: section_key (unique), title, subtitle
-- **`projects`**: title, description, category, technologies[], status, images[], link, expires_text
-- **`education_academic`**: institution, course, period, status, description, highlights[]
-- **`education_technical`**: institution, course, period, status, highlights[]
-- **`certificates`**: title, institution, date, status, skills[], description
-- **`experiences`**: company, position, period, type, description, responsibilities[], technologies[], achievements[]
-- **`skills`**: name, level (int), category
-- **`social_links`**: label, url, icon
+## 2. Carrossel fade nas imagens de projeto
 
-Todas com RLS: `SELECT` público (anon+auth), `INSERT/UPDATE/DELETE` só para `has_role(auth.uid(),'admin')`. Grants explícitos para `anon`, `authenticated`, `service_role` conforme regras.
+Novo componente `src/components/ProjectImageCarousel.tsx`:
 
-**Migração inicial de dados**: os JSONs atuais (`src/data/*.json`) viram um seed SQL que popula as tabelas na primeira migration — nada de conteúdo se perde.
+- Recebe `images: string[]`.
+- Auto-play a cada ~3.5s, transição cross-fade suave (500ms).
+- Pausa no hover, retoma ao sair.
+- Fallback: se `images` vazio, mostra o "planeta" gradiente atual (mantém o visual atual como placeholder).
+- Dots discretos embaixo, sem setas (visual limpo).
+- Usado tanto no card do grid quanto no modal de detalhes (versão maior lá).
 
-## UX de edição
-- **Rota `/admin/login`**: tela de login (email/senha). Sem opção pública de cadastro.
-- **Botão flutuante** (canto inferior direito, só visível para admin logado): alterna Modo Edição on/off + botão "Sair".
-- **Com Modo Edição ligado**:
-  - Títulos/subtítulos das seções e textos do Hero/Sobre viram **editáveis inline** (clica → vira input → salva ao sair do foco)
-  - Cada card de item ganha overlay com **✏️ Editar / 🗑️ Excluir / ↕ Reordenar**
-  - Cada seção-lista ganha botão **+ Adicionar**
-  - **Modal genérico** (`ItemEditorDialog`) com campos dinâmicos por tipo (text, textarea, url, tags, número, select)
-  - `ConfirmDeleteDialog` antes de excluir
-- **Feedback**: toasts de "Salvando…", "Salvo", "Erro" (usando o toast já presente)
-- **Otimismo**: React Query com invalidate/refetch após mutations
-- **Visitantes**: não veem nada de admin. Site funciona igual.
+Implementação leve com `useState` + `setInterval`, sem lib nova.
 
-## Arquitetura no frontend
-- **Novos**:
-  - `src/integrations/supabase/*` (auto-gerado ao ativar Cloud)
-  - `src/contexts/AuthContext.tsx` — sessão + `isAdmin`
-  - `src/contexts/EditModeContext.tsx` — toggle global
-  - `src/hooks/useContent.ts` — hooks por tabela (`useProjects`, `useHero`, etc.) via React Query
-  - `src/components/admin/EditModeToggle.tsx` (flutuante)
-  - `src/components/admin/AdminToolbar.tsx` (barra fixa no topo quando editando)
-  - `src/components/admin/EditableText.tsx` (inline)
-  - `src/components/admin/ItemEditorDialog.tsx` (modal com schema)
-  - `src/components/admin/ConfirmDeleteDialog.tsx`
-  - `src/components/admin/ReorderControls.tsx` (↑ ↓)
-  - `src/components/admin/fieldSchemas.ts` (definição de campos por tabela)
-  - `src/pages/AdminLogin.tsx` (rota `/admin/login`)
-- **Modificados**: `HeroSection`, `AboutSection`, `SkillsSection`, `ProjectsSection`, `EducationSection`, `CertificatesSection`, `ExperienceSection`, `ContactSection`, `Footer`, `Index.tsx`, `App.tsx` (providers + rota admin). Cada seção troca `import xData from "@/data/*.json"` por hook `useX()`.
-- **Removidos depois da migração**: JSONs em `src/data/` (mantenho `types.ts`).
+## 3. Fundo galáctico cinematográfico + parallax por seção
 
-## Etapas de entrega
-1. **Ativar Lovable Cloud** (bloqueia todo o resto)
-2. Migration: enums, tabelas, RLS, grants, `has_role`, seed a partir dos JSONs atuais
-3. AuthContext + página `/admin/login` + promoção do seu email a admin
-4. Hooks React Query por tabela + refatorar cada Section para consumir hooks
-5. EditModeContext + botão flutuante + toolbar
-6. EditableText inline (Hero, About, títulos das seções)
-7. ItemEditorDialog + Add/Edit/Delete/Reorder em cada seção-lista
-8. Toasts, estados de loading/erro, tela vazia
-9. Remover JSONs de `src/data/`
+Refatorar `SpaceBackground.tsx` em duas camadas fixas (`position: fixed; inset: 0; z-index: -1`):
 
-## Fora do escopo (fica pra depois)
-- Upload real de imagens (por ora continua URL colada; storage pode ser adicionado num plano separado)
-- Editor WYSIWYG
-- Histórico de versões / rollback
-- Aprovação de mudanças / multi-admin com permissões finas
-- Painel `/admin` separado
+**Camada A — Galáxia hero (inspirada na imagem 1, sem copiar):**
+- SVG/canvas com espiral de partículas roxo/magenta girando lentamente (60s/volta).
+- Só visível no topo, fade-out ao rolar (`opacity` via scroll).
+- Mantém identidade "gal_axy" que você já tem.
 
-## O que preciso de você antes de começar
-1. Aprovar este plano
-2. Confirmar que posso ativar o **Lovable Cloud** agora
-3. Me passar o **email** que será o admin (para promover na migration inicial)
+**Camada B — Starfield parallax multi-camada:**
+- 3 camadas de estrelas (perto/médio/longe) que se movem em velocidades diferentes conforme `window.scrollY` (hook `useScrollParallax`).
+- Cor/densidade das partículas transiciona por seção via `IntersectionObserver`: 
+  - Hero → roxo dominante
+  - About/Skills → azul nebular
+  - Projects → magenta
+  - Gallery → rosa/roxo
+  - Experience/Contact → azul profundo
+- Transição de cor suave (CSS `transition: filter/hue-rotate 1.2s`).
+
+Performance: `requestAnimationFrame` throttled, respeita `prefers-reduced-motion` (desliga parallax).
+
+## 4. Refino visual (imagem 1 como referência)
+
+- Hero: adicionar a espiral galáctica atrás do título, com o nome flutuando por cima (glow sutil, letter-spacing maior tipo "FLYING").
+- Tipografia do H1 do hero: peso mais forte, tracking amplo em caixa alta discreta.
+- Botão principal do hero: pill translúcida com ícone `>` estilo "enter", mantendo o `neon-btn` atual.
+- Cards de projeto: overlay do carrossel de imagens quando houver, badge de status mantida.
+- Manter todos os tokens de cor existentes em `src/index.css` — sem hardcode.
+
+## 5. Estrutura técnica
+
+```text
+src/
+├── data/
+│   ├── types.ts
+│   ├── projects.json
+│   ├── education.json
+│   ├── certificates.json
+│   ├── experience.json
+│   ├── skills.json
+│   └── gallery.json
+├── components/
+│   ├── ProjectImageCarousel.tsx    (novo)
+│   ├── SpaceBackground.tsx         (refatorado: galáxia + parallax)
+│   └── [sections].tsx              (leem do JSON)
+├── hooks/
+│   ├── useScrollParallax.ts        (novo)
+│   └── useSectionTheme.ts          (novo — muda cor do bg por seção visível)
+```
+
+## 6. O que NÃO muda
+
+- Paleta, tokens de cor, stack, funcionalidades (i18n PT/EN, PWA, dark mode, download CV, modal de projetos, filtros).
+- Estrutura das seções e rotas.
+- Sem backend, sem novas dependências pesadas.
+
+## 7. Ordem de execução
+
+1. Criar `src/data/*.json` + tipos, migrar seções para lerem dali.
+2. Criar `ProjectImageCarousel` e plugar no card + modal.
+3. Refatorar `SpaceBackground` com galáxia + parallax + hook de tema por seção.
+4. Polir hero (tipografia, botão, espiral atrás).
+5. Typecheck final.
+
+Depois é só você popular os JSONs e jogar imagens em `/public/projects/`.

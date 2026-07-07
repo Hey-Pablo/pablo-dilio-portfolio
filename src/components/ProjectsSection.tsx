@@ -1,101 +1,34 @@
-
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Projector, ExternalLink, Calendar, Code2 } from "lucide-react";
+import { ExternalLink, Calendar, Code2 } from "lucide-react";
+import projectsData from "@/data/projects.json";
+import type { Project } from "@/data/types";
+import ProjectImageCarousel from "@/components/ProjectImageCarousel";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-  technologies: string[];
-  status: string;
-  link?: string;
-  expiresText?: string;
-}
+const projects = projectsData as Project[];
+
+const gradients = [
+  "from-[#7C3AED] via-[#D946EF] to-[#EC4899]",
+  "from-[#38BDF8] via-[#7C3AED] to-[#D946EF]",
+  "from-[#EC4899] via-[#7C3AED] to-[#38BDF8]",
+  "from-[#D946EF] via-[#38BDF8] to-[#7C3AED]",
+  "from-[#7C3AED] to-[#38BDF8]",
+  "from-[#EC4899] to-[#7C3AED]",
+];
 
 const ProjectsSection = () => {
   const [selectedFilter, setSelectedFilter] = useState("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "App Web para controle de Leitura",
-      description: "Site para gestão de Manwhas/Weebton pessoal com dashboard interativo. Desenvolvido com foco na experiência do usuário.",
-      image: "/placeholder-finance.jpg",
-      category: "fullstack",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui"],
-      status: "Em Desenvolvimento",
-    },
-    {
-      id: 2,
-      title: "Açaí Control – Sistema Web de Gestão de Vendas e Estoque",
-      description: "Criação de um sistema completo de gestão para estabelecimentos de açaí, com autenticação segura, dashboard, vendas integradas ao estoque, relatórios e cadastro de produtos. Construído com React, TailwindCSS e Supabase, incluindo RLS e cálculos automáticos de custos e lucros.",
-      image: "/placeholder-finance.jpg",
-      category: "fullstack",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase", "RLS"],
-      status: "Em Desenvolvimento"
-    },
-    {
-      id: 3,
-      title: "Portfólio Pessoal",
-      description: "Portfólio responsivo desenvolvido com React e TypeScript, apresentando projetos e habilidades de forma interativa e moderna.",
-      image: "/placeholder-portfolio.jpg",
-      category: "frontend",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive"],
-      status: "Em Desenvolvimento"
-    },
-    {
-      id: 4,
-      title: "Brasil Dev Tools",
-      description: "Coleção de ferramentas para devs brasileiros inspirada no 4Devs: geradores, validadores e utilitários para testes.",
-      image: "/placeholder-portfolio.jpg",
-      category: "frontend",
-      technologies: ["React", "TypeScript", "Tailwind CSS"],
-      status: "Em Desenvolvimento"
-    },
-    {
-      id: 5,
-      title: "FinanceFlow — Sistema de Gestão Financeira Pessoal",
-      description: "Aplicação web para controle completo de finanças pessoais, incluindo receitas, despesas, investimentos e dividendos. Possui dashboard interativo, acompanhamento de ações em tempo real e design moderno focado em usabilidade.",
-      image: "/placeholder-finance.jpg",
-      category: "fullstack",
-      technologies: ["React 18", "TypeScript", "Tailwind CSS", "Supabase", "React Query", "Recharts", "Framer Motion"],
-      status: "Concluído"
-    },
-    {
-      id: 6,
-      title: "Suporte do Pablão — Base de Conhecimento e Help Desk",
-      description: "Aplicação web para gestão de documentação técnica e artigos de suporte, permitindo que empresas organizem conteúdos em uma Base de Conhecimento com controle de acesso, busca inteligente e um painel administrativo completo.",
-      image: "/placeholder-portfolio.jpg",
-      category: "fullstack",
-      technologies: ["React 18", "TypeScript", "Tailwind CSS", "Supabase", "Tiptap", "shadcn/ui"],
-      status: "Concluído"
-    }
-  ];
-
   const categories = [
     { id: "all", label: "Todos" },
     { id: "fullstack", label: "Full Stack" },
-    { id: "frontend", label: "Frontend" }
+    { id: "frontend", label: "Frontend" },
   ];
 
-  const filteredProjects = selectedFilter === "all" 
-    ? projects 
-    : projects.filter(project => project.category === selectedFilter);
-
-  const gradients = [
-    "from-[#7C3AED] via-[#D946EF] to-[#EC4899]",
-    "from-[#38BDF8] via-[#7C3AED] to-[#D946EF]",
-    "from-[#EC4899] via-[#7C3AED] to-[#38BDF8]",
-    "from-[#D946EF] via-[#38BDF8] to-[#7C3AED]",
-    "from-[#7C3AED] to-[#38BDF8]",
-    "from-[#EC4899] to-[#7C3AED]",
-  ];
+  const filteredProjects =
+    selectedFilter === "all" ? projects : projects.filter((p) => p.category === selectedFilter);
 
   return (
     <section id="projects" className="section-padding relative overflow-hidden">
@@ -121,9 +54,7 @@ const ProjectsSection = () => {
                 key={category.id}
                 onClick={() => setSelectedFilter(category.id)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  active
-                    ? "neon-btn"
-                    : "glass text-white/80 hover:text-white hover:bg-white/10"
+                  active ? "neon-btn" : "glass text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {category.label}
@@ -142,17 +73,14 @@ const ProjectsSection = () => {
                 className="tech-card group cursor-pointer flex flex-col"
                 onClick={() => setSelectedProject(project)}
               >
-                {/* Planet-like project cover */}
                 <div className="relative mb-5 h-48 rounded-xl overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${grad} opacity-80`} />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.35),transparent_55%)]" />
-                  <div className="absolute -bottom-16 -right-10 h-40 w-40 rounded-full bg-black/40 blur-2xl" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="h-24 w-24 rounded-full bg-gradient-to-br from-white/30 to-transparent border border-white/20 backdrop-blur-sm animate-float flex items-center justify-center">
-                      <Projector size={32} className="text-white drop-shadow-lg" />
-                    </div>
-                  </div>
-                  <Badge className="absolute top-3 right-3 glass-strong border-white/20 text-white text-xs">
+                  <ProjectImageCarousel
+                    images={project.images}
+                    fallbackGradient={grad}
+                    alt={project.title}
+                    className="absolute inset-0 h-full w-full"
+                  />
+                  <Badge className="absolute top-3 right-3 glass-strong border-white/20 text-white text-xs z-10">
                     {project.status}
                   </Badge>
                 </div>
@@ -168,11 +96,7 @@ const ProjectsSection = () => {
 
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {project.technologies.slice(0, 5).map((tech, index) => (
-                      <Badge
-                        key={index}
-                        variant="outline"
-                        className="text-xs border-white/15 bg-white/5 text-white/85"
-                      >
+                      <Badge key={index} variant="outline" className="text-xs border-white/15 bg-white/5 text-white/85">
                         {tech}
                       </Badge>
                     ))}
@@ -217,25 +141,23 @@ const ProjectsSection = () => {
                 </DialogHeader>
 
                 <div className="space-y-6 mt-4">
-                  {/* Project Image */}
-                  <div className="relative h-64 bg-gradient-to-br from-tech-blue/10 to-tech-green/10 rounded-lg overflow-hidden">
-                    <div className="w-full h-full bg-muted flex items-center justify-center">
-                      <Projector size={64} className="text-muted-foreground" />
-                    </div>
+                  <div className="relative h-64 rounded-lg overflow-hidden">
+                    <ProjectImageCarousel
+                      images={selectedProject.images}
+                      fallbackGradient={gradients[(selectedProject.id - 1) % gradients.length]}
+                      alt={selectedProject.title}
+                      className="absolute inset-0 h-full w-full"
+                    />
                   </div>
 
-                  {/* Description */}
                   <div className="space-y-2">
                     <h3 className="text-lg font-semibold flex items-center gap-2">
                       <Code2 size={20} />
                       Sobre o Projeto
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {selectedProject.description}
-                    </p>
+                    <p className="text-muted-foreground leading-relaxed">{selectedProject.description}</p>
                   </div>
 
-                  {/* Technologies */}
                   <div className="space-y-2">
                     <h3 className="text-lg font-semibold flex items-center gap-2">
                       <Code2 size={20} />
@@ -250,7 +172,6 @@ const ProjectsSection = () => {
                     </div>
                   </div>
 
-                  {/* Status and Link */}
                   <div className="space-y-3 pt-4 border-t">
                     <div className="flex items-center gap-2">
                       <Calendar size={18} className="text-muted-foreground" />
@@ -258,7 +179,7 @@ const ProjectsSection = () => {
                         <span className="font-medium">Status:</span> {selectedProject.status}
                       </span>
                     </div>
-                    
+
                     {selectedProject.link && (
                       <div className="flex items-start gap-2">
                         <ExternalLink size={18} className="text-muted-foreground mt-0.5" />
@@ -274,9 +195,7 @@ const ProjectsSection = () => {
                             {selectedProject.link}
                           </a>
                           {selectedProject.expiresText && (
-                            <p className="text-xs text-muted-foreground mt-1">
-                              {selectedProject.expiresText}
-                            </p>
+                            <p className="text-xs text-muted-foreground mt-1">{selectedProject.expiresText}</p>
                           )}
                         </div>
                       </div>

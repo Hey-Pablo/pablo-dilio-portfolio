@@ -1,4 +1,4 @@
-
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -10,15 +10,20 @@ import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
+const GallerySection = lazy(() => import("@/components/GallerySection"));
+
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <Header />
-      <main>
+      <main className="relative">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <Suspense fallback={<div className="h-96" />}>
+          <GallerySection />
+        </Suspense>
         <EducationSection />
         <CertificatesSection />
         <ExperienceSection />

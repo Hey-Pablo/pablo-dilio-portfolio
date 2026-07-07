@@ -58,18 +58,24 @@ const Header = () => {
     }
   };
 
+  const menuItemsFull = [
+    ...menuItems,
+    { href: "#gallery", label: "Galeria" },
+  ];
+
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-background/60 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_30px_-12px_rgba(124,58,237,0.35)]"
+          : "bg-transparent"
       }`}
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <div className="flex items-center">
-            <a 
-              href="#home" 
+            <a
+              href="#home"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection("#home");
@@ -78,14 +84,13 @@ const Header = () => {
             >
               Pablo Dilio
             </a>
-            <span className="ml-2 text-sm text-muted-foreground font-mono hidden sm:inline">
+            <span className="ml-2 text-sm text-white/50 font-mono hidden sm:inline">
               &lt;dev/&gt;
             </span>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
+          <div className="hidden md:flex items-center gap-1 glass rounded-full px-2 py-1.5">
+            {menuItemsFull.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -93,41 +98,40 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 relative group"
+                className="text-sm font-medium text-white/80 hover:text-white px-3 py-1.5 rounded-full hover:bg-white/10 transition-all duration-200"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
           </div>
 
-          {/* Theme toggle and Mobile menu */}
           <div className="flex items-center gap-2">
             <Button
               variant="ghost"
               size="sm"
               onClick={toggleDarkMode}
-              className="p-2"
+              aria-label="Alternar tema"
+              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full"
             >
-              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+              {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
             </Button>
-            
+
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
+              className="md:hidden text-white hover:bg-white/10 rounded-full"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menu"
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b animate-fade-in">
-            <div className="container-custom py-4">
-              {menuItems.map((item) => (
+          <div className="md:hidden absolute top-full left-0 right-0 mt-2 mx-4 rounded-2xl glass-strong animate-fade-in">
+            <div className="py-3 px-2">
+              {menuItemsFull.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -135,7 +139,7 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="block py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
+                  className="block px-4 py-3 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
                 >
                   {item.label}
                 </a>

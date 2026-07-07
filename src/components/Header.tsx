@@ -58,10 +58,7 @@ const Header = () => {
     }
   };
 
-  const menuItemsFull = [
-    ...menuItems,
-    { href: "#gallery", label: "Galeria" },
-  ];
+  const scrollToSection = (href: string) => {
 
   return (
     <header

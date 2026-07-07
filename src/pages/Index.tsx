@@ -9,12 +9,16 @@ import CertificatesSection from "@/components/CertificatesSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import SpaceBackground from "@/components/SpaceBackground";
 
 const GallerySection = lazy(() => import("@/components/GallerySection"));
 
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Global cinematic background (fixed, parallax, section-themed) */}
+      <SpaceBackground />
+
       <Header />
       <main className="relative">
         <HeroSection />

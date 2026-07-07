@@ -1,4 +1,3 @@
-import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -10,8 +9,6 @@ import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SpaceBackground from "@/components/SpaceBackground";
-
-const GallerySection = lazy(() => import("@/components/GallerySection"));
 
 const Index = () => {
   return (
@@ -25,9 +22,6 @@ const Index = () => {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
-        <Suspense fallback={<div className="h-96" />}>
-          <GallerySection />
-        </Suspense>
         <EducationSection />
         <CertificatesSection />
         <ExperienceSection />

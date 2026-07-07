@@ -53,12 +53,3 @@ export interface Skill {
   level: number;
   category: string;
 }
-
-export interface GalleryItem {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  gradient: string;
-  image?: string;
-}

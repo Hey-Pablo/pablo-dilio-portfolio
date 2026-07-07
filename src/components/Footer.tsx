@@ -45,7 +45,7 @@ const Footer = () => {
       <div className="container-custom">
         {/* Main Footer Content */}
         <div className="py-12">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className={`grid gap-8 ${showLogin ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
             {/* Brand Section */}
             <div className="space-y-4">
               <div>

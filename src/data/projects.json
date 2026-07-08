@@ -126,6 +126,24 @@
       "/__l5e/assets-v1/023b35f1-d59c-49f8-8078-95ae72e540de/suporte-pablao-2.png",
       "/__l5e/assets-v1/70be4923-77cc-4724-ab6b-fd00058593d0/suporte-pablao-3.png",
       "/__l5e/assets-v1/0726513d-3084-4aef-975c-6472e11d1cf2/suporte-pablao-4.png"
+  ,
+  {
+    "id": 10,
+    "title": "Meus Projetos",
+    "description": "Projeto full stack em desenvolvimento.",
+    "category": "fullstack",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "Supabase"],
+    "status": "Em desenvolvimento",
+    "images": [
+      "/__l5e/assets-v1/1b8519e0-3c7f-439c-8ee3-1dd9412299e8/bela-agenda-65.png",
+      "/__l5e/assets-v1/3aa26cce-23b4-4877-8bf1-11302e1bf1b0/bela-agenda-66.png",
+      "/__l5e/assets-v1/973f5243-173a-4156-9a6f-af24390a75d0/bela-agenda-67.png",
+      "/__l5e/assets-v1/8302cc2f-e386-4767-89db-6907bd1963a9/bela-agenda-68.png",
+      "/__l5e/assets-v1/25a5cd5d-d581-4876-a0ca-7b31e5647c85/bela-agenda-69.png",
+      "/__l5e/assets-v1/296357b3-7d0e-4f0d-8fe7-3212779c0e76/bela-agenda-70.png",
+      "/__l5e/assets-v1/e6ac87f2-d1de-4d9c-9d68-ca395349b97b/bela-agenda-71.png"
     ]
+  }
+]
   }
 ]

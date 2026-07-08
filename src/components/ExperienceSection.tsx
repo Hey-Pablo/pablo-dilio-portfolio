@@ -86,6 +86,13 @@ const ExperienceSection = () => {
                         <div className="p-2 bg-background rounded-lg">
                           {getTypeIcon(exp.type)}
                         </div>
+                        {companyLogos[exp.company] && (
+                          <img
+                            src={companyLogos[exp.company]}
+                            alt={`${exp.company} logo`}
+                            className="h-10 w-auto object-contain bg-white rounded-md p-1"
+                          />
+                        )}
                         <div>
                           <h3 className="text-lg font-semibold">{exp.position}</h3>
                           <p className="text-tech-blue font-medium">{exp.company}</p>

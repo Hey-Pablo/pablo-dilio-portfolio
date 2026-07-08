@@ -1,5 +1,5 @@
-import { memo, useEffect, useState } from "react";
-import { Projector } from "lucide-react";
+import { memo, useEffect, useState, useCallback } from "react";
+import { Projector, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Props {
   images?: string[];
@@ -30,6 +30,18 @@ const ProjectImageCarousel = memo(
     const [index, setIndex] = useState(0);
     const [paused, setPaused] = useState(false);
 
+    const goTo = useCallback((i: number) => {
+      setIndex(i);
+    }, []);
+
+    const prev = useCallback(() => {
+      setIndex((i) => (i - 1 + list.length) % list.length);
+    }, [list.length]);
+
+    const next = useCallback(() => {
+      setIndex((i) => (i + 1) % list.length);
+    }, [list.length]);
+
     useEffect(() => {
       if (!hasImages || list.length < 2 || paused) return;
       const id = window.setInterval(() => {
@@ -41,6 +53,21 @@ const ProjectImageCarousel = memo(
     useEffect(() => {
       onIndexChange?.(index);
     }, [index, onIndexChange]);
+
+    useEffect(() => {
+      if (list.length < 2) return;
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          prev();
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          next();
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [list.length, prev, next]);
 
     if (!hasImages) {
       return (
@@ -81,6 +108,39 @@ const ProjectImageCarousel = memo(
         ))}
         {/* subtle overlay for legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+
+        {/* Side click zones */}
+        {list.length > 1 && (
+          <>
+            <button
+              type="button"
+              aria-label="Imagem anterior"
+              onClick={(e) => {
+                e.stopPropagation();
+                prev();
+              }}
+              className="absolute left-0 top-0 bottom-0 w-1/4 z-20 flex items-center justify-start pl-2 group focus:outline-none"
+            >
+              <span className="p-2 rounded-full bg-black/40 text-white/70 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity">
+                <ChevronLeft size={24} />
+              </span>
+            </button>
+            <button
+              type="button"
+              aria-label="Próxima imagem"
+              onClick={(e) => {
+                e.stopPropagation();
+                next();
+              }}
+              className="absolute right-0 top-0 bottom-0 w-1/4 z-20 flex items-center justify-end pr-2 group focus:outline-none"
+            >
+              <span className="p-2 rounded-full bg-black/40 text-white/70 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity">
+                <ChevronRight size={24} />
+              </span>
+            </button>
+          </>
+        )}
+
         {list.length > 1 && (
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
             {list.map((_, i) => (
@@ -90,7 +150,7 @@ const ProjectImageCarousel = memo(
                 aria-label={`Ir para imagem ${i + 1}`}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setIndex(i);
+                  goTo(i);
                 }}
                 className={`h-1.5 rounded-full transition-all ${
                   i === index ? "w-5 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"

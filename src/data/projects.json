@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "App Web para controle de Leitura",
+    "title": "MEUS MANHWAS | Projeto pessoal para amigos",
     "description": "Site para gestão de Manwhas/Weebton pessoal com dashboard interativo. Desenvolvido com foco na experiência do usuário.",
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui"],

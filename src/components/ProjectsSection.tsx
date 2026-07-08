@@ -141,12 +141,13 @@ const ProjectsSection = () => {
                 </DialogHeader>
 
                 <div className="space-y-6 mt-4">
-                  <div className="relative h-64 rounded-lg overflow-hidden">
+                  <div className="relative min-h-[16rem] h-auto rounded-lg overflow-hidden bg-black/40">
                     <ProjectImageCarousel
                       images={selectedProject.images}
                       fallbackGradient={gradients[(selectedProject.id - 1) % gradients.length]}
                       alt={selectedProject.title}
                       className="absolute inset-0 h-full w-full"
+                      objectFit="contain"
                     />
                   </div>
 

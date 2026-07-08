@@ -83,15 +83,16 @@ const ExperienceSection = () => {
                     {/* Header */}
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                       <div className="flex items-center space-x-3 mb-2 md:mb-0">
-                        <div className="p-2 bg-background rounded-lg">
-                          {getTypeIcon(exp.type)}
-                        </div>
-                        {companyLogos[exp.company] && (
+                        {companyLogos[exp.company] ? (
                           <img
                             src={companyLogos[exp.company]}
                             alt={`${exp.company} logo`}
-                            className="h-10 w-auto object-contain bg-white rounded-md p-1"
+                            className="h-10 w-10 object-contain bg-white rounded-lg p-1"
                           />
+                        ) : (
+                          <div className="p-2 bg-background rounded-lg">
+                            {getTypeIcon(exp.type)}
+                          </div>
                         )}
                         <div>
                           <h3 className="text-lg font-semibold">{exp.position}</h3>

@@ -43,24 +43,7 @@ const AboutSection = () => {
               <h3 className="text-2xl font-semibold mb-4">Minha Trajetória</h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Sou Pablo Adriano Maciel Dilio, Analista de Implantação e Suporte ERP, formado em 
-                  Análise e Desenvolvimento de Sistemas. Tenho experiência na implantação, configuração, 
-                  parametrização e suporte de sistemas ERP, atuando no atendimento a clientes B2B e 
-                  conduzindo projetos de implantação desde o levantamento das necessidades até a 
-                  homologação e entrada em produção.
-                </p>
-                <p>
-                  Realizo treinamentos de usuários, suporte funcional, parametrização de módulos e 
-                  acompanhamento pós-implantação. Tenho vivência com os módulos Fiscal, Financeiro, 
-                  Compras, Vendas, Estoque e Transporte, além de suporte à emissão de documentos fiscais 
-                  eletrônicos (NF-e, NFC-e, NFS-e e CT-e), desenvolvimento de consultas SQL em SQL Server, 
-                  importação de dados e configuração de integrações bancárias.
-                </p>
-                <p>
-                  Sou um profissional com perfil analítico, comunicação clara e foco na resolução de 
-                  problemas, comprometido em compreender as regras de negócio e entregar soluções que 
-                  agreguem valor aos processos dos clientes. Também possuo conhecimentos em Power BI, 
-                  PostgreSQL, Git/GitHub e metodologias ágeis (Scrum e Kanban).
+                  Analista de Implantação e Suporte ERP, formado em Análise e Desenvolvimento de Sistemas, com experiência na implantação, configuração, parametrização e suporte de sistemas ERP. Atuação no atendimento a clientes B2B, conduzindo projetos de implantação desde o levantamento das necessidades até a homologação e entrada em produção, realizando treinamentos de usuários, suporte funcional, parametrização de módulos e acompanhamento pós-implantação. Vivência com os módulos Fiscal, Financeiro, Compras, Vendas, Estoque e Transporte, suporte à emissão de documentos fiscais eletrônicos (NF-e, NFC-e, NFS-e e CT-e), desenvolvimento de consultas SQL em SQL Server, importação de dados e configuração de integrações bancárias. Profissional com perfil analítico, comunicação clara e foco na resolução de problemas, comprometido em compreender as regras de negócio e entregar soluções que agreguem valor aos processos dos clientes. Conhecimentos em Power BI, PostgreSQL, Git/GitHub e metodologias ágeis (Scrum e Kanban).
                 </p>
               </div>
             </div>

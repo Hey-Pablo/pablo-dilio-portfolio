@@ -92,9 +92,10 @@ const ResourceManager = ({ config }: { config: ResourceConfig }) => {
     config.fields.forEach((f) => {
       if (f.type === "number") payload[f.name] = Number(payload[f.name]) || 0;
     });
+    const table = supabase.from(config.table) as any;
     const { error } = editing
-      ? await supabase.from(config.table).update(payload).eq("id", editing.id)
-      : await supabase.from(config.table).insert(payload);
+      ? await table.update(payload).eq("id", editing.id)
+      : await table.insert(payload);
     setSaving(false);
     if (error) {
       toast({ title: "Erro ao salvar", description: error.message, variant: "destructive" });

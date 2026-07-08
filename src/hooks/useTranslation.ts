@@ -36,8 +36,8 @@ const translations: Translations = {
   en: {
     // Hero Section
     'hero.title': 'Pablo Adriano Maciel Dilio',
-    'hero.subtitle': 'Full Stack Developer',
-    'hero.description': '4th semester ADS student, passionate about technology and full-stack development. Currently working as IT Assistant Jr. at TID Software, focused on expanding knowledge in frontend and backend.',
+    'hero.subtitle': 'ERP Implementation and Support Analyst',
+    'hero.description': 'Graduated in Systems Analysis and Development, with experience in implementation, configuration, parameterization and support of ERP systems. I lead B2B projects from requirements gathering to homologation and production, focusing on fiscal, financial, purchasing, sales, inventory and transportation modules.',
     'hero.downloadCV': 'Download CV',
     'hero.contact': 'Get in Touch',
     

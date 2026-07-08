@@ -39,7 +39,11 @@
     "category": "frontend",
     "technologies": ["React", "TypeScript", "Tailwind CSS"],
     "status": "Concluído",
-    "images": []
+    "images": [
+      "/__l5e/assets-v1/d6d67fb1-f141-4588-95e4-7d504eb52c95/brasil-dev-tools-1.png",
+      "/__l5e/assets-v1/276783c9-34be-4eb7-9372-470ac6d68288/brasil-dev-tools-2.png",
+      "/__l5e/assets-v1/bc08a562-c8eb-4688-8514-bc23c88274d2/brasil-dev-tools-3.png"
+    ]
   },
   {
     "id": 5,

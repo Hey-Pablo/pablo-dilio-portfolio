@@ -5,7 +5,7 @@
     "description": "Site para gestão de Manwhas/Weebton pessoal com dashboard interativo. Desenvolvido com foco na experiência do usuário.",
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui"],
-    "status": "Em Desenvolvimento",
+    "status": "Concluído",
     "images": []
   },
   {
@@ -14,7 +14,7 @@
     "description": "Criação de um sistema completo de gestão para estabelecimentos de açaí, com autenticação segura, dashboard, vendas integradas ao estoque, relatórios e cadastro de produtos. Construído com React, TailwindCSS e Supabase, incluindo RLS e cálculos automáticos de custos e lucros.",
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase", "RLS"],
-    "status": "Em Desenvolvimento",
+    "status": "Concluído",
     "images": []
   },
   {
@@ -23,7 +23,7 @@
     "description": "Portfólio responsivo desenvolvido com React e TypeScript, apresentando projetos e habilidades de forma interativa e moderna.",
     "category": "frontend",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Responsive"],
-    "status": "Em Desenvolvimento",
+    "status": "Concluído",
     "images": []
   },
   {
@@ -32,7 +32,7 @@
     "description": "Coleção de ferramentas para devs brasileiros inspirada no 4Devs: geradores, validadores e utilitários para testes.",
     "category": "frontend",
     "technologies": ["React", "TypeScript", "Tailwind CSS"],
-    "status": "Em Desenvolvimento",
+    "status": "Concluído",
     "images": []
   },
   {
@@ -41,7 +41,7 @@
     "description": "Portfólio digital desenvolvido para apresentar os projetos e trajetória de Marcos e Branca de forma moderna, responsiva e interativa.",
     "category": "frontend",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    "status": "Em Desenvolvimento",
+    "status": "Concluído",
     "images": [
       "/__l5e/assets-v1/6422f8df-ffad-4ab6-a9a3-3bf1d01c6101/marcos-branca-1.png",
       "/__l5e/assets-v1/655cc501-a3af-488d-be27-99426408c353/marcos-branca-2.png",
@@ -55,7 +55,7 @@
     "description": "Aplicação web para organização e leitura de manhwas, com controle de capítulos, favoritos e recomendações personalizadas para amigos.",
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase"],
-    "status": "Em Desenvolvimento",
+    "status": "Concluído",
     "images": []
   },
   {
@@ -64,7 +64,7 @@
     "description": "Sistema de gestão de vendas desenvolvido para açaiteria, com controle de pedidos, produtos, estoque e acompanhamento de desempenho.",
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase"],
-    "status": "Em Desenvolvimento",
+    "status": "Concluído",
     "images": []
   },
   {
@@ -73,7 +73,7 @@
     "description": "Aplicativo de anotações colaborativo com categorias, lembretes e sincronização entre dispositivos, criado para uso entre amigos.",
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase"],
-    "status": "Em Desenvolvimento",
+    "status": "Concluído",
     "images": []
   },
   {

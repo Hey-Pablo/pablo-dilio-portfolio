@@ -141,9 +141,9 @@ const EducationSection = () => {
             </div>
             <h3 className="text-lg font-semibold mb-2">Status Atual</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Atualmente no 4º semestre de ADS, com previsão de conclusão em 2025. 
-              Focado em projetos práticos que integram desenvolvimento frontend e backend, 
-              sempre buscando aplicar os conhecimentos teóricos em situações reais de trabalho.
+              Formado em Análise e Desenvolvimento de Sistemas (2025). Atualmente cursando pós-graduação 
+              em Análise de Dados, com previsão de conclusão em Março/2027. Focado em evoluir na área de 
+              ERP, Business Intelligence e análise de dados aplicados aos processos de negócio.
             </p>
           </div>
         </div>

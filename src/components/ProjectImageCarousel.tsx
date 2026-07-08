@@ -1,5 +1,5 @@
-import { memo, useEffect, useState } from "react";
-import { Projector } from "lucide-react";
+import { memo, useEffect, useState, useCallback } from "react";
+import { Projector, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Props {
   images?: string[];

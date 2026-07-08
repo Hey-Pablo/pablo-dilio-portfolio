@@ -1,64 +1,84 @@
 [
   {
     "company": "TID Software",
-    "position": "Auxiliar de Informática Jr.",
-    "period": "07/2024 - Atualmente",
+    "position": "Help Desk | Implantação ERP",
+    "period": "07/2024 – 06/2026",
     "type": "ti",
-    "description": "Atuo no suporte técnico e desenvolvimento, sendo responsável por introduzir usuários ao sistema TID, realizar mapeamento de sistemas internos e atender demandas de suporte. Faço visitas a empresas para atender demandas específicas de clientes.",
+    "description": "Atuação na implantação, configuração e suporte do ERP TID Software, atendendo clientes B2B de diferentes segmentos e acompanhando todas as etapas do processo de implantação, desde o levantamento das necessidades até a homologação do ambiente e entrada em produção. Responsável pela parametrização dos módulos Fiscal, Financeiro, Compras, Vendas, Estoque e Transporte, adequando o sistema às regras de negócio de cada empresa e garantindo a aderência dos processos ao ERP.",
     "responsibilities": [
-      "Introdução ao usuário e suporte para uso geral do sistema TID",
-      "Mapeamento do sistema interno do cliente",
-      "Suporte ao usuário em demandas diversas",
-      "Visitas a empresas para atendimento de demandas",
-      "Documentação de processos e sistemas"
+      "Parametrização dos módulos Fiscal, Financeiro, Compras, Vendas, Estoque e Transporte",
+      "Realização de treinamentos presenciais e remotos para usuários finais",
+      "Prestação de suporte funcional e técnico por telefone, WhatsApp, e-mail e acesso remoto (TeamViewer e AnyDesk)",
+      "Suporte à emissão de documentos fiscais eletrônicos (NF-e, NFC-e, NFS-e e CT-e)",
+      "Desenvolvimento de consultas SQL em SQL Server para análise e validação de informações",
+      "Importação e migração de dados entre sistemas",
+      "Configuração de integrações bancárias para emissão de boletos, arquivos de remessa e retorno",
+      "Homologação dos processos junto aos clientes e suporte pós-implantação"
     ],
-    "technologies": ["Sistemas TID", "Suporte Técnico", "Mapeamento", "Documentação"],
+    "technologies": ["ERP TID Software", "SQL Server", "TeamViewer", "AnyDesk", "NF-e", "NFC-e", "NFS-e", "CT-e", "Integrações Bancárias"],
     "achievements": [
-      "Implementação de processos de suporte mais eficientes",
-      "Redução no tempo de resposta ao cliente",
-      "Melhoria na documentação de sistemas"
+      "Implantação estável e aderente às regras de negócio de cada cliente",
+      "Redução de inconsistências fiscais através de análise e correção parametrizada",
+      "Melhoria na continuidade e evolução dos processos de negócio dos clientes"
     ]
   },
   {
-    "company": "Caterpillar Brasil",
-    "position": "Aprendiz Administrativo",
-    "period": "02/2023 - 06/2024",
-    "type": "administrativo",
-    "description": "Trabalhei com conferência de Notas Fiscais, classificação para depreciação e transferências entre filiais. Utilizei sistemas como RED-E, RIS e SAP, além de elaborar relatórios mensais de depreciação.",
+    "company": "Autônomo",
+    "position": "Técnico de Informática",
+    "period": "03/2025 – 05/2026",
+    "type": "ti",
+    "description": "Prestação de serviços autônomos em infraestrutura e suporte técnico, exercida em paralelo às atividades profissionais, atuando na montagem, manutenção preventiva e corretiva, formatação e configuração de computadores, notebooks, impressoras e demais dispositivos.",
     "responsibilities": [
-      "Conferência de Notas Fiscais e classificação para depreciação mensal e anual",
-      "Operação dos sistemas RED-E e RIS",
-      "Transferências de itens entre filiais via sistema SAP",
-      "Elaboração de lista de depreciação mensal",
-      "Controle de processos administrativos"
+      "Montagem, manutenção preventiva e corretiva de computadores, notebooks e impressoras",
+      "Instalação e configuração de sistemas operacionais, drivers e softwares",
+      "Configuração de redes locais e Wi-Fi",
+      "Otimização de desempenho de equipamentos e suporte a periféricos",
+      "Atendimento on-site e remoto via TeamViewer e AnyDesk",
+      "Backup e recuperação de dados, instalação e atualização de antivírus",
+      "Monitoramento básico de rede e atualização de sistemas"
     ],
-    "technologies": ["SAP", "RED-E", "RIS", "Excel", "Processos Administrativos"],
+    "technologies": ["Windows", "TeamViewer", "AnyDesk", "Redes", "Hardware", "Antivírus", "Backup"],
     "achievements": [
-      "Otimização do processo de depreciação",
-      "Redução de erros em transferências",
-      "Melhoria na organização de documentos fiscais"
+      "Estabilidade e continuidade dos serviços de TI dos clientes atendidos",
+      "Suporte rápido e eficiente em atendimentos remotos e presenciais"
+    ]
+  },
+  {
+    "company": "Caterpillar Brasil LTDA",
+    "position": "Auxiliar Administrativo",
+    "period": "02/2023 – 06/2024",
+    "type": "administrativo",
+    "description": "Responsável pelo suporte às rotinas administrativas da área, realizando conferência e validação de notas fiscais, classificação patrimonial de ativos e utilização do sistema SAP para consultas e registros. Atuação na elaboração de controles internos e relatórios gerenciais, contribuindo para a organização das informações e o apoio às atividades do setor.",
+    "responsibilities": [
+      "Conferência e validação de notas fiscais",
+      "Classificação patrimonial de ativos",
+      "Utilização do sistema SAP para consultas e registros",
+      "Elaboração de controles internos e relatórios gerenciais",
+      "Organização de informações e apoio às atividades do setor"
+    ],
+    "technologies": ["SAP", "Excel", "Notas Fiscais", "Controle Patrimonial"],
+    "achievements": [
+      "Organização eficiente de informações administrativas",
+      "Apoio consistente às rotinas do setor"
     ]
   },
   {
     "company": "Magazine Luiza",
-    "position": "Assistente de Vendas Jr.",
-    "period": "04/2022 - 01/2023",
+    "position": "Assistente de Vendas",
+    "period": "04/2022 – 01/2023",
     "type": "vendas",
-    "description": "Responsável pelo controle e organização de estoque, aplicação de metodologias 5S e FIFO, atendimento ao público e controle digital. Gerenciei saída de pedidos e elaborei relatórios de inventário.",
+    "description": "Atuação no atendimento ao cliente e venda consultiva de produtos, serviços e soluções financeiras, incluindo consórcios, garantias estendidas, serviços de instalação e montagem. Responsável pelo controle de estoque utilizando a metodologia FIFO (PEPS), inventários, recebimento de mercadorias e organização da loja.",
     "responsibilities": [
-      "Controle e organização de estoque de produtos",
-      "Aplicação dos 5S e FIFO",
-      "Atendimento ao público e controle digital",
-      "Classificação de itens via sistema",
-      "Relatórios e controle de inventário",
-      "Recebimento e conferência de materiais",
-      "Gerenciamento de saída de pedidos por loja e site"
+      "Atendimento ao cliente e venda consultiva de produtos e serviços",
+      "Venda de soluções financeiras como consórcios e garantias estendidas",
+      "Controle de estoque utilizando a metodologia FIFO (PEPS)",
+      "Inventários, recebimento de mercadorias e organização da loja",
+      "Cumprimento de metas comerciais e experiência positiva dos clientes"
     ],
-    "technologies": ["Sistema de Vendas", "Controle de Estoque", "5S", "FIFO"],
+    "technologies": ["Sistema de Vendas", "Controle de Estoque", "FIFO (PEPS)", "Atendimento ao Cliente"],
     "achievements": [
-      "Implementação de processos 5S no setor",
-      "Melhoria na organização do estoque",
-      "Redução de perdas por organização eficiente"
+      "Cumprimento das metas comerciais",
+      "Organização eficiente do estoque"
     ]
   }
 ]

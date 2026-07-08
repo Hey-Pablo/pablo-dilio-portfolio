@@ -106,6 +106,17 @@ const ResourceManager = ({ config }: { config: ResourceConfig }) => {
     load();
   };
 
+  const remove = async (row: any) => {
+    if (!confirm(`Excluir "${row[config.titleField]}"?`)) return;
+    const { error } = await supabase.from(config.table).delete().eq("id", row.id);
+    if (error) {
+      toast({ title: "Erro ao excluir", description: error.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "Excluído" });
+    load();
+  };
+
   const move = async (row: any, direction: -1 | 1) => {
     const idx = rows.findIndex((r) => r.id === row.id);
     const swapIdx = idx + direction;
@@ -113,14 +124,16 @@ const ResourceManager = ({ config }: { config: ResourceConfig }) => {
     const a = rows[idx];
     const b = rows[swapIdx];
     const table = supabase.from(config.table) as any;
-    const { error } = await table
+    const { error: errA } = await table
       .update({ order_index: b.order_index })
       .eq("id", a.id);
-    if (!error) {
-      await table.update({ order_index: a.order_index }).eq("id", b.id);
+    if (errA) {
+      toast({ title: "Erro ao reordenar", description: errA.message, variant: "destructive" });
+      return;
     }
-    if (error) {
-      toast({ title: "Erro ao reordenar", description: error.message, variant: "destructive" });
+    const { error: errB } = await table.update({ order_index: a.order_index }).eq("id", b.id);
+    if (errB) {
+      toast({ title: "Erro ao reordenar", description: errB.message, variant: "destructive" });
       return;
     }
     toast({ title: "Ordem atualizada" });

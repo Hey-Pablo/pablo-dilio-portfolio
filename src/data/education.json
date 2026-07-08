@@ -2,38 +2,48 @@
   "academic": [
     {
       "institution": "Centro Universitário União das Américas Descomplica",
-      "course": "Análise e Desenvolvimento de Sistemas",
-      "period": "01/2023 - Cursando",
-      "status": "4º semestre",
-      "description": "Foco em desenvolvimento full stack e análise de sistemas. Aprendendo sobre modelagem de dados, programação orientada a objetos, desenvolvimento web e metodologias ágeis.",
+      "course": "Pós-graduação – Especialização em Análise de Dados",
+      "period": "2025 – 2027",
+      "status": "Cursando",
+      "description": "Especialização focada em análise de dados, modelagem, ETL, visualização e storytelling com dados. Previsão de conclusão: Março/2027.",
       "highlights": [
-        "Desenvolvimento Full Stack",
+        "Análise de Dados",
+        "ETL",
+        "Modelagem de Dados",
+        "Visualização de Dados",
+        "Power BI"
+      ]
+    },
+    {
+      "institution": "Centro Universitário União das Américas Descomplica",
+      "course": "Análise e Desenvolvimento de Sistemas",
+      "period": "2023 – 2025",
+      "status": "Concluído",
+      "description": "Formação em Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento de sistemas, modelagem de dados, programação e metodologias ágeis.",
+      "highlights": [
+        "Desenvolvimento de Sistemas",
         "Análise de Sistemas",
         "Modelagem de Dados",
         "Metodologias Ágeis",
-        "Programação Orientada a Objetos"
+        "Programação"
       ]
     },
     {
       "institution": "Colégio Mello Ayres",
       "course": "Ensino Médio Completo",
-      "period": "2017 - 2019",
+      "period": "2017 – 2019",
       "status": "Concluído",
       "description": "Formação básica com foco em exatas e preparação para ensino superior. Base sólida em matemática e ciências que contribuiu para o interesse em tecnologia.",
       "highlights": ["Formação em Exatas", "Preparação Vestibular", "Base Matemática", "Ciências"]
     }
   ],
   "technicalCourses": [
-    { "institution": "SENAI", "course": "Técnico em Administração", "period": "06/2023", "status": "Concluído", "highlights": ["Gestão", "Processos", "Qualidade", "Liderança"] },
-    { "institution": "Digital Innovation One", "course": "Backend Developer", "period": "12/2024", "status": "Concluído", "highlights": ["APIs", "Server-side", "Database", "Security"] },
-    { "institution": "Digital Innovation One", "course": "Object-Oriented Developer", "period": "09/2024", "status": "Concluído", "highlights": ["OOP", "Design Patterns", "SOLID", "Clean Code"] },
-    { "institution": "Digital Innovation One", "course": "Programmer", "period": "05/2024", "status": "Concluído", "highlights": ["Logic", "Algorithms", "Data Structures"] },
-    { "institution": "Digital Innovation One", "course": "Basic Frontend", "period": "03/2024", "status": "Concluído", "highlights": ["HTML5", "CSS3", "JavaScript", "Responsive"] },
-    { "institution": "Certificação", "course": "Auxiliar Mecânico de Manutenção", "period": "08/2022", "status": "Concluído", "highlights": ["Manutenção", "Mecânica", "Equipamentos"] },
-    { "institution": "People", "course": "Robótica", "period": "2019", "status": "Concluído", "highlights": ["Automação", "Programação", "Eletrônica"] },
-    { "institution": "Microlins", "course": "Montagem e Manutenção de Computadores e Redes", "period": "2019", "status": "Concluído", "highlights": ["Hardware", "Redes", "Manutenção", "Infraestrutura"] },
-    { "institution": "Microlins", "course": "Design Gráfico e Multimídia", "period": "2019", "status": "Concluído", "highlights": ["Corel Draw", "Photoshop", "Flash", "After Effects", "3D Studio Max"] },
+    { "institution": "SENAI", "course": "Técnico em Administração", "period": "06/2024", "status": "Concluído", "highlights": ["Gestão", "Processos", "Qualidade", "Liderança"] },
+    { "institution": "SENAI", "course": "Auxiliar Mecânico de Manutenção", "period": "08/2022", "status": "Concluído", "highlights": ["Manutenção", "Mecânica", "Equipamentos"] },
+    { "institution": "Micropro", "course": "Contabilidade / Secretariado / Departamento Pessoal", "period": "2018", "status": "Concluído", "highlights": ["Contabilidade", "Secretariado", "Departamento Pessoal", "Legislação"] },
     { "institution": "Micropro", "course": "Profissional Administrativo Tecnológico", "period": "2018", "status": "Concluído", "highlights": ["Administração", "Tecnologia", "Gestão"] },
-    { "institution": "Micropro", "course": "Contabilidade / Secretariado / Departamento Pessoal", "period": "2018", "status": "Concluído", "highlights": ["Contabilidade", "RH", "Secretariado", "Legislação"] }
+    { "institution": "Microlins", "course": "Corel Draw / Photoshop / Flash / After Effects / 3D Studio Max", "period": "2019", "status": "Concluído", "highlights": ["Corel Draw", "Photoshop", "Flash", "After Effects", "3D Studio Max"] },
+    { "institution": "Microlins", "course": "Montagem e Manutenção de Computadores e Redes", "period": "2019", "status": "Concluído", "highlights": ["Hardware", "Redes", "Manutenção", "Infraestrutura"] },
+    { "institution": "People", "course": "Robótica", "period": "2019", "status": "Concluído", "highlights": ["Automação", "Programação", "Eletrônica"] }
   ]
 }

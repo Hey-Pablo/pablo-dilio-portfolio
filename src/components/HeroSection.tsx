@@ -32,12 +32,12 @@ const HeroSection = () => {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[hsl(var(--nebula-magenta))]" />
             </span>
             <span className="text-xs font-mono text-white/80 tracking-wider">
-              disponível para novas missões
+              disponível para novas oportunidades em ERP
             </span>
           </div>
 
           <p className="text-sm font-mono text-[hsl(var(--nebula-blue))] mb-3 tracking-widest animate-on-scroll stagger-1">
-            &lt;developer/&gt;
+            &lt;erp_analyst/&gt;
           </p>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 animate-on-scroll stagger-2">
@@ -47,12 +47,13 @@ const HeroSection = () => {
           </h1>
 
           <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-4 animate-on-scroll stagger-3">
-            Full Stack Developer & Criador de Experiências Digitais
+            Analista de Implantação e Suporte ERP
           </h2>
 
           <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mb-10 animate-on-scroll stagger-4">
-            Desenvolvo sistemas web modernos, interfaces funcionais e experiências
-            digitais que unem tecnologia, design e performance.
+            Especialista em implantação, configuração, parametrização e suporte de sistemas ERP. 
+            Conduzo projetos de implantação B2B do levantamento de necessidades até a homologação 
+            e produção, com foco em módulos fiscais, financeiros, compras, vendas, estoque e transporte.
           </p>
 
           {/* CTAs */}

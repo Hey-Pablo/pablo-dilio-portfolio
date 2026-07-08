@@ -33,7 +33,7 @@ const AboutSection = () => {
             Sobre <span className="gradient-text">Mim</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Conheça minha trajetória de crescimento profissional e acadêmico na área de tecnologia
+            Conheça minha trajetória profissional na área de tecnologia e sistemas ERP
           </p>
         </div>
 

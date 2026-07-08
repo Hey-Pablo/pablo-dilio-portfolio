@@ -138,7 +138,7 @@ const ContactSection = () => {
                   <User size={64} className="text-muted-foreground" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Pablo Adriano Maciel Dilio</h3>
-                <p className="text-muted-foreground">Desenvolvedor Full Stack</p>
+                <p className="text-muted-foreground">Analista de Implantação e Suporte ERP</p>
                 <p className="text-sm text-muted-foreground mt-2">Piracicaba, SP</p>
               </div>
             </div>

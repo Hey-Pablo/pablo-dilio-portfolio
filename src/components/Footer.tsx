@@ -49,8 +49,9 @@ const Footer = () => {
                 <p className="text-sm font-mono text-muted-foreground">&lt;dev/&gt;</p>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Desenvolvedor Full Stack em formação, especializado em criar soluções web 
-                modernas e funcionais. Sempre em busca de novos desafios e aprendizado contínuo.
+                Analista de Implantação e Suporte ERP, formado em Análise e Desenvolvimento de Sistemas. 
+                Especializado em implantação, configuração, parametrização e suporte de sistemas ERP, 
+                sempre em busca de novos desafios e aprendizado contínuo.
               </p>
               <div className="flex space-x-3">
                 {socialLinks.map((social, index) => (

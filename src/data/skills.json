@@ -12,14 +12,20 @@
     { "name": "n8n", "level": 25, "category": "Backend" }
   ],
   "tools": [
-    { "name": "SSMS / SSRS", "level": 90, "category": "Tools" },
-    { "name": "TeamViewer", "level": 95, "category": "Tools" },
-    { "name": "AnyDesk", "level": 95, "category": "Tools" },
-    { "name": "Microsoft Office / 365", "level": 90, "category": "Tools" },
-    { "name": "Google Workspace", "level": 85, "category": "Tools" },
-    { "name": "SAP", "level": 70, "category": "Enterprise" },
-    { "name": "Power BI", "level": 80, "category": "Tools" },
-    { "name": "Excel", "level": 90, "category": "Tools" }
+    { "name": "TeamViewer", "level": 95, "category": "Remote" },
+    { "name": "AnyDesk", "level": 95, "category": "Remote" },
+    { "name": "Microsoft Office / 365", "level": 90, "category": "OfficeSystems" },
+    { "name": "Google Workspace", "level": 85, "category": "OfficeSystems" },
+    { "name": "SAP", "level": 70, "category": "OfficeSystems" },
+    { "name": "Power BI", "level": 80, "category": "OfficeSystems" },
+    { "name": "Excel", "level": 90, "category": "OfficeSystems" },
+    { "name": "Lovable", "level": 80, "category": "AI" },
+    { "name": "ChatGPT", "level": 75, "category": "AI" },
+    { "name": "Claude", "level": 85, "category": "AI" },
+    { "name": "Perplex", "level": 55, "category": "AI" },
+    { "name": "Google antigravity", "level": 35, "category": "AI" },
+    { "name": "Hermes agent", "level": 15, "category": "AI" },
+    { "name": "Copilot", "level": 35, "category": "AI" }
   ],
   "soft": [
     "Trabalho em equipe",

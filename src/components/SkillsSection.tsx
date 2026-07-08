@@ -126,16 +126,22 @@ const SkillsSection = () => {
                   <SkillChart skills={tools} />
                 </div>
               ) : (
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div className="tech-card animate-slide-in-left">
-                    <h3 className="text-lg font-semibold mb-4 gradient-text">Ferramentas de Desenvolvimento</h3>
-                    {tools.slice(0, 3).map((tool, index) => (
+                    <h3 className="text-lg font-semibold mb-4 gradient-text">Ferramentas de Atendimento Remoto</h3>
+                    {tools.filter(t => t.category === "Remote").map((tool, index) => (
                       <SkillBar key={index} skill={tool} />
                     ))}
                   </div>
                   <div className="tech-card animate-slide-in-right">
                     <h3 className="text-lg font-semibold mb-4 gradient-text">Design e Sistemas</h3>
-                    {tools.slice(3).map((tool, index) => (
+                    {tools.filter(t => t.category === "OfficeSystems").map((tool, index) => (
+                      <SkillBar key={index} skill={tool} />
+                    ))}
+                  </div>
+                  <div className="tech-card animate-slide-in-left">
+                    <h3 className="text-lg font-semibold mb-4 gradient-text">Integração com IA</h3>
+                    {tools.filter(t => t.category === "AI").map((tool, index) => (
                       <SkillBar key={index} skill={tool} />
                     ))}
                   </div>

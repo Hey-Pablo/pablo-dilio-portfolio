@@ -8,6 +8,7 @@ interface Props {
   className?: string;
   alt?: string;
   objectFit?: "cover" | "contain";
+  onIndexChange?: (index: number) => void;
 }
 
 /**

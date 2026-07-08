@@ -54,7 +54,7 @@ const ExperienceSection = () => {
             Experiência <span className="gradient-text">Profissional</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Minha trajetória profissional progressiva: de vendas ao administrativo, até chegar à área de TI
+            Minha trajetória profissional: de vendas ao administrativo, até a especialização em implantação e suporte ERP
           </p>
         </div>
 

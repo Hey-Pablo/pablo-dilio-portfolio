@@ -44,6 +44,11 @@
     { "institution": "Micropro", "course": "Profissional Administrativo Tecnológico", "period": "2018", "status": "Concluído", "highlights": ["Administração", "Tecnologia", "Gestão"] },
     { "institution": "Microlins", "course": "Corel Draw / Photoshop / Flash / After Effects / 3D Studio Max", "period": "2019", "status": "Concluído", "highlights": ["Corel Draw", "Photoshop", "Flash", "After Effects", "3D Studio Max"] },
     { "institution": "Microlins", "course": "Montagem e Manutenção de Computadores e Redes", "period": "2019", "status": "Concluído", "highlights": ["Hardware", "Redes", "Manutenção", "Infraestrutura"] },
-    { "institution": "People", "course": "Robótica", "period": "2019", "status": "Concluído", "highlights": ["Automação", "Programação", "Eletrônica"] }
+    { "institution": "People", "course": "Robótica", "period": "2019", "status": "Concluído", "highlights": ["Automação", "Programação", "Eletrônica"] },
+    { "institution": "Descomplica Faculdade Digital", "course": "FrontEnd Developer", "period": "2025", "status": "Concluído", "highlights": ["Frontend", "React", "JavaScript", "CSS"] },
+    { "institution": "Descomplica Faculdade Digital", "course": "Devops Strategist", "period": "2025", "status": "Concluído", "highlights": ["DevOps", "CI/CD", "Cloud", "Automação"] },
+    { "institution": "Descomplica Faculdade Digital", "course": "Full cycle developer", "period": "2025", "status": "Concluído", "highlights": ["Full Stack", "APIs", "Banco de Dados", "Deploy"] },
+    { "institution": "Descomplica Faculdade Digital", "course": "Smart Manager", "period": "2025", "status": "Concluído", "highlights": ["Gestão", "Liderança", "Metodologias Ágeis", "Produtividade"] },
+    { "institution": "Descomplica Faculdade Digital", "course": "Advanced Tester", "period": "2025", "status": "Concluído", "highlights": ["Testes", "QA", "Automação de Testes", "Quality Assurance"] }
   ]
 }

@@ -71,7 +71,13 @@
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase"],
     "status": "Concluído",
-    "images": []
+    "images": [
+      "/__l5e/assets-v1/2ed519d9-d861-4188-8649-a776dee75a4c/controle-vendas-1.png",
+      "/__l5e/assets-v1/37f88dc3-5bb4-4c48-88e2-ebd244dcfa00/controle-vendas-2.png",
+      "/__l5e/assets-v1/c4bd02e9-8c0a-4da7-b89c-1d2fd7b28de1/controle-vendas-3.png",
+      "/__l5e/assets-v1/e5bb21cd-5fbd-462a-b73e-ad540eb0dd6e/controle-vendas-4.png",
+      "/__l5e/assets-v1/7e7ebb48-ad70-4123-bc92-5e63b11fffa4/controle-vendas-5.png"
+    ]
   },
   {
     "id": 8,

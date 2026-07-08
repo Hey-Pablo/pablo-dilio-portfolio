@@ -6,22 +6,22 @@ const AboutSection = () => {
     {
       icon: Book,
       title: "Formação Acadêmica",
-      description: "4º semestre de ADS - Centro Universitário União das Américas Descomplica"
+      description: "Formado em Análise e Desenvolvimento de Sistemas"
     },
     {
       icon: Code,
       title: "Experiência Atual",
-      description: "Auxiliar de Informática Jr. na TID Software - Suporte e desenvolvimento"
+      description: "Analista de Implantação e Suporte ERP — implantação, configuração e suporte B2B"
     },
     {
       icon: Settings,
       title: "Especialização",
-      description: "Desenvolvimento Full Stack com foco em sistemas web e análise"
+      description: "Sistemas ERP, módulos Fiscal, Financeiro, Compras, Vendas, Estoque e Transporte"
     },
     {
       icon: User,
       title: "Objetivo",
-      description: "Consolidar conhecimentos e me tornar um desenvolvedor full stack completo"
+      description: "Entregar soluções que agreguem valor aos processos dos clientes"
     }
   ];
 
@@ -43,20 +43,24 @@ const AboutSection = () => {
               <h3 className="text-2xl font-semibold mb-4">Minha Trajetória</h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Sou Pablo Adriano Maciel Dilio, um desenvolvedor em formação apaixonado por tecnologia 
-                  e resolução de problemas. Atualmente no 4º semestre de Análise e Desenvolvimento de 
-                  Sistemas, tenho uma trajetória única que me levou da área de vendas até a TI.
+                  Sou Pablo Adriano Maciel Dilio, Analista de Implantação e Suporte ERP, formado em 
+                  Análise e Desenvolvimento de Sistemas. Tenho experiência na implantação, configuração, 
+                  parametrização e suporte de sistemas ERP, atuando no atendimento a clientes B2B e 
+                  conduzindo projetos de implantação desde o levantamento das necessidades até a 
+                  homologação e entrada em produção.
                 </p>
                 <p>
-                  Minha experiência profissional inclui passagens pela Magazine Luiza, Caterpillar Brasil 
-                  e atualmente na TID Software, onde atuo como Auxiliar de Informática Jr. Essa progressão 
-                  me proporcionou uma visão ampla de negócios e a capacidade de entender as necessidades 
-                  reais dos usuários.
+                  Realizo treinamentos de usuários, suporte funcional, parametrização de módulos e 
+                  acompanhamento pós-implantação. Tenho vivência com os módulos Fiscal, Financeiro, 
+                  Compras, Vendas, Estoque e Transporte, além de suporte à emissão de documentos fiscais 
+                  eletrônicos (NF-e, NFC-e, NFS-e e CT-e), desenvolvimento de consultas SQL em SQL Server, 
+                  importação de dados e configuração de integrações bancárias.
                 </p>
                 <p>
-                  Meus valores profissionais são baseados no aprendizado contínuo, resolução de problemas 
-                  complexos e na busca constante por conhecimento técnico. Estou focado em me tornar um 
-                  desenvolvedor full stack completo, combinando frontend e backend.
+                  Sou um profissional com perfil analítico, comunicação clara e foco na resolução de 
+                  problemas, comprometido em compreender as regras de negócio e entregar soluções que 
+                  agreguem valor aos processos dos clientes. Também possuo conhecimentos em Power BI, 
+                  PostgreSQL, Git/GitHub e metodologias ágeis (Scrum e Kanban).
                 </p>
               </div>
             </div>

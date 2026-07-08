@@ -6,7 +6,14 @@
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "shadcn/ui"],
     "status": "Concluído",
-    "images": []
+    "images": [
+      "/__l5e/assets-v1/92f4e2c9-4436-4a6b-a60a-bedd5b74389a/meus-manhwas-1.png",
+      "/__l5e/assets-v1/2bb726a8-be93-47a3-bf9c-c84c10a33e2c/meus-manhwas-2.png",
+      "/__l5e/assets-v1/7acd6b3a-2a2f-45a4-b28a-4331de6d2f7f/meus-manhwas-3.png",
+      "/__l5e/assets-v1/f75e3f06-6f7c-4d05-8d20-0f13e4a66804/meus-manhwas-4.png",
+      "/__l5e/assets-v1/bd27593d-4057-4c57-8169-d91d86ca5ba0/meus-manhwas-5.png",
+      "/__l5e/assets-v1/f482f813-fa58-46db-8e66-28af1c1a2ba2/meus-manhwas-6.png"
+    ]
   },
   {
     "id": 2,

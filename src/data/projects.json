@@ -62,8 +62,8 @@
     "id": 5,
     "title": "Minha Agenda | Marcos e Branca",
     "description": "Aplicativo WEB. para controle de clientes e horários disponíveis, feito especificadamente para o salão de Beleza Marcos e Branca, projeto voltado para uso interno\u00a0",
-    "category": "frontend",
-    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    "category": "fullstack",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "Supabase"],
     "status": "Concluído",
     "images": [
       "/__l5e/assets-v1/6422f8df-ffad-4ab6-a9a3-3bf1d01c6101/marcos-branca-1.png",

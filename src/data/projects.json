@@ -126,7 +126,9 @@
       "/__l5e/assets-v1/023b35f1-d59c-49f8-8078-95ae72e540de/suporte-pablao-2.png",
       "/__l5e/assets-v1/70be4923-77cc-4724-ab6b-fd00058593d0/suporte-pablao-3.png",
       "/__l5e/assets-v1/0726513d-3084-4aef-975c-6472e11d1cf2/suporte-pablao-4.png"
-  ,
+    ]
+  },
+
   {
     "id": 10,
     "title": "Meus Projetos",
@@ -145,5 +147,4 @@
     ]
   }
 ]
-  }
-]
+

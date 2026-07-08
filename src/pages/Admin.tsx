@@ -23,6 +23,11 @@ const AdminContent = () => {
           </div>
           <div className="flex items-center gap-3">
             <span className="text-sm text-muted-foreground hidden sm:block">{user?.email}</span>
+            <Link to="/" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm">
+                <Eye size={14} className="mr-2" /> Preview
+              </Button>
+            </Link>
             <Button variant="outline" size="sm" onClick={signOut}>
               <LogOut size={14} className="mr-2" /> Sair
             </Button>

@@ -2,8 +2,17 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Settings, User, Code } from "lucide-react";
 import experienceData from "@/data/experience.json";
 import type { Experience } from "@/data/types";
+import magaluLogo from "@/assets/magalu.png.asset.json";
+import caterpillarLogo from "@/assets/caterpillar.png.asset.json";
+import tidLogo from "@/assets/tid.png.asset.json";
 
 const experiences = experienceData as Experience[];
+
+const companyLogos: Record<string, string> = {
+  "Magazine Luiza": magaluLogo.url,
+  "Caterpillar Brasil LTDA": caterpillarLogo.url,
+  "TID Software": tidLogo.url,
+};
 
 const ExperienceSection = () => {
 
@@ -77,6 +86,13 @@ const ExperienceSection = () => {
                         <div className="p-2 bg-background rounded-lg">
                           {getTypeIcon(exp.type)}
                         </div>
+                        {companyLogos[exp.company] && (
+                          <img
+                            src={companyLogos[exp.company]}
+                            alt={`${exp.company} logo`}
+                            className="h-10 w-auto object-contain bg-white rounded-md p-1"
+                          />
+                        )}
                         <div>
                           <h3 className="text-lg font-semibold">{exp.position}</h3>
                           <p className="text-tech-blue font-medium">{exp.company}</p>

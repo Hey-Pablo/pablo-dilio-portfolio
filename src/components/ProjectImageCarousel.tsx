@@ -7,6 +7,8 @@ interface Props {
   interval?: number;
   className?: string;
   alt?: string;
+  objectFit?: "cover" | "contain";
+  onIndexChange?: (index: number) => void;
 }
 
 /**
@@ -14,7 +16,15 @@ interface Props {
  * Falls back to a gradient "planet" when no images are provided.
  */
 const ProjectImageCarousel = memo(
-  ({ images, fallbackGradient, interval = 3500, className = "", alt = "" }: Props) => {
+  ({
+    images,
+    fallbackGradient,
+    interval = 3500,
+    className = "",
+    alt = "",
+    objectFit = "cover",
+    onIndexChange,
+  }: Props) => {
     const list = images?.filter(Boolean) ?? [];
     const hasImages = list.length > 0;
     const [index, setIndex] = useState(0);
@@ -27,6 +37,10 @@ const ProjectImageCarousel = memo(
       }, interval);
       return () => window.clearInterval(id);
     }, [hasImages, list.length, paused, interval]);
+
+    useEffect(() => {
+      onIndexChange?.(index);
+    }, [index, onIndexChange]);
 
     if (!hasImages) {
       return (
@@ -46,6 +60,8 @@ const ProjectImageCarousel = memo(
       );
     }
 
+    const fitClass = objectFit === "contain" ? "object-contain" : "object-cover";
+
     return (
       <div
         className={`relative overflow-hidden ${className}`}
@@ -58,7 +74,7 @@ const ProjectImageCarousel = memo(
             src={src}
             alt={alt}
             loading="lazy"
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out ${
+            className={`absolute inset-0 h-full w-full ${fitClass} transition-opacity duration-700 ease-in-out ${
               i === index ? "opacity-100" : "opacity-0"
             }`}
           />

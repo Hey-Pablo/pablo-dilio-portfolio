@@ -86,7 +86,12 @@
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase"],
     "status": "Concluído",
-    "images": []
+    "images": [
+      "/__l5e/assets-v1/6cf9ffc9-475e-4ae4-af6b-568f72359684/notas-plus-1.png",
+      "/__l5e/assets-v1/2eee159d-9b94-46ba-a5ce-84711aa6f5a3/notas-plus-2.png",
+      "/__l5e/assets-v1/8d3fc726-7096-419e-b00d-e06d382d2b92/notas-plus-3.png",
+      "/__l5e/assets-v1/90249e58-5df8-4f76-831f-d6f5c6071966/notas-plus-4.png"
+    ]
   },
   {
     "id": 9,

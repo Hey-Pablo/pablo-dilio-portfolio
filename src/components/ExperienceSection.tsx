@@ -2,8 +2,17 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Settings, User, Code } from "lucide-react";
 import experienceData from "@/data/experience.json";
 import type { Experience } from "@/data/types";
+import magaluLogo from "@/assets/magalu.png.asset.json";
+import caterpillarLogo from "@/assets/caterpillar.png.asset.json";
+import tidLogo from "@/assets/tid.png.asset.json";
 
 const experiences = experienceData as Experience[];
+
+const companyLogos: Record<string, string> = {
+  "Magazine Luiza": magaluLogo.url,
+  "Caterpillar Brasil LTDA": caterpillarLogo.url,
+  "TID Software": tidLogo.url,
+};
 
 const ExperienceSection = () => {
 

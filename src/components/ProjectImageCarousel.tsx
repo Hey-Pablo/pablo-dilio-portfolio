@@ -38,6 +38,10 @@ const ProjectImageCarousel = memo(
       return () => window.clearInterval(id);
     }, [hasImages, list.length, paused, interval]);
 
+    useEffect(() => {
+      onIndexChange?.(index);
+    }, [index, onIndexChange]);
+
     if (!hasImages) {
       return (
         <div

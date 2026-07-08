@@ -140,14 +140,16 @@ const ResourceManager = ({ config }: { config: ResourceConfig }) => {
               className="p-4 rounded-lg border border-border bg-card/50 flex justify-between items-start gap-4"
             >
               <div className="min-w-0 flex-1">
-                <p className="font-medium truncate">{row[config.titleField]}</p>
+                <p className="font-medium text-base leading-snug break-words">
+                  {row[config.titleField]}
+                </p>
                 {config.subtitleField && (
-                  <p className="text-sm text-muted-foreground truncate">
+                  <p className="text-sm text-muted-foreground mt-1 leading-relaxed break-words line-clamp-3">
                     {row[config.subtitleField]}
                   </p>
                 )}
                 {!row.is_active && (
-                  <span className="inline-block mt-1 text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground">
+                  <span className="inline-block mt-2 text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground">
                     Inativo
                   </span>
                 )}

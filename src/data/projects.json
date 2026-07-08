@@ -75,7 +75,7 @@
   {
     "id": 6,
     "title": "Biblioteca MyManhwa | Projeto pessoal para amigos",
-    "description": "Aplicação web para organização e leitura de manhwas, com controle de capítulos, favoritos e recomendações personalizadas para amigos.",
+    "description": "Aplicação web para armazenar imagens e exportar elas para o MyManhwas, extensão criada para não acumular memoria do banco de dados\u00a0",
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase"],
     "status": "Concluído",

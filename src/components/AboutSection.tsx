@@ -6,7 +6,7 @@ const AboutSection = () => {
     {
       icon: Book,
       title: "Formação Acadêmica",
-      description: "Formado em Análise e Desenvolvimento de Sistemas"
+      description: "Formado em Análise e Desenvolvimento de Sistemas e cursando pós-graduação em Análise de Dados (Descomplica)"
     },
     {
       icon: Code,
@@ -16,7 +16,7 @@ const AboutSection = () => {
     {
       icon: Settings,
       title: "Especialização",
-      description: "Sistemas ERP, módulos Fiscal, Financeiro, Compras, Vendas, Estoque e Transporte"
+      description: "Sistemas ERP, Criação de Sites, Manutenção de Sites, Atendimentos B2B e B2C, Pequenas automações"
     },
     {
       icon: User,

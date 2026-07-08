@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { ExternalLink, Calendar, Code2 } from "lucide-react";
+import { ExternalLink, Calendar, Code2, X } from "lucide-react";
 import projectsData from "@/data/projects.json";
 import type { Project } from "@/data/types";
 import ProjectImageCarousel from "@/components/ProjectImageCarousel";

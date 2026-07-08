@@ -124,7 +124,16 @@ const ProjectsSection = () => {
         </div>
 
         {/* Project Details Modal */}
-        <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
+        <Dialog
+          open={!!selectedProject}
+          onOpenChange={(open) => {
+            if (!open) {
+              setSelectedProject(null);
+              setModalImageIndex(0);
+              setLightboxOpen(false);
+            }
+          }}
+        >
           <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
             {selectedProject && (
               <>
@@ -143,14 +152,23 @@ const ProjectsSection = () => {
                 </DialogHeader>
 
                 <div className="space-y-6 mt-4">
-                  <div className="relative w-full aspect-[4/3] max-h-[500px] rounded-lg overflow-hidden bg-black/40">
+                  <div
+                    className="relative w-full aspect-[4/3] max-h-[500px] rounded-lg overflow-hidden bg-black/40 cursor-pointer group"
+                    onClick={() => selectedProject.images.length > 0 && setLightboxOpen(true)}
+                  >
                     <ProjectImageCarousel
                       images={selectedProject.images}
                       fallbackGradient={gradients[(selectedProject.id - 1) % gradients.length]}
                       alt={selectedProject.title}
                       className="absolute inset-0 h-full w-full"
                       objectFit="contain"
+                      onIndexChange={setModalImageIndex}
                     />
+                    {selectedProject.images.length > 0 && (
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30 pointer-events-none">
+                        <span className="text-white text-sm font-medium">Clique para ampliar</span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="space-y-2">

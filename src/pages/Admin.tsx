@@ -4,41 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { useAuth } from "@/hooks/useAuth";
-import projectsData from "@/data/projects.json";
-import educationData from "@/data/education.json";
-import certificatesData from "@/data/certificates.json";
-import experienceData from "@/data/experience.json";
-import skillsData from "@/data/skills.json";
-
-const projects = projectsData as any[];
-const certificates = certificatesData as any[];
-const experience = experenceFlatten(experienceData);
-const education = [
-  ...(((educationData as any).academic ?? []) as any[]),
-  ...(((educationData as any).technicalCourses ?? []) as any[]),
-].map((e) => ({ title: e.course, description: `${e.institution} — ${e.period}` }));
-const skills = [
-  ...(((skillsData as any).technical ?? []) as any[]),
-  ...(((skillsData as any).tools ?? []) as any[]),
-  ...(((skillsData as any).soft ?? []) as string[]).map((s) => ({ name: s })),
-  ...(((skillsData as any).methodologies ?? []) as string[]).map((s) => ({ name: s })),
-];
-
-function experenceFlatten(d: any): any[] {
-  if (Array.isArray(d)) return d;
-  return Object.values(d ?? {}).flat() as any[];
-}
-
-const Section = ({ items, keyField = "title" }: { items: any[]; keyField?: string }) => (
-  <div className="grid gap-3">
-    {items.map((it, i) => (
-      <div key={i} className="p-4 rounded-lg border border-border bg-card/50">
-        <p className="font-medium">{it[keyField] ?? it.name ?? JSON.stringify(it).slice(0, 60)}</p>
-        {it.description && <p className="text-sm text-muted-foreground mt-1">{it.description}</p>}
-      </div>
-    ))}
-  </div>
-);
+import ResourceManager from "@/components/admin/ResourceManager";
+import { RESOURCES } from "@/components/admin/resourceConfigs";
 
 const AdminContent = () => {
   const { user, signOut } = useAuth();
@@ -62,24 +29,21 @@ const AdminContent = () => {
           </div>
         </div>
 
-        <Tabs defaultValue="projects">
+        <Tabs defaultValue={RESOURCES[0].table}>
           <TabsList className="flex-wrap h-auto">
-            <TabsTrigger value="projects">Projetos</TabsTrigger>
-            <TabsTrigger value="education">Formação</TabsTrigger>
-            <TabsTrigger value="certificates">Certificados</TabsTrigger>
-            <TabsTrigger value="experience">Experiência</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
+            {RESOURCES.map((r) => (
+              <TabsTrigger key={r.table} value={r.table}>
+                {r.label}
+              </TabsTrigger>
+            ))}
           </TabsList>
 
           <div className="mt-6">
-            <p className="text-sm text-muted-foreground mb-4">
-              Visualização somente-leitura. Edição via interface em breve — por ora, edite os arquivos JSON em <code>src/data/</code>.
-            </p>
-            <TabsContent value="projects"><Section items={projects} /></TabsContent>
-            <TabsContent value="education"><Section items={education} /></TabsContent>
-            <TabsContent value="certificates"><Section items={certificates} /></TabsContent>
-            <TabsContent value="experience"><Section items={experience} /></TabsContent>
-            <TabsContent value="skills"><Section items={skills} keyField="name" /></TabsContent>
+            {RESOURCES.map((r) => (
+              <TabsContent key={r.table} value={r.table}>
+                <ResourceManager config={r} />
+              </TabsContent>
+            ))}
           </div>
         </Tabs>
       </div>

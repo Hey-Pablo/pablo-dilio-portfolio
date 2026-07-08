@@ -73,7 +73,11 @@
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase"],
     "status": "Concluído",
-    "images": []
+    "images": [
+      "/__l5e/assets-v1/4bcd517c-ff9a-46a5-a0bd-be451642feb7/biblioteca-mymanhwa-1.png",
+      "/__l5e/assets-v1/ec284e3f-3c48-4700-aa8c-a9903a7827af/biblioteca-mymanhwa-2.png",
+      "/__l5e/assets-v1/ccfed441-49f8-4f64-b892-e99db44c9680/biblioteca-mymanhwa-3.png"
+    ]
   },
   {
     "id": 7,

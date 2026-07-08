@@ -45,12 +45,12 @@ const EducationSection = () => {
                 }`}>
                   <div className="tech-card animate-fade-in">
                     {/* Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
+                    <div className="flex items-start justify-between mb-4 gap-4">
+                      <div className="flex-1 min-w-0">
                         <h3 className="text-lg font-semibold mb-1">{item.course}</h3>
                         <p className="text-tech-blue font-medium text-sm">{item.institution}</p>
                       </div>
-                      <div className="text-right">
+                      <div className="text-right flex-shrink-0">
                         <Badge variant={item.status === "Concluído" ? "default" : "secondary"}>
                           {item.status}
                         </Badge>

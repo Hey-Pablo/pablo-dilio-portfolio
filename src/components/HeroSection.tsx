@@ -1,38 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download, ArrowRight, Rocket } from "lucide-react";
-import jsPDF from "jspdf";
-
+import curriculoAsset from "@/assets/curriculo-pablo-dilio.pdf.asset.json";
 
 const HeroSection = () => {
   const handleDownloadCV = () => {
-    const doc = new jsPDF();
-    doc.setFontSize(20);
-    doc.text("Pablo Adriano Maciel Dilio", 20, 30);
-    doc.setFontSize(14);
-    doc.text("Desenvolvedor Full Stack", 20, 40);
-    doc.setFontSize(12);
-    doc.text("Email: dilio.pablo@gmail.com", 20, 55);
-    doc.text("Telefone: (19) 99269-8202", 20, 65);
-    doc.text("Localização: Piracicaba, SP", 20, 75);
-    doc.text("LinkedIn: https://www.linkedin.com/in/pablo-dilio-4063991b2", 20, 85);
-    doc.text("GitHub: https://github.com/Hey-Pablo", 20, 95);
-
-    doc.setFontSize(14);
-    doc.text("FORMAÇÃO ACADÊMICA", 20, 115);
-    doc.setFontSize(10);
-    doc.text("Análise e Desenvolvimento de Sistemas", 20, 125);
-    doc.text("Centro Universitário União das Américas Descomplica", 20, 133);
-    doc.text("4º semestre (01/2023 - Cursando)", 20, 141);
-    doc.text("Ensino Médio Completo - Colégio Mello Ayres (2017 - 2019)", 20, 155);
-
-    doc.setFontSize(14);
-    doc.text("EXPERIÊNCIA PROFISSIONAL", 20, 175);
-    doc.setFontSize(10);
-    doc.text("TID Software - Auxiliar de Informática Jr. (07/2024 - Atualmente)", 20, 185);
-    doc.text("Caterpillar Brasil - Aprendiz Administrativo (02/2023 – 06/2024)", 20, 200);
-    doc.text("Magazine Luiza - Assistente de Vendas Jr. (04/2022 - 01/2023)", 20, 215);
-
-    doc.save("CV_Pablo_Dilio.pdf");
+    const link = document.createElement("a");
+    link.href = curriculoAsset.url;
+    link.download = "Curriculo_Pablo_Dilio.pdf";
+    link.rel = "noopener";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const scrollTo = (id: string) =>

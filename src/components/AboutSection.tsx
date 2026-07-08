@@ -6,22 +6,22 @@ const AboutSection = () => {
     {
       icon: Book,
       title: "Formação Acadêmica",
-      description: "4º semestre de ADS - Centro Universitário União das Américas Descomplica"
+      description: "Formado em Análise e Desenvolvimento de Sistemas"
     },
     {
       icon: Code,
       title: "Experiência Atual",
-      description: "Auxiliar de Informática Jr. na TID Software - Suporte e desenvolvimento"
+      description: "Analista de Implantação e Suporte ERP — implantação, configuração e suporte B2B"
     },
     {
       icon: Settings,
       title: "Especialização",
-      description: "Desenvolvimento Full Stack com foco em sistemas web e análise"
+      description: "Sistemas ERP, módulos Fiscal, Financeiro, Compras, Vendas, Estoque e Transporte"
     },
     {
       icon: User,
       title: "Objetivo",
-      description: "Consolidar conhecimentos e me tornar um desenvolvedor full stack completo"
+      description: "Entregar soluções que agreguem valor aos processos dos clientes"
     }
   ];
 

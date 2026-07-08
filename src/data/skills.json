@@ -2,14 +2,14 @@
   "technical": [
     { "name": "SQL Server", "level": 90, "category": "Database" },
     { "name": "SQL", "level": 90, "category": "Database" },
-    { "name": "PostgreSQL", "level": 70, "category": "Database" },
-    { "name": "Power BI", "level": 80, "category": "Database" },
+    { "name": "PostgreSQL", "level": 35, "category": "Database" },
+    { "name": "Power BI", "level": 35, "category": "Database" },
     { "name": "ERP TID Software", "level": 95, "category": "Backend" },
-    { "name": "JavaScript", "level": 75, "category": "Frontend" },
+    { "name": "JavaScript", "level": 55, "category": "Frontend" },
     { "name": "HTML/CSS", "level": 80, "category": "Frontend" },
-    { "name": "Node.js", "level": 65, "category": "Backend" },
-    { "name": "Git/GitHub", "level": 80, "category": "Backend" },
-    { "name": "n8n", "level": 70, "category": "Backend" }
+    { "name": "Node.js", "level": 55, "category": "Backend" },
+    { "name": "Git/GitHub", "level": 65, "category": "Backend" },
+    { "name": "n8n", "level": 25, "category": "Backend" }
   ],
   "tools": [
     { "name": "SSMS / SSRS", "level": 90, "category": "Tools" },

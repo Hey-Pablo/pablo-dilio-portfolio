@@ -7,7 +7,6 @@ const certificates = certificatesData as Certificate[];
 
 const futureCertificates = [
   { id: "future-1", title: "Em Breve", placeholder: true },
-  { id: "future-2", title: "Em Breve", placeholder: true },
 ];
 
 const CertificatesSection = () => {
@@ -100,11 +99,11 @@ const CertificatesSection = () => {
         {/* Estatísticas */}
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary mb-1">6</div>
+            <div className="text-2xl font-bold text-primary mb-1">11</div>
             <div className="text-sm text-muted-foreground">Certificados</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-tech-green mb-1">5</div>
+            <div className="text-2xl font-bold text-tech-green mb-1">10</div>
             <div className="text-sm text-muted-foreground">Desenvolvimento</div>
           </div>
           <div className="text-center">

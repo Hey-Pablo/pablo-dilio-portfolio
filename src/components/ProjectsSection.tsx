@@ -223,6 +223,29 @@ const ProjectsSection = () => {
                     )}
                   </div>
                 </div>
+
+                {/* Lightbox overlay */}
+                {lightboxOpen && selectedProject.images.length > 0 && (
+                  <div
+                    className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
+                    onClick={() => setLightboxOpen(false)}
+                  >
+                    <button
+                      type="button"
+                      aria-label="Fechar visualização ampliada"
+                      className="absolute top-4 right-4 text-white/80 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                      onClick={() => setLightboxOpen(false)}
+                    >
+                      <X size={24} />
+                    </button>
+                    <img
+                      src={selectedProject.images[modalImageIndex]}
+                      alt={selectedProject.title}
+                      className="max-w-full max-h-full object-contain rounded-md shadow-2xl"
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                  </div>
+                )}
               </>
             )}
           </DialogContent>

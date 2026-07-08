@@ -14,6 +14,7 @@
   "tools": [
     { "name": "TeamViewer", "level": 95, "category": "Remote" },
     { "name": "AnyDesk", "level": 95, "category": "Remote" },
+    { "name": "Hostinger", "level": 45, "category": "Hosting" },
     { "name": "Microsoft Office / 365", "level": 90, "category": "OfficeSystems" },
     { "name": "Google Workspace", "level": 85, "category": "OfficeSystems" },
     { "name": "SAP", "level": 70, "category": "OfficeSystems" },

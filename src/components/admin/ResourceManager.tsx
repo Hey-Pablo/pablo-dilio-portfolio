@@ -106,14 +106,24 @@ const ResourceManager = ({ config }: { config: ResourceConfig }) => {
     load();
   };
 
-  const remove = async (row: any) => {
-    if (!confirm(`Excluir "${row[config.titleField]}"?`)) return;
-    const { error } = await supabase.from(config.table).delete().eq("id", row.id);
+  const move = async (row: any, direction: -1 | 1) => {
+    const idx = rows.findIndex((r) => r.id === row.id);
+    const swapIdx = idx + direction;
+    if (idx < 0 || swapIdx < 0 || swapIdx >= rows.length) return;
+    const a = rows[idx];
+    const b = rows[swapIdx];
+    const table = supabase.from(config.table) as any;
+    const { error } = await table
+      .update({ order_index: b.order_index })
+      .eq("id", a.id);
+    if (!error) {
+      await table.update({ order_index: a.order_index }).eq("id", b.id);
+    }
     if (error) {
-      toast({ title: "Erro ao excluir", description: error.message, variant: "destructive" });
+      toast({ title: "Erro ao reordenar", description: error.message, variant: "destructive" });
       return;
     }
-    toast({ title: "Excluído" });
+    toast({ title: "Ordem atualizada" });
     load();
   };
 

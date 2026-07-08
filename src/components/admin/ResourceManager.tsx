@@ -20,7 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-import { Loader2, Plus, Pencil, Trash2 } from "lucide-react";
+import { Loader2, Plus, Pencil, Trash2, ChevronUp, ChevronDown } from "lucide-react";
 import type { ResourceConfig, FieldConfig } from "./resourceConfigs";
 
 const emptyRecord = (fields: FieldConfig[]) => {
@@ -117,6 +117,29 @@ const ResourceManager = ({ config }: { config: ResourceConfig }) => {
     load();
   };
 
+  const move = async (row: any, direction: -1 | 1) => {
+    const idx = rows.findIndex((r) => r.id === row.id);
+    const swapIdx = idx + direction;
+    if (idx < 0 || swapIdx < 0 || swapIdx >= rows.length) return;
+    const a = rows[idx];
+    const b = rows[swapIdx];
+    const table = supabase.from(config.table) as any;
+    const { error: errA } = await table
+      .update({ order_index: b.order_index })
+      .eq("id", a.id);
+    if (errA) {
+      toast({ title: "Erro ao reordenar", description: errA.message, variant: "destructive" });
+      return;
+    }
+    const { error: errB } = await table.update({ order_index: a.order_index }).eq("id", b.id);
+    if (errB) {
+      toast({ title: "Erro ao reordenar", description: errB.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "Ordem atualizada" });
+    load();
+  };
+
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
@@ -134,7 +157,7 @@ const ResourceManager = ({ config }: { config: ResourceConfig }) => {
         </div>
       ) : (
         <div className="grid gap-2">
-          {rows.map((row) => (
+          {rows.map((row, index) => (
             <div
               key={row.id}
               className="p-4 rounded-lg border border-border bg-card/50 flex justify-between items-start gap-4"
@@ -155,6 +178,26 @@ const ResourceManager = ({ config }: { config: ResourceConfig }) => {
                 )}
               </div>
               <div className="flex gap-1 shrink-0">
+                <div className="flex flex-col gap-0.5">
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="h-6 w-6"
+                    disabled={index === 0}
+                    onClick={() => move(row, -1)}
+                  >
+                    <ChevronUp size={14} />
+                  </Button>
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="h-6 w-6"
+                    disabled={index === rows.length - 1}
+                    onClick={() => move(row, 1)}
+                  >
+                    <ChevronDown size={14} />
+                  </Button>
+                </div>
                 <Button size="icon" variant="ghost" onClick={() => openEdit(row)}>
                   <Pencil size={14} />
                 </Button>

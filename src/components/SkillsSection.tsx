@@ -126,18 +126,20 @@ const SkillsSection = () => {
                   <SkillChart skills={tools} />
                 </div>
               ) : (
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  <div className="tech-card animate-slide-in-left">
-                    <h3 className="text-lg font-semibold mb-4 gradient-text">Ferramentas de Atendimento Remoto</h3>
-                    {tools.filter(t => t.category === "Remote").map((tool, index) => (
-                      <SkillBar key={index} skill={tool} />
-                    ))}
-                  </div>
-                  <div className="tech-card animate-slide-in-right">
-                    <h3 className="text-lg font-semibold mb-4 gradient-text">Ferramentas de Hospedagem</h3>
-                    {tools.filter(t => t.category === "Hosting").map((tool, index) => (
-                      <SkillBar key={index} skill={tool} />
-                    ))}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="flex flex-col gap-8">
+                    <div className="tech-card animate-slide-in-left">
+                      <h3 className="text-lg font-semibold mb-4 gradient-text">Ferramentas de Atendimento Remoto</h3>
+                      {tools.filter(t => t.category === "Remote").map((tool, index) => (
+                        <SkillBar key={index} skill={tool} />
+                      ))}
+                    </div>
+                    <div className="tech-card animate-slide-in-right">
+                      <h3 className="text-lg font-semibold mb-4 gradient-text">Ferramentas de Hospedagem</h3>
+                      {tools.filter(t => t.category === "Hosting").map((tool, index) => (
+                        <SkillBar key={index} skill={tool} />
+                      ))}
+                    </div>
                   </div>
                   <div className="tech-card animate-slide-in-left">
                     <h3 className="text-lg font-semibold mb-4 gradient-text">Design e Sistemas</h3>

@@ -30,6 +30,18 @@ const ProjectImageCarousel = memo(
     const [index, setIndex] = useState(0);
     const [paused, setPaused] = useState(false);
 
+    const goTo = useCallback((i: number) => {
+      setIndex(i);
+    }, []);
+
+    const prev = useCallback(() => {
+      setIndex((i) => (i - 1 + list.length) % list.length);
+    }, [list.length]);
+
+    const next = useCallback(() => {
+      setIndex((i) => (i + 1) % list.length);
+    }, [list.length]);
+
     useEffect(() => {
       if (!hasImages || list.length < 2 || paused) return;
       const id = window.setInterval(() => {
@@ -41,6 +53,21 @@ const ProjectImageCarousel = memo(
     useEffect(() => {
       onIndexChange?.(index);
     }, [index, onIndexChange]);
+
+    useEffect(() => {
+      if (list.length < 2) return;
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          prev();
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          next();
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [list.length, prev, next]);
 
     if (!hasImages) {
       return (

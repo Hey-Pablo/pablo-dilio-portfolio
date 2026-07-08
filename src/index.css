@@ -87,6 +87,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    text-align: justify;
     background-color: #050105;
     background-image:
       radial-gradient(1200px 800px at 10% -10%, hsl(var(--nebula-purple) / 0.22), transparent 60%),

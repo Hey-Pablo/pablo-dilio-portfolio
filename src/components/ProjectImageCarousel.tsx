@@ -23,6 +23,7 @@ const ProjectImageCarousel = memo(
     className = "",
     alt = "",
     objectFit = "cover",
+    onIndexChange,
   }: Props) => {
     const list = images?.filter(Boolean) ?? [];
     const hasImages = list.length > 0;

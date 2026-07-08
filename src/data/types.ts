@@ -42,6 +42,7 @@ export interface Experience {
   position: string;
   period: string;
   type: "ti" | "administrativo" | "vendas" | string;
+  logo?: string;
   description: string;
   responsibilities: string[];
   technologies: string[];

@@ -60,8 +60,8 @@
   },
   {
     "id": 5,
-    "title": "Meus Projetos | Marcos e Branca",
-    "description": "Portfólio digital desenvolvido para apresentar os projetos e trajetória de Marcos e Branca de forma moderna, responsiva e interativa.",
+    "title": "Minha Agenda | Marcos e Branca",
+    "description": "Aplicativo WEB. para controle de clientes e horários disponíveis, feito especificadamente para o salão de Beleza Marcos e Branca, projeto voltado para uso interno\u00a0",
     "category": "frontend",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite"],
     "status": "Concluído",

@@ -157,7 +157,7 @@ const ResourceManager = ({ config }: { config: ResourceConfig }) => {
         </div>
       ) : (
         <div className="grid gap-2">
-          {rows.map((row) => (
+          {rows.map((row, index) => (
             <div
               key={row.id}
               className="p-4 rounded-lg border border-border bg-card/50 flex justify-between items-start gap-4"
@@ -178,6 +178,26 @@ const ResourceManager = ({ config }: { config: ResourceConfig }) => {
                 )}
               </div>
               <div className="flex gap-1 shrink-0">
+                <div className="flex flex-col gap-0.5">
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="h-6 w-6"
+                    disabled={index === 0}
+                    onClick={() => move(row, -1)}
+                  >
+                    <ChevronUp size={14} />
+                  </Button>
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="h-6 w-6"
+                    disabled={index === rows.length - 1}
+                    onClick={() => move(row, 1)}
+                  >
+                    <ChevronDown size={14} />
+                  </Button>
+                </div>
                 <Button size="icon" variant="ghost" onClick={() => openEdit(row)}>
                   <Pencil size={14} />
                 </Button>

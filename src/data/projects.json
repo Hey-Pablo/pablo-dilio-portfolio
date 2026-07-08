@@ -15,7 +15,13 @@
     "category": "fullstack",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase", "RLS"],
     "status": "Concluído",
-    "images": []
+    "images": [
+      "/__l5e/assets-v1/bf8a5965-72e2-43de-b16d-10c904bded03/acai-control-1.png",
+      "/__l5e/assets-v1/f724ecfc-8f1b-434a-ac0b-29d2e403bc33/acai-control-2.png",
+      "/__l5e/assets-v1/30e0885a-34bd-454a-ba50-d289d960980b/acai-control-3.png",
+      "/__l5e/assets-v1/376a98c9-aab4-4c7c-b479-5de1852c5580/acai-control-4.png",
+      "/__l5e/assets-v1/eafa418a-0fbf-4572-957d-56cc1e8f6c15/acai-control-5.png"
+    ]
   },
   {
     "id": 3,

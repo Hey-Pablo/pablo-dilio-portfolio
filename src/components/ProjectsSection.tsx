@@ -20,6 +20,8 @@ const gradients = [
 const ProjectsSection = () => {
   const [selectedFilter, setSelectedFilter] = useState("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [modalImageIndex, setModalImageIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const categories = [
     { id: "all", label: "Todos" },

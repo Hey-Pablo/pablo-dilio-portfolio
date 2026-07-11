@@ -122,6 +122,12 @@ const ProjectsSection = () => {
               </article>
             );
           })}
+
+          {/* Espaço para Futuros Projetos */}
+          <ComingSoonCard
+            title="Em Breve"
+            subtitle="Novo projeto será adicionado aqui"
+          />
         </div>
 
         {/* Project Details Modal */}

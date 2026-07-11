@@ -133,7 +133,7 @@ const EducationSection = () => {
             {/* Espaço para Futuros Cursos */}
             <ComingSoonCard
               title="Em Breve"
-              subtitle="Novo curso técnico será adicionado aqui"
+              subtitle="Novo curso será adicionado aqui"
             />
           </div>
         </div>

@@ -115,8 +115,6 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    background-size: 200% 200%;
-    animation: gradient-shift 120s ease infinite;
   }
 
   /* Glassmorphism card */
@@ -195,10 +193,6 @@
 }
 .animate-on-scroll { opacity: 0; animation: fadeInUp .6s ease-out forwards; }
 
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
 
 @keyframes float-slow {
   0%, 100% { transform: translateY(0) rotate(0deg); }

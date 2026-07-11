@@ -5,6 +5,7 @@ import { ExternalLink, Calendar, Code2, X } from "lucide-react";
 import projectsData from "@/data/projects.json";
 import type { Project } from "@/data/types";
 import ProjectImageCarousel from "@/components/ProjectImageCarousel";
+import ComingSoonCard from "@/components/ComingSoonCard";
 
 const projects = projectsData as Project[];
 
@@ -121,6 +122,12 @@ const ProjectsSection = () => {
               </article>
             );
           })}
+
+          {/* Espaço para Futuros Projetos */}
+          <ComingSoonCard
+            title="Em Breve"
+            subtitle="Novo projeto será adicionado aqui"
+          />
         </div>
 
         {/* Project Details Modal */}

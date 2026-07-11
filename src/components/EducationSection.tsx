@@ -2,6 +2,7 @@ import { Book, Calendar, GraduationCap, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import educationData from "@/data/education.json";
 import type { EducationItem, TechnicalCourse } from "@/data/types";
+import ComingSoonCard from "@/components/ComingSoonCard";
 
 const education = educationData.academic as EducationItem[];
 const technicalCourses = educationData.technicalCourses as TechnicalCourse[];

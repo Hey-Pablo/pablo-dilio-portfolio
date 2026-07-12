@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -10,7 +10,20 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Pablo Dilio — Full Stack Developer & Criador Digital" />
     <meta property="og:description" content="Sistemas web modernos, interfaces funcionais e experiências digitais que unem tecnologia, design e performance." />
+    <meta property="og:image" content="/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og-image.png" />
+    <script>
+      // Anti-flicker: aplica o tema antes do React carregar
+      (function() {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

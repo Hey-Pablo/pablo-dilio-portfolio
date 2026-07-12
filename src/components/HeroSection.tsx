@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download, ArrowRight, Rocket } from "lucide-react";
-import curriculoAsset from "@/assets/curriculo-pablo-dilio.pdf.asset.json";
 
 const HeroSection = () => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = curriculoAsset.url;
+    link.href = "/Curriculo_Pablo_Dilio.pdf";
     link.download = "Curriculo_Pablo_Dilio.pdf";
     link.rel = "noopener";
     document.body.appendChild(link);

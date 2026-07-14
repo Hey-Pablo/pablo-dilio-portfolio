@@ -2,6 +2,8 @@
 
 Portfólio pessoal de Pablo Dilio — Analista de Implantação e Suporte ERP.
 
+🔗 **Live:** [https://hey-pablo.github.io/pablo-dilio-portfolio/](https://hey-pablo.github.io/pablo-dilio-portfolio/)
+
 ## 🛠️ Tecnologias
 
 - **Vite** + **React** + **TypeScript**

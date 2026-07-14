@@ -111,7 +111,7 @@ const ProjectsSection = () => {
                   </div>
 
                   <div className="pt-3 mt-auto flex items-center justify-between">
-                    <span className="text-xs font-mono text-white/40">
+                    <span className="text-sm font-bold font-mono text-white/70">
                       #{String(project.id).padStart(2, "0")}
                     </span>
                     <span className="text-xs font-medium text-[hsl(var(--nebula-blue))] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
@@ -146,6 +146,9 @@ const ProjectsSection = () => {
               <>
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold gradient-text">
+                    <span className="text-sm font-mono text-white/40 font-normal mr-2">
+                      #{String(selectedProject.id).padStart(2, "0")}
+                    </span>
                     {selectedProject.title}
                   </DialogTitle>
                   <DialogDescription className="flex items-center gap-2 mt-2">

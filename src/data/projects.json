@@ -145,6 +145,16 @@
       "/__l5e/assets-v1/296357b3-7d0e-4f0d-8fe7-3212779c0e76/bela-agenda-70.png",
       "/__l5e/assets-v1/e6ac87f2-d1de-4d9c-9d68-ca395349b97b/bela-agenda-71.png"
     ]
+  },
+  {
+    "id": 11,
+    "title": "Candidaturas Kanban",
+    "description": "Sistema de gerenciamento de candidaturas a vagas de emprego em estilo Kanban. Com autenticação de usuários, arrastar e soltar entre colunas, controle de validade com movimentação automática para encerradas e paginação. Desenvolvido com React, TypeScript, Supabase e shadcn/ui.",
+    "category": "fullstack",
+    "technologies": ["React 18", "TypeScript", "Tailwind CSS", "Supabase", "shadcn/ui", "@hello-pangea/dnd"],
+    "status": "Concluído",
+    "link": "https://hey-pablo.github.io/candidaturas-kanban/",
+    "images": []
   }
 ]
 

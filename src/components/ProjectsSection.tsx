@@ -87,6 +87,25 @@ const ProjectsSection = () => {
                   <Badge className="absolute top-3 right-3 glass-strong border-white/20 text-white text-xs z-10">
                     {project.status}
                   </Badge>
+                  <Badge
+                    className={`absolute top-3 left-3 z-10 text-xs font-medium border ${
+                      project.category === "front-end"
+                        ? "bg-sky-500/20 text-sky-300 border-sky-500/30"
+                        : project.category === "back-end-fullstack"
+                        ? "bg-purple-500/20 text-purple-300 border-purple-500/30"
+                        : project.category === "ia"
+                        ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
+                        : "bg-white/10 text-white/70 border-white/20"
+                    }`}
+                  >
+                    {project.category === "front-end"
+                      ? "🎨 Front-End"
+                      : project.category === "back-end-fullstack"
+                      ? "⚙️ Back-end / Full Stack"
+                      : project.category === "ia"
+                      ? "🤖 IA"
+                      : project.category}
+                  </Badge>
                 </div>
 
                 <div className="space-y-3 flex-1 flex flex-col">

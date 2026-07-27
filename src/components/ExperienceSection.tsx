@@ -27,16 +27,22 @@ const ExperienceSection = () => {
   };
 
   const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr);
+    const [month, year] = dateStr.split("/");
+    const date = new Date(Number(year), Number(month) - 1);
     return date.toLocaleDateString("pt-BR", {
       month: "long",
       year: "numeric",
     });
   };
 
-  const calculateDuration = (start: string, end?: string) => {
-    const startDate = new Date(start);
-    const endDate = end ? new Date(end) : new Date();
+  const calculateDuration = (period: string) => {
+    const [startStr, endStr] = period.split(" – ");
+    const parseDate = (s: string) => {
+      const [m, y] = s.split("/");
+      return new Date(Number(y), Number(m) - 1);
+    };
+    const startDate = parseDate(startStr);
+    const endDate = endStr ? parseDate(endStr) : new Date();
     const diffMonths =
       (endDate.getFullYear() - startDate.getFullYear()) * 12 +
       endDate.getMonth() -
@@ -48,6 +54,9 @@ const ExperienceSection = () => {
     if (months > 0) parts.push(`${months} ${months === 1 ? "mês" : "meses"}`);
     return parts.join(" e ") || "Menos de 1 mês";
   };
+
+  const getPeriodStart = (period: string) => period.split(" – ")[0];
+  const getPeriodEnd = (period: string) => period.split(" – ")[1];
 
   const experiencesByType = {
     ti: experiences.filter((exp) => exp.type === "ti"),
@@ -155,10 +164,10 @@ const ExperienceSection = () => {
 
                               <div>
                                 <h4 className="text-lg font-bold text-white group-hover:text-tech-blue transition-colors">
-                                  {exp.role}
+                                  {exp.position}
                                 </h4>
                                 <p className="text-sm text-white/60">
-                                  {exp.company} • {exp.location}
+                                  {exp.company}
                                 </p>
                               </div>
                             </div>
@@ -166,13 +175,13 @@ const ExperienceSection = () => {
                             <div className="flex items-center gap-2 text-xs text-white/40">
                               <Calendar size={14} />
                               <span>
-                                {formatDate(exp.startDate)} —{" "}
-                                {exp.endDate
-                                  ? formatDate(exp.endDate)
+                                {formatDate(getPeriodStart(exp.period))} —{" "}
+                                {exp.period.includes("–")
+                                  ? formatDate(getPeriodEnd(exp.period))
                                   : "Presente"}
                               </span>
                               <span className="text-tech-blue/60 font-medium">
-                                · {calculateDuration(exp.startDate, exp.endDate)}
+                                · {calculateDuration(exp.period)}
                               </span>
                             </div>
                           </div>

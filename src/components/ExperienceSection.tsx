@@ -6,9 +6,9 @@ import type { Experience } from "@/data/types";
 const experiences = experienceData as Experience[];
 
 const companyLogos: Record<string, string> = {
-  "Magazine Luiza": "/assets/logos/magalu.png",
-  "Caterpillar Brasil LTDA": "/assets/logos/caterpillar.png",
-  "TID Software": "/assets/logos/tid.png",
+  "Magazine Luiza": "./assets/logos/magalu.png",
+  "Caterpillar Brasil LTDA": "./assets/logos/caterpillar.png",
+  "TID Software": "./assets/logos/tid.png",
 };
 
 const ExperienceSection = () => {

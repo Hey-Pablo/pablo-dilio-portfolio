@@ -26,8 +26,9 @@ const ProjectsSection = () => {
 
   const categories = [
     { id: "all", label: "Todos" },
-    { id: "fullstack", label: "Full Stack" },
-    { id: "frontend", label: "Frontend" },
+    { id: "front-end", label: "Front-End" },
+    { id: "back-end-fullstack", label: "Back-end - Full Stack" },
+    { id: "ia", label: "Conjunto com IA" },
   ];
 
   const filteredProjects =
@@ -156,7 +157,13 @@ const ProjectsSection = () => {
                       {selectedProject.status}
                     </Badge>
                     <Badge variant="outline" className="text-sm">
-                      {selectedProject.category === "fullstack" ? "Full Stack" : "Frontend"}
+                      {selectedProject.category === "front-end"
+                        ? "Front-End"
+                        : selectedProject.category === "back-end-fullstack"
+                        ? "Back-end - Full Stack"
+                        : selectedProject.category === "ia"
+                        ? "Conjunto com IA"
+                        : selectedProject.category}
                     </Badge>
                   </DialogDescription>
                 </DialogHeader>

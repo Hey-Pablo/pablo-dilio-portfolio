@@ -58,8 +58,8 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                     className="p-2 bg-muted rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                     aria-label={social.label}
                   >

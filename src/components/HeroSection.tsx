@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, Download, ArrowRight, Rocket } from "lucide-rea
 const HeroSection = () => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/Curriculo_Pablo_Dilio.pdf";
+    link.href = "./Curriculo_Pablo_Dilio.pdf";
     link.download = "Curriculo_Pablo_Dilio.pdf";
     link.rel = "noopener";
     document.body.appendChild(link);
@@ -96,8 +96,8 @@ const HeroSection = () => {
               <a
                 key={label}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 aria-label={label}
                 className="group relative flex h-12 w-12 items-center justify-center rounded-xl glass hover-lift"
               >

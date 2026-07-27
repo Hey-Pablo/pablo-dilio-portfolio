@@ -146,7 +146,7 @@ const ExperienceSection = () => {
                             <div className="flex items-center gap-3">
                               {/* Company Logo */}
                               {companyLogos[exp.company] ? (
-                                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center p-2 overflow-hidden flex-shrink-0">
+                                <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
                                   <img
                                     src={companyLogos[exp.company]}
                                     alt={exp.company}

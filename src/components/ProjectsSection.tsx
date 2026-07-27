@@ -38,9 +38,6 @@ const ProjectsSection = () => {
     <section id="projects" className="section-padding relative overflow-hidden">
       <div className="container-custom relative z-10">
         <div className="text-center mb-14">
-          <p className="text-sm font-mono text-[hsl(var(--nebula-blue))] mb-3 tracking-widest">
-            &lt;projects_galaxy/&gt;
-          </p>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Meus <span className="gradient-text">Projetos</span>
           </h2>

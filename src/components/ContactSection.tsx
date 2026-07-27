@@ -1,7 +1,10 @@
 
-import { Mail, User, Github, Linkedin, Calendar } from "lucide-react";
+import { useState } from "react";
+import { Mail, User, Github, Linkedin, Calendar, Check } from "lucide-react";
 
 const ContactSection = () => {
+  const [copied, setCopied] = useState(false);
+
   const contactInfo = [
     {
       icon: Mail,
@@ -13,7 +16,7 @@ const ContactSection = () => {
       icon: User,
       label: "Telefone",
       value: "19 99269-8202",
-      href: "tel:+5519992698202"
+      href: "tel:+551****8202"
     },
     {
       icon: User,
@@ -39,10 +42,31 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:dilio.pablo@gmail.com",
+      action: "copy",
+      email: "dilio.pablo@gmail.com",
       color: "hover:text-tech-green"
     }
   ];
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("dilio.pablo@gmail.com");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // fallback: select text method
+      const textarea = document.createElement("textarea");
+      textarea.value = "dilio.pablo@gmail.com";
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <section id="contact" className="section-padding bg-muted/30">
@@ -88,18 +112,36 @@ const ContactSection = () => {
             <div className="tech-card mb-6">
               <h3 className="text-lg font-semibold mb-4">Redes Sociais</h3>
               
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target={social.href.startsWith("mailto") ? undefined : "_blank"}
-                    rel={social.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                    className={`p-3 bg-muted rounded-lg transition-all duration-300 hover:scale-110 ${social.color}`}
-                  >
-                    <social.icon size={20} />
-                  </a>
-                ))}
+              <div className="flex space-x-4 items-center">
+                {socialLinks.map((social, index) =>
+                  social.action === "copy" ? (
+                    <button
+                      key={index}
+                      onClick={handleCopyEmail}
+                      title={copied ? "Email copiado!" : "Copiar email"}
+                      className={`p-3 bg-muted rounded-lg transition-all duration-300 hover:scale-110 relative ${social.color}`}
+                    >
+                      {copied ? <Check size={20} className="text-tech-green" /> : <social.icon size={20} />}
+                    </button>
+                  ) : (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-3 bg-muted rounded-lg transition-all duration-300 hover:scale-110 ${social.color}`}
+                    >
+                      <social.icon size={20} />
+                    </a>
+                  )
+                )}
+
+                {/* Toast */}
+                {copied && (
+                  <div className="text-xs text-tech-green font-medium animate-pulse">
+                    Copiado!
+                  </div>
+                )}
               </div>
             </div>
 

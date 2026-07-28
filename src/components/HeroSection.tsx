@@ -30,7 +30,7 @@ const HeroSection = () => {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[hsl(var(--nebula-magenta))] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[hsl(var(--nebula-magenta))]" />
             </span>
-            <span className="text-xs font-mono text-white/80 tracking-wider">
+            <span className="text-xs font-mono text-foreground/80 dark:text-white/80 tracking-wider">
               disponível para novas oportunidades em ERP
             </span>
           </div>
@@ -45,7 +45,7 @@ const HeroSection = () => {
             <span className="gradient-text">Maciel Dilio</span>
           </h1>
 
-          <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-4 animate-on-scroll stagger-3">
+          <h2 className="text-xl md:text-2xl font-semibold text-foreground/90 dark:text-white/90 mb-4 animate-on-scroll stagger-3">
             Analista de Implantação e Suporte ERP
           </h2>
 
@@ -70,7 +70,7 @@ const HeroSection = () => {
               size="lg"
               variant="outline"
               onClick={handleDownloadCV}
-              className="rounded-full px-7 h-12 text-base glass border-white/20 text-white hover:text-white hover:bg-white/10"
+              className="rounded-full px-7 h-12 text-base glass border-border/30 text-foreground dark:text-white hover:text-foreground dark:hover:text-white hover:bg-foreground/10 dark:hover:bg-white/10"
             >
               <Download className="mr-2 h-4 w-4" />
               Baixar CV
@@ -79,7 +79,7 @@ const HeroSection = () => {
               size="lg"
               variant="ghost"
               onClick={() => scrollTo("#contact")}
-              className="rounded-full px-7 h-12 text-base text-white/90 hover:bg-white/5 hover:text-white"
+              className="rounded-full px-7 h-12 text-base text-foreground/90 dark:text-white/90 hover:bg-foreground/5 dark:hover:bg-white/5 hover:text-foreground dark:hover:text-white"
             >
               <Mail className="mr-2 h-4 w-4" />
               Entrar em Contato
@@ -101,7 +101,7 @@ const HeroSection = () => {
                 aria-label={label}
                 className="group relative flex h-12 w-12 items-center justify-center rounded-xl glass hover-lift"
               >
-                <Icon size={20} className="text-white/80 group-hover:text-white transition-colors" />
+                <Icon size={20} className="text-foreground/80 dark:text-white/80 group-hover:text-foreground dark:group-hover:text-white transition-colors" />
                 <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity neon-glow pointer-events-none" />
               </a>
             ))}

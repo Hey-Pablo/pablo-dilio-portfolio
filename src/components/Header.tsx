@@ -54,7 +54,7 @@ const Header = () => {
             >
               Pablo Dilio
             </a>
-            <span className="ml-2 text-sm text-white/50 font-mono hidden sm:inline">
+            <span className="ml-2 text-sm text-foreground/50 dark:text-white/50 font-mono hidden sm:inline">
               &lt;dev/&gt;
             </span>
           </div>
@@ -68,7 +68,7 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-sm font-medium text-white/80 hover:text-white px-3 py-1.5 rounded-full hover:bg-white/10 transition-all duration-200"
+                className="text-sm font-medium text-foreground/80 dark:text-white/80 hover:text-foreground dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-foreground/10 dark:hover:bg-white/10 transition-all duration-200"
               >
                 {item.label}
               </a>
@@ -81,7 +81,7 @@ const Header = () => {
               size="sm"
               onClick={toggleTheme}
               aria-label="Alternar tema"
-              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-full"
+              className="p-2 text-foreground/80 dark:text-white/80 hover:text-foreground dark:hover:text-white hover:bg-foreground/10 dark:hover:bg-white/10 rounded-full"
             >
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </Button>
@@ -89,7 +89,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden text-white hover:bg-white/10 rounded-full"
+              className="md:hidden text-foreground/80 dark:text-white/80 hover:bg-foreground/10 dark:hover:bg-white/10 rounded-full"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Menu"
             >
@@ -109,7 +109,7 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="block px-4 py-3 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
+                  className="block px-4 py-3 text-sm font-medium text-foreground/90 dark:text-white/90 hover:text-foreground dark:hover:text-white hover:bg-foreground/10 dark:hover:bg-white/10 rounded-xl transition-colors"
                 >
                   {item.label}
                 </a>

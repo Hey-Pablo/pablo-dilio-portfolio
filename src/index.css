@@ -103,7 +103,7 @@
     text-align: justify;
   }
 
-  .dark body, body.dark-mode {
+  .dark body {
     background-color: #050105;
     background-image:
       radial-gradient(1200px 800px at 10% -10%, hsl(var(--nebula-purple) / 0.22), transparent 60%),
@@ -112,11 +112,20 @@
     background-attachment: fixed;
   }
 
-  :root:not(.dark) body {
+  body {
     background-color: #f5f0ff;
     background-image:
       radial-gradient(1200px 800px at 10% -10%, hsl(var(--nebula-purple) / 0.06), transparent 60%),
       radial-gradient(1000px 700px at 110% 10%, hsl(var(--nebula-magenta) / 0.04), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  :root.dark body {
+    background-color: #050105;
+    background-image:
+      radial-gradient(1200px 800px at 10% -10%, hsl(var(--nebula-purple) / 0.22), transparent 60%),
+      radial-gradient(1000px 700px at 110% 10%, hsl(var(--nebula-magenta) / 0.18), transparent 60%),
+      radial-gradient(900px 700px at 50% 110%, hsl(var(--nebula-blue) / 0.15), transparent 60%);
     background-attachment: fixed;
   }
 
@@ -155,14 +164,7 @@
     border: 1px solid rgba(255, 255, 255, 0.14);
   }
 
-  :root:not(.dark) .glass {
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(124, 58, 237, 0.15);
-  }
-  :root:not(.dark) .glass-strong {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(124, 58, 237, 0.15);
-  }
+  .hover-lift { @apply transition-all duration-300 hover:-translate-y-2; }
 
   .tech-card {
     @apply relative rounded-2xl p-6 transition-all duration-500;
@@ -295,4 +297,48 @@
   animation: shimmer 1.5s ease-in-out infinite;
   background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
   background-size: 1000px 100%;
+}
+
+/* Hide starfield in light mode */
+:root:not(.dark) .stars,
+:root:not(.dark) .stars-2,
+:root:not(.dark) .stars-3 {
+  opacity: 0;
+}
+
+/* ============ Light mode overrides ============ */
+/* Convert hardcoded white text to foreground color when in light mode
+   so text is readable on light backgrounds. Opacity-variant classes like
+   text-white/80 also become fully opaque to keep things simple. */
+:root:not(.dark) [class*="text-white"] {
+  color: hsl(var(--foreground));
+}
+
+/* Cards & tech-card fallback backgrounds in light mode */
+:root:not(.dark) .glass-strong {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-color: hsl(var(--border) / 0.3);
+}
+
+:root:not(.dark) .glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  border-color: hsl(var(--border) / 0.2);
+}
+
+:root:not(.dark) .tech-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: hsl(var(--border) / 0.2);
+}
+
+/* Dialog content in light mode */
+:root:not(.dark) .dialog-content {
+  background: hsl(0 0% 100%);
+  border-color: hsl(var(--border) / 0.3);
+}
+
+/* Project badges in light mode */
+:root:not(.dark) .badge {
+  border-color: hsl(var(--border) / 0.3);
 }

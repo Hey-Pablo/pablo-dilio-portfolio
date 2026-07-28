@@ -4,76 +4,89 @@
 
 /* ============================================================
    Cosmic Design System — dark-first, space/cyber aesthetic
-   All tokens defined here. Do not hardcode colors in components.
+   :root = LIGHT mode, .dark = DARK mode (space theme)
    ============================================================ */
 
 @layer base {
   :root {
-    /* Base — deep space */
-    --background: 265 90% 3%;            /* #090014-ish */
-    --foreground: 0 0% 100%;
+    /* Light mode — clean & bright */
+    --background: 0 0% 100%;
+    --foreground: 265 60% 6%;
 
-    --card: 265 60% 6%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 97%;
+    --card-foreground: 265 60% 6%;
 
-    --popover: 265 70% 5%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 265 60% 6%;
 
-    /* Purple primary */
-    --primary: 262 83% 58%;              /* #7C3AED */
+    --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 265 40% 12%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 265 30% 92%;
+    --secondary-foreground: 265 60% 6%;
 
-    --muted: 265 30% 10%;
-    --muted-foreground: 240 5% 75%;      /* #A1A1AA */
+    --muted: 265 20% 94%;
+    --muted-foreground: 265 15% 40%;
 
-    /* Magenta accent */
-    --accent: 292 84% 61%;               /* #D946EF */
+    --accent: 262 83% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 100%;                 /* alpha applied via bg-white/12 */
-    --input: 265 40% 15%;
+    --border: 265 30% 80%;
+    --input: 265 20% 88%;
     --ring: 262 83% 58%;
 
-    /* Cosmic palette */
-    --nebula-purple: 262 83% 58%;        /* #7C3AED */
-    --nebula-magenta: 292 84% 61%;       /* #D946EF */
-    --nebula-blue: 199 89% 60%;          /* #38BDF8 */
-    --nebula-pink: 330 81% 60%;          /* #EC4899 */
+    /* Cosmic palette (light) */
+    --nebula-purple: 262 83% 58%;
+    --nebula-magenta: 292 84% 61%;
+    --nebula-blue: 199 89% 50%;
+    --nebula-pink: 330 81% 55%;
 
-    /* Legacy tech tokens (mapped to cosmic palette so old refs still glow) */
-    --tech-blue: 199 89% 60%;
-    --tech-green: 292 84% 61%;
-    --tech-gray: 240 5% 75%;
+    /* Legacy tech tokens */
+    --tech-blue: 199 89% 50%;
+    --tech-green: 142 70% 45%;
+    --tech-gray: 265 15% 40%;
 
     --radius: 1rem;
   }
 
   .dark {
+    /* Dark mode — deep space */
     --background: 265 90% 3%;
     --foreground: 0 0% 100%;
+
     --card: 265 60% 6%;
     --card-foreground: 0 0% 100%;
+
     --popover: 265 70% 5%;
     --popover-foreground: 0 0% 100%;
+
     --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
+
     --secondary: 265 40% 12%;
     --secondary-foreground: 0 0% 100%;
+
     --muted: 265 30% 10%;
     --muted-foreground: 240 5% 75%;
+
     --accent: 292 84% 61%;
     --accent-foreground: 0 0% 100%;
+
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
+
     --border: 0 0% 100%;
     --input: 265 40% 15%;
     --ring: 262 83% 58%;
+
+    --nebula-purple: 262 83% 58%;
+    --nebula-magenta: 292 84% 61%;
+    --nebula-blue: 199 89% 60%;
+    --nebula-pink: 330 81% 60%;
+
     --tech-blue: 199 89% 60%;
     --tech-green: 292 84% 61%;
     --tech-gray: 240 5% 75%;
@@ -88,11 +101,22 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     text-align: justify;
+  }
+
+  .dark body, body.dark-mode {
     background-color: #050105;
     background-image:
       radial-gradient(1200px 800px at 10% -10%, hsl(var(--nebula-purple) / 0.22), transparent 60%),
       radial-gradient(1000px 700px at 110% 10%, hsl(var(--nebula-magenta) / 0.18), transparent 60%),
       radial-gradient(900px 700px at 50% 110%, hsl(var(--nebula-blue) / 0.15), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  :root:not(.dark) body {
+    background-color: #f5f0ff;
+    background-image:
+      radial-gradient(1200px 800px at 10% -10%, hsl(var(--nebula-purple) / 0.06), transparent 60%),
+      radial-gradient(1000px 700px at 110% 10%, hsl(var(--nebula-magenta) / 0.04), transparent 60%);
     background-attachment: fixed;
   }
 
@@ -131,6 +155,15 @@
     border: 1px solid rgba(255, 255, 255, 0.14);
   }
 
+  :root:not(.dark) .glass {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(124, 58, 237, 0.15);
+  }
+  :root:not(.dark) .glass-strong {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(124, 58, 237, 0.15);
+  }
+
   .tech-card {
     @apply relative rounded-2xl p-6 transition-all duration-500;
     background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
@@ -152,7 +185,13 @@
   .tech-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px -20px rgba(124,58,237,0.45); }
   .tech-card:hover::before { opacity: 1; }
 
-  .skill-bar { @apply h-2 rounded-full overflow-hidden; background: rgba(255,255,255,0.08); }
+  :root:not(.dark) .tech-card {
+    background: linear-gradient(160deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5));
+    border: 1px solid rgba(124, 58, 237, 0.12);
+  }
+
+  .skill-bar { @apply h-2 rounded-full overflow-hidden; background: rgba(0,0,0,0.08); }
+  :root:not(.dark) .skill-bar { background: rgba(0,0,0,0.06); }
   .skill-progress {
     @apply h-full rounded-full transition-all duration-1000 ease-out;
     background: linear-gradient(90deg, #38BDF8, #7C3AED, #EC4899);

@@ -12,5 +12,17 @@
       "https://raw.githubusercontent.com/Hey-Pablo/HeyPablo-Refri/main/img/Print-Abacate.png",
       "https://raw.githubusercontent.com/Hey-Pablo/HeyPablo-Refri/main/img/Print-Laranja.png"
     ]
+  },
+  {
+    "id": 2,
+    "title": "Spotify Front",
+    "description": "Recriação da interface do Spotify, desenvolvida com HTML, CSS e JavaScript durante os estudos de Front-end. Aplica conceitos de design responsivo, manipulação do DOM e organização de código.",
+    "category": "front-end",
+    "technologies": ["HTML5", "CSS3", "JavaScript"],
+    "status": "Concluído",
+    "link": "https://hey-pablo.github.io/spotify-Front/",
+    "images": [
+      "https://raw.githubusercontent.com/Hey-Pablo/spotify-Front/main/img/preview.png"
+    ]
   }
 ]

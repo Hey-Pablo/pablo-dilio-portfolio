@@ -1,7 +1,16 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { useState } from "react";
+import { Github, Linkedin, Mail, Heart, Check } from "lucide-react";
 
 const Footer = () => {
+  const [copiedEmail, setCopiedEmail] = useState(false);
   const currentYear = new Date().getFullYear();
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("dilio.pablo@gmail.com").then(() => {
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2000);
+    });
+  };
 
   const quickLinks = [
     { label: "Sobre", href: "#about" },
@@ -54,18 +63,35 @@ const Footer = () => {
                 sempre em busca de novos desafios e aprendizado contínuo.
               </p>
               <div className="flex space-x-3">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target={social.href.startsWith("mailto:") ? undefined : "_blank"}
-                    rel={social.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                    className="p-2 bg-muted rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                    aria-label={social.label}
-                  >
-                    <social.icon size={16} />
-                  </a>
-                ))}
+                {socialLinks.map((social, index) =>
+                  social.label === "Email" ? (
+                    <button
+                      key={index}
+                      onClick={handleCopyEmail}
+                      className="p-2 bg-muted rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                      aria-label="Copiar email"
+                      title="Clique para copiar o email"
+                    >
+                      {copiedEmail ? <Check size={16} /> : <Mail size={16} />}
+                    </button>
+                  ) : (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-muted rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                      aria-label={social.label}
+                    >
+                      <social.icon size={16} />
+                    </a>
+                  )
+                )}
+                {copiedEmail && (
+                  <span className="text-xs text-tech-green self-center animate-fade-in">
+                    Copiado!
+                  </span>
+                )}
               </div>
             </div>
 

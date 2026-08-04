@@ -59,5 +59,19 @@
       "./assets/projects/notasplus/listas.png",
       "./assets/projects/notasplus/login.png"
     ]
+  },
+  {
+    "id": 5,
+    "title": "Biblioteca MyManhwa",
+    "description": "Projeto realizado para armazenar imagens e disponibilizar para o site https://my-manhwas.lovable.app/manhwas. Gerenciador de imagens com galeria organizada por categorias (Manhwa e Anime), busca por título, ordenação e geração de links diretos, Markdown e HTML.",
+    "category": "ia",
+    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "status": "Concluído",
+    "link": "https://github.com/Hey-Pablo/biblioteca-mymanhwa",
+    "images": [
+      "./assets/projects/biblioteca-mymanhwa/galeria-manhwa.png",
+      "./assets/projects/biblioteca-mymanhwa/galeria-anime.png",
+      "./assets/projects/biblioteca-mymanhwa/modal-link.png"
+    ]
   }
 ]

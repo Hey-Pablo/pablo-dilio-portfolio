@@ -67,7 +67,7 @@
     "category": "ia",
     "technologies": ["React", "TypeScript", "Tailwind CSS"],
     "status": "Concluído",
-    "link": "https://github.com/Hey-Pablo/biblioteca-mymanhwa",
+    "link": "https://biblioteca-mymanhwa.lovable.app",
     "images": [
       "./assets/projects/biblioteca-mymanhwa/galeria-manhwa.png",
       "./assets/projects/biblioteca-mymanhwa/galeria-anime.png",

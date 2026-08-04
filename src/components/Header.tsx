@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,16 +76,6 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleTheme}
-              aria-label="Alternar tema"
-              className="p-2 text-foreground/80 dark:text-white/80 hover:text-foreground dark:hover:text-white hover:bg-foreground/10 dark:hover:bg-white/10 rounded-full"
-            >
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-            </Button>
-
             <Button
               variant="ghost"
               size="sm"

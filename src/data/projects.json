@@ -124,5 +124,26 @@
       "./assets/projects/bela-agenda/caixa-historico.png",
       "./assets/projects/bela-agenda/admin.png"
     ]
+  },
+  {
+    "id": 9,
+    "title": "My Manhwas",
+    "description": "Projeto pessoal criado para ajudar meus amigos e eu a organizar nossas leituras, séries e outras coisas: saber onde paramos, organizar e lembrar onde estávamos. Plataforma completa com controle de manhwas e animes, biblioteca central, scans favoritos, lixeira e área privada.",
+    "category": "ia",
+    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "status": "Concluído",
+    "link": "https://my-manhwas.lovable.app",
+    "images": [
+      "./assets/projects/my-manhwas/landing.png",
+      "./assets/projects/my-manhwas/login.png",
+      "./assets/projects/my-manhwas/inicio.png",
+      "./assets/projects/my-manhwas/animes.png",
+      "./assets/projects/my-manhwas/biblioteca.png",
+      "./assets/projects/my-manhwas/scans.png",
+      "./assets/projects/my-manhwas/lixeira.png",
+      "./assets/projects/my-manhwas/privada-chave.png",
+      "./assets/projects/my-manhwas/privada-manhwas.png",
+      "./assets/projects/my-manhwas/privada-config.png"
+    ]
   }
 ]

@@ -50,7 +50,7 @@
     "category": "ia",
     "technologies": ["React", "TypeScript", "Tailwind CSS"],
     "status": "Concluído",
-    "link": "https://github.com/Hey-Pablo/notasplus",
+    "link": "https://notasplus.lovable.app",
     "images": [
       "./assets/projects/notasplus/notas.png",
       "./assets/projects/notasplus/categorias.png",

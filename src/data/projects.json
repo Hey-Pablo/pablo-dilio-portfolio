@@ -24,5 +24,23 @@
     "images": [
       "https://raw.githubusercontent.com/Hey-Pablo/spotify-Front/main/img/preview.png"
     ]
+  },
+  {
+    "id": 3,
+    "title": "Brasil Dev Tools",
+    "description": "Plataforma completa com ferramentas essenciais para desenvolvedores brasileiros: geradores de CPF/CNPJ/CEP, validadores, calculadoras, utilidades de texto, criptografia e ferramentas trabalhistas. Mais de 30 ferramentas gratuitas e open source, desenvolvidas com IA.",
+    "category": "ia",
+    "technologies": ["HTML5", "CSS3", "JavaScript"],
+    "status": "Concluído",
+    "link": "https://github.com/Hey-Pablo/brasil-dev-helpers-95",
+    "images": [
+      "./assets/projects/brasil-dev-tools/home.png",
+      "./assets/projects/brasil-dev-tools/validadores.webp",
+      "./assets/projects/brasil-dev-tools/calculadoras.png",
+      "./assets/projects/brasil-dev-tools/trabalhistas.webp",
+      "./assets/projects/brasil-dev-tools/gerador-cpf.webp",
+      "./assets/projects/brasil-dev-tools/validador-cpf.webp",
+      "./assets/projects/brasil-dev-tools/porcentagem.webp"
+    ]
   }
 ]

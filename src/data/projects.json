@@ -42,5 +42,22 @@
       "./assets/projects/brasil-dev-tools/validador-cpf.webp",
       "./assets/projects/brasil-dev-tools/porcentagem.webp"
     ]
+  },
+  {
+    "id": 4,
+    "title": "Notasplus",
+    "description": "Projeto realizado para ajudar a organizar compromissos, lembretes e tarefas diárias, juntamente com anotações. Aplicativo de notas completo com categorias, arquivamento, listas de tarefas e autenticação, desenvolvido com IA.",
+    "category": "ia",
+    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "status": "Concluído",
+    "link": "https://github.com/Hey-Pablo/notasplus",
+    "images": [
+      "./assets/projects/notasplus/notas.png",
+      "./assets/projects/notasplus/categorias.png",
+      "./assets/projects/notasplus/arquivadas.png",
+      "./assets/projects/notasplus/editor.png",
+      "./assets/projects/notasplus/listas.png",
+      "./assets/projects/notasplus/login.png"
+    ]
   }
 ]

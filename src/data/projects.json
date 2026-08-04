@@ -73,5 +73,20 @@
       "./assets/projects/biblioteca-mymanhwa/galeria-anime.png",
       "./assets/projects/biblioteca-mymanhwa/modal-link.png"
     ]
+  },
+  {
+    "id": 6,
+    "title": "Agenda Profissional Marcos e Branca",
+    "description": "Agenda criada para auxiliar salão de cabeleireiro e caixa de forma simples e rápida. Controle completo de agendamentos por profissional com grade horária, filtro por cores, gestão de clientes, serviços e caixa integrado com registro de vendas, formas de pagamento e histórico.",
+    "category": "ia",
+    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "status": "Concluído",
+    "link": "",
+    "images": [
+      "./assets/projects/agenda-marcos-branca/agenda.png",
+      "./assets/projects/agenda-marcos-branca/novo-agendamento.png",
+      "./assets/projects/agenda-marcos-branca/caixa-nova-venda.png",
+      "./assets/projects/agenda-marcos-branca/caixa-historico.png"
+    ]
   }
 ]

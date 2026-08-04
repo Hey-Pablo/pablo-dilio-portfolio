@@ -143,7 +143,10 @@
       "./assets/projects/my-manhwas/lixeira.png",
       "./assets/projects/my-manhwas/privada-chave.png",
       "./assets/projects/my-manhwas/privada-manhwas.png",
-      "./assets/projects/my-manhwas/privada-config.png"
+      "./assets/projects/my-manhwas/privada-config.png",
+      "./assets/projects/my-manhwas/config-perfil.png",
+      "./assets/projects/my-manhwas/config-filtros.png",
+      "./assets/projects/my-manhwas/config-conta.png"
     ]
   }
 ]

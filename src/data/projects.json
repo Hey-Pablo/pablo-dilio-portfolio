@@ -88,5 +88,21 @@
       "./assets/projects/agenda-marcos-branca/caixa-nova-venda.png",
       "./assets/projects/agenda-marcos-branca/caixa-historico.png"
     ]
+  },
+  {
+    "id": 7,
+    "title": "Base de Conhecimento",
+    "description": "Base de conhecimento para atendimentos e procedimentos padrões vivenciados por mim no dia a dia. Portal de suporte com busca, categorias organizadas, artigos por categoria e painel administrativo completo (dashboard, categorias, artigos, imagens, cadastro e configurações) com backend Supabase, PostgreSQL e RLS.",
+    "category": "ia",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+    "status": "Concluído",
+    "link": "https://base-conhecimento-pablo.lovable.app",
+    "images": [
+      "./assets/projects/base-conhecimento/portal-home.png",
+      "./assets/projects/base-conhecimento/categorias.png",
+      "./assets/projects/base-conhecimento/artigos.png",
+      "./assets/projects/base-conhecimento/dashboard.png",
+      "./assets/projects/base-conhecimento/configuracoes.png"
+    ]
   }
 ]

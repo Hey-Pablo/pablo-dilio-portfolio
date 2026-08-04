@@ -104,5 +104,15 @@
       "./assets/projects/base-conhecimento/dashboard.png",
       "./assets/projects/base-conhecimento/configuracoes.png"
     ]
+  },
+  {
+    "id": 8,
+    "title": "Bela Agenda",
+    "description": "Site para gerenciar agendamentos de clientes, horários livres dos profissionais, caixa do estabelecimento, separado por empresa. Desenvolvido com IA.",
+    "category": "ia",
+    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "status": "Em Andamento",
+    "link": "https://bela-agenda-magic.lovable.app",
+    "images": []
   }
 ]

@@ -1,50 +1,44 @@
 [
   {
     "id": 1,
-    "title": "HeyPablo Refri",
-    "description": "Landing Page interativa de uma marca de refrigerantes, desenvolvida com HTML, CSS e JavaScript durante os estudos de Front-end. Apresenta três sabores com design responsivo e visual moderno.",
-    "category": "front-end",
-    "technologies": ["HTML5", "CSS3", "JavaScript"],
+    "title": "My Manhwas",
+    "description": "Projeto pessoal criado para ajudar meus amigos e eu a organizar nossas leituras, séries e outras coisas: saber onde paramos, organizar e lembrar onde estávamos. Plataforma completa com controle de manhwas e animes, biblioteca central, scans favoritos, lixeira e área privada.",
+    "category": "ia",
+    "technologies": ["React", "TypeScript", "Tailwind CSS"],
     "status": "Concluído",
-    "link": "https://hey-pablo.github.io/HeyPablo-Refri/",
+    "link": "https://my-manhwas.lovable.app",
     "images": [
-      "https://raw.githubusercontent.com/Hey-Pablo/HeyPablo-Refri/main/img/Print-Morango.png",
-      "https://raw.githubusercontent.com/Hey-Pablo/HeyPablo-Refri/main/img/Print-Abacate.png",
-      "https://raw.githubusercontent.com/Hey-Pablo/HeyPablo-Refri/main/img/Print-Laranja.png"
+      "./assets/projects/my-manhwas/landing.png",
+      "./assets/projects/my-manhwas/login.png",
+      "./assets/projects/my-manhwas/inicio.png",
+      "./assets/projects/my-manhwas/animes.png",
+      "./assets/projects/my-manhwas/biblioteca.png",
+      "./assets/projects/my-manhwas/scans.png",
+      "./assets/projects/my-manhwas/lixeira.png",
+      "./assets/projects/my-manhwas/privada-chave.png",
+      "./assets/projects/my-manhwas/privada-manhwas.png",
+      "./assets/projects/my-manhwas/privada-config.png",
+      "./assets/projects/my-manhwas/config-perfil.png",
+      "./assets/projects/my-manhwas/config-filtros.png",
+      "./assets/projects/my-manhwas/config-conta.png"
     ]
   },
   {
     "id": 2,
-    "title": "Spotify Front",
-    "description": "Recriação da interface do Spotify, desenvolvida com HTML, CSS e JavaScript durante os estudos de Front-end. Aplica conceitos de design responsivo, manipulação do DOM e organização de código.",
-    "category": "front-end",
-    "technologies": ["HTML5", "CSS3", "JavaScript"],
+    "title": "Biblioteca MyManhwa",
+    "description": "Projeto realizado para armazenar imagens e disponibilizar para o site https://my-manhwas.lovable.app/manhwas. Gerenciador de imagens com galeria organizada por categorias (Manhwa e Anime), busca por título, ordenação e geração de links diretos, Markdown e HTML.",
+    "category": "ia",
+    "technologies": ["React", "TypeScript", "Tailwind CSS"],
     "status": "Concluído",
-    "link": "https://hey-pablo.github.io/spotify-Front/",
+    "link": "https://biblioteca-mymanhwa.lovable.app",
     "images": [
-      "https://raw.githubusercontent.com/Hey-Pablo/spotify-Front/main/img/preview.png"
+      "./assets/projects/biblioteca-mymanhwa/galeria-manhwa.png",
+      "./assets/projects/biblioteca-mymanhwa/galeria-anime.png",
+      "./assets/projects/biblioteca-mymanhwa/modal-link.png"
     ]
   },
   {
     "id": 3,
-    "title": "Brasil Dev Tools",
-    "description": "Plataforma completa com ferramentas essenciais para desenvolvedores brasileiros: geradores de CPF/CNPJ/CEP, validadores, calculadoras, utilidades de texto, criptografia e ferramentas trabalhistas. Mais de 30 ferramentas gratuitas e open source, desenvolvidas com IA.",
-    "category": "ia",
-    "technologies": ["HTML5", "CSS3", "JavaScript"],
-    "status": "Concluído",
-    "link": "https://github.com/Hey-Pablo/brasil-dev-helpers-95",
-    "images": [
-      "./assets/projects/brasil-dev-tools/home.png",
-      "./assets/projects/brasil-dev-tools/validadores.webp",
-      "./assets/projects/brasil-dev-tools/calculadoras.png",
-      "./assets/projects/brasil-dev-tools/trabalhistas.webp",
-      "./assets/projects/brasil-dev-tools/gerador-cpf.webp",
-      "./assets/projects/brasil-dev-tools/validador-cpf.webp",
-      "./assets/projects/brasil-dev-tools/porcentagem.webp"
-    ]
-  },
-  {
-    "id": 4,
     "title": "Notasplus",
     "description": "Projeto realizado para ajudar a organizar compromissos, lembretes e tarefas diárias, juntamente com anotações. Aplicativo de notas completo com categorias, arquivamento, listas de tarefas e autenticação, desenvolvido com IA.",
     "category": "ia",
@@ -61,21 +55,7 @@
     ]
   },
   {
-    "id": 5,
-    "title": "Biblioteca MyManhwa",
-    "description": "Projeto realizado para armazenar imagens e disponibilizar para o site https://my-manhwas.lovable.app/manhwas. Gerenciador de imagens com galeria organizada por categorias (Manhwa e Anime), busca por título, ordenação e geração de links diretos, Markdown e HTML.",
-    "category": "ia",
-    "technologies": ["React", "TypeScript", "Tailwind CSS"],
-    "status": "Concluído",
-    "link": "https://biblioteca-mymanhwa.lovable.app",
-    "images": [
-      "./assets/projects/biblioteca-mymanhwa/galeria-manhwa.png",
-      "./assets/projects/biblioteca-mymanhwa/galeria-anime.png",
-      "./assets/projects/biblioteca-mymanhwa/modal-link.png"
-    ]
-  },
-  {
-    "id": 6,
+    "id": 4,
     "title": "Agenda Profissional Marcos e Branca",
     "description": "Agenda criada para auxiliar salão de cabeleireiro e caixa de forma simples e rápida. Controle completo de agendamentos por profissional com grade horária, filtro por cores, gestão de clientes, serviços e caixa integrado com registro de vendas, formas de pagamento e histórico.",
     "category": "ia",
@@ -87,6 +67,32 @@
       "./assets/projects/agenda-marcos-branca/novo-agendamento.png",
       "./assets/projects/agenda-marcos-branca/caixa-nova-venda.png",
       "./assets/projects/agenda-marcos-branca/caixa-historico.png"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Spotify Front",
+    "description": "Recriação da interface do Spotify, desenvolvida com HTML, CSS e JavaScript durante os estudos de Front-end. Aplica conceitos de design responsivo, manipulação do DOM e organização de código.",
+    "category": "front-end",
+    "technologies": ["HTML5", "CSS3", "JavaScript"],
+    "status": "Concluído",
+    "link": "https://hey-pablo.github.io/spotify-Front/",
+    "images": [
+      "https://raw.githubusercontent.com/Hey-Pablo/spotify-Front/main/img/preview.png"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "HeyPablo Refri",
+    "description": "Landing Page interativa de uma marca de refrigerantes, desenvolvida com HTML, CSS e JavaScript durante os estudos de Front-end. Apresenta três sabores com design responsivo e visual moderno.",
+    "category": "front-end",
+    "technologies": ["HTML5", "CSS3", "JavaScript"],
+    "status": "Concluído",
+    "link": "https://hey-pablo.github.io/HeyPablo-Refri/",
+    "images": [
+      "https://raw.githubusercontent.com/Hey-Pablo/HeyPablo-Refri/main/img/Print-Morango.png",
+      "https://raw.githubusercontent.com/Hey-Pablo/HeyPablo-Refri/main/img/Print-Abacate.png",
+      "https://raw.githubusercontent.com/Hey-Pablo/HeyPablo-Refri/main/img/Print-Laranja.png"
     ]
   },
   {
@@ -127,26 +133,20 @@
   },
   {
     "id": 9,
-    "title": "My Manhwas",
-    "description": "Projeto pessoal criado para ajudar meus amigos e eu a organizar nossas leituras, séries e outras coisas: saber onde paramos, organizar e lembrar onde estávamos. Plataforma completa com controle de manhwas e animes, biblioteca central, scans favoritos, lixeira e área privada.",
+    "title": "Brasil Dev Tools",
+    "description": "Plataforma completa com ferramentas essenciais para desenvolvedores brasileiros: geradores de CPF/CNPJ/CEP, validadores, calculadoras, utilidades de texto, criptografia e ferramentas trabalhistas. Mais de 30 ferramentas gratuitas e open source, desenvolvidas com IA.",
     "category": "ia",
-    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "technologies": ["HTML5", "CSS3", "JavaScript"],
     "status": "Concluído",
-    "link": "https://my-manhwas.lovable.app",
+    "link": "https://github.com/Hey-Pablo/brasil-dev-helpers-95",
     "images": [
-      "./assets/projects/my-manhwas/landing.png",
-      "./assets/projects/my-manhwas/login.png",
-      "./assets/projects/my-manhwas/inicio.png",
-      "./assets/projects/my-manhwas/animes.png",
-      "./assets/projects/my-manhwas/biblioteca.png",
-      "./assets/projects/my-manhwas/scans.png",
-      "./assets/projects/my-manhwas/lixeira.png",
-      "./assets/projects/my-manhwas/privada-chave.png",
-      "./assets/projects/my-manhwas/privada-manhwas.png",
-      "./assets/projects/my-manhwas/privada-config.png",
-      "./assets/projects/my-manhwas/config-perfil.png",
-      "./assets/projects/my-manhwas/config-filtros.png",
-      "./assets/projects/my-manhwas/config-conta.png"
+      "./assets/projects/brasil-dev-tools/home.png",
+      "./assets/projects/brasil-dev-tools/validadores.webp",
+      "./assets/projects/brasil-dev-tools/calculadoras.png",
+      "./assets/projects/brasil-dev-tools/trabalhistas.webp",
+      "./assets/projects/brasil-dev-tools/gerador-cpf.webp",
+      "./assets/projects/brasil-dev-tools/validador-cpf.webp",
+      "./assets/projects/brasil-dev-tools/porcentagem.webp"
     ]
   }
 ]

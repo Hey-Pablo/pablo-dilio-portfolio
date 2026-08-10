@@ -88,7 +88,7 @@ const HeroSection = () => {
             <Button
               size="lg"
               onClick={() => scrollTo("#projects")}
-              className="h-12 rounded-full border border-amber-300/30 bg-amber-200 px-7 text-base text-black shadow-[0_10px_35px_-15px_rgba(251,191,36,0.8)] hover:bg-amber-100"
+              className="motion-button motion-button-primary h-12 rounded-full border border-amber-200/40 bg-amber-200 px-7 text-base text-black shadow-[0_10px_35px_-15px_rgba(217,145,55,0.8)] hover:bg-amber-100"
             >
               <Rocket className="mr-2 h-4 w-4" />
               Ver Projetos
@@ -98,7 +98,7 @@ const HeroSection = () => {
               size="lg"
               variant="outline"
               onClick={handleDownloadCV}
-              className="h-12 rounded-full border-white/20 bg-white/[0.04] px-7 text-base text-white backdrop-blur-sm hover:bg-white/10 hover:text-white"
+              className="motion-button liquid-glass h-12 rounded-full border-white/20 bg-white/[0.04] px-7 text-base text-white backdrop-blur-sm hover:bg-white/10 hover:text-white"
             >
               <Download className="mr-2 h-4 w-4" />
               Baixar CV
@@ -107,7 +107,7 @@ const HeroSection = () => {
               size="lg"
               variant="ghost"
               onClick={() => scrollTo("#contact")}
-              className="h-12 rounded-full px-7 text-base text-white/75 hover:bg-white/10 hover:text-white"
+              className="motion-button h-12 rounded-full px-7 text-base text-white/75 hover:bg-white/10 hover:text-white"
             >
               <Mail className="mr-2 h-4 w-4" />
               Entrar em Contato
@@ -126,7 +126,8 @@ const HeroSection = () => {
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 aria-label={label}
-                className="group relative flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm transition-transform hover:-translate-y-1"
+                data-tooltip={label}
+                className="motion-icon group relative flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm"
               >
                 <Icon size={20} className="text-white/70 transition-colors group-hover:text-white" />
               </a>

@@ -59,7 +59,7 @@ const Header = () => {
             </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-1 glass rounded-full px-2 py-1.5">
+          <div className="nav-limelight-shell hidden md:flex items-center gap-1 rounded-full px-2 py-1.5">
             {menuItems.map((item) => (
               <a
                 key={item.href}
@@ -68,7 +68,7 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-sm font-medium text-foreground/80 dark:text-white/80 hover:text-foreground dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-foreground/10 dark:hover:bg-white/10 transition-all duration-200"
+                className="nav-limelight-link relative rounded-full px-3 py-1.5 text-sm font-medium text-foreground/70 transition-all duration-300 hover:-translate-y-px hover:text-foreground dark:text-white/70 dark:hover:text-white"
               >
                 {item.label}
               </a>

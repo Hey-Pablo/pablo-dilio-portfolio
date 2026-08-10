@@ -53,43 +53,43 @@
   }
 
   .dark {
-    /* Dark mode — deep space */
-    --background: 265 90% 3%;
+    /* Dark mode — black hole / warm cinematic palette */
+    --background: 30 12% 3%;
     --foreground: 0 0% 100%;
 
-    --card: 265 60% 6%;
+    --card: 30 12% 6%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 265 70% 5%;
+    --popover: 30 14% 5%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 38 96% 68%;
+    --primary-foreground: 30 15% 5%;
 
-    --secondary: 265 40% 12%;
+    --secondary: 30 18% 12%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 265 30% 10%;
+    --muted: 30 14% 10%;
     --muted-foreground: 240 5% 75%;
 
-    --accent: 292 84% 61%;
+    --accent: 30 74% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 100%;
-    --input: 265 40% 15%;
-    --ring: 262 83% 58%;
+    --border: 30 20% 100%;
+    --input: 30 22% 15%;
+    --ring: 38 96% 68%;
 
-    --nebula-purple: 262 83% 58%;
-    --nebula-magenta: 292 84% 61%;
-    --nebula-blue: 199 89% 60%;
-    --nebula-pink: 330 81% 60%;
+    --nebula-purple: 28 75% 44%;
+    --nebula-magenta: 38 88% 58%;
+    --nebula-blue: 24 70% 42%;
+    --nebula-pink: 18 78% 52%;
 
-    --tech-blue: 199 89% 60%;
-    --tech-green: 292 84% 61%;
-    --tech-gray: 240 5% 75%;
+    --tech-blue: 38 88% 64%;
+    --tech-green: 28 75% 52%;
+    --tech-gray: 30 8% 72%;
   }
 }
 
@@ -144,7 +144,7 @@
   .container-custom { @apply container mx-auto px-4 sm:px-6 lg:px-8; }
 
   .gradient-text {
-    background: linear-gradient(90deg, #38BDF8 0%, #7C3AED 50%, #EC4899 100%);
+    background: linear-gradient(100deg, #FFF4DE 0%, #F0C477 52%, #B8682D 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -163,6 +163,90 @@
     -webkit-backdrop-filter: blur(20px) saturate(150%);
     border: 1px solid rgba(255, 255, 255, 0.14);
   }
+
+  .nav-limelight-shell {
+    position: relative;
+    background: rgba(22, 14, 10, 0.72);
+    border: 1px solid rgba(255, 226, 177, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.09), 0 12px 40px -24px rgba(201, 126, 48, 0.65);
+    backdrop-filter: blur(18px) saturate(125%);
+    -webkit-backdrop-filter: blur(18px) saturate(125%);
+  }
+  .nav-limelight-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: #F0C477;
+    box-shadow: 0 0 14px rgba(240, 196, 119, 0.75);
+    transform: translateX(-50%);
+    transition: width 300ms cubic-bezier(.22,1,.36,1);
+  }
+  .nav-limelight-link:hover::after,
+  .nav-limelight-link:focus-visible::after { width: 46%; }
+
+  .liquid-glass {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,0.025);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.12);
+  }
+  .liquid-glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(180deg, rgba(255,244,222,0.38), rgba(255,255,255,0.06) 38%, transparent 62%, rgba(226,155,74,0.25));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .motion-button {
+    position: relative;
+    overflow: hidden;
+    transition: transform 350ms cubic-bezier(.22,1,.36,1), box-shadow 350ms ease, background-color 350ms ease, color 350ms ease;
+  }
+  .motion-button::after {
+    content: "";
+    position: absolute;
+    inset: -40% -20%;
+    background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.38) 50%, transparent 65%);
+    transform: translateX(-120%) rotate(8deg);
+    transition: transform 700ms cubic-bezier(.22,1,.36,1);
+    pointer-events: none;
+  }
+  .motion-button:hover { transform: translateY(-3px) scale(1.015); }
+  .motion-button:hover::after { transform: translateX(120%) rotate(8deg); }
+  .motion-button:focus-visible,
+  .motion-icon:focus-visible,
+  .nav-limelight-link:focus-visible { outline: 2px solid #F0C477; outline-offset: 4px; }
+  .motion-icon { transition: transform 300ms cubic-bezier(.22,1,.36,1), border-color 300ms ease, background-color 300ms ease; }
+  .motion-icon:hover { transform: translateY(-4px) scale(1.04); border-color: rgba(240,196,119,0.42); background: rgba(240,196,119,0.08); }
+  .motion-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    padding: 0.35rem 0.55rem;
+    border: 1px solid rgba(240,196,119,0.22);
+    border-radius: 0.5rem;
+    background: rgba(18, 12, 8, 0.94);
+    color: #FFF4DE;
+    font-size: 0.7rem;
+    line-height: 1;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 4px);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+  .motion-icon:hover::after,
+  .motion-icon:focus-visible::after { opacity: 1; transform: translate(-50%, 0); }
 
   .hover-lift { @apply transition-all duration-300 hover:-translate-y-2; }
 
@@ -203,6 +287,9 @@
     .tech-card:hover { transform: none; }
     .tech-card::before,
     .tech-card::after { transition: none; }
+    .motion-button, .motion-icon, .nav-limelight-link::after { transition: none; }
+    .motion-button:hover, .motion-icon:hover { transform: none; }
+    .motion-button::after { display: none; }
   }
 
   :root:not(.dark) .tech-card {
@@ -214,16 +301,16 @@
   :root:not(.dark) .skill-bar { background: rgba(0,0,0,0.06); }
   .skill-progress {
     @apply h-full rounded-full transition-all duration-1000 ease-out;
-    background: linear-gradient(90deg, #38BDF8, #7C3AED, #EC4899);
-    box-shadow: 0 0 12px rgba(124,58,237,0.6);
+    background: linear-gradient(90deg, #B8682D, #E29B4A, #F0C477);
+    box-shadow: 0 0 12px rgba(226,155,74,0.55);
   }
 
   /* Neon glow */
   .neon-glow {
     box-shadow:
-      0 0 8px rgba(124,58,237,0.6),
-      0 0 24px rgba(124,58,237,0.35),
-      0 0 48px rgba(217,70,239,0.25);
+      0 0 8px rgba(226,155,74,0.5),
+      0 0 24px rgba(201,126,48,0.32),
+      0 0 48px rgba(184,104,45,0.22);
   }
   .neon-btn {
     position: relative;

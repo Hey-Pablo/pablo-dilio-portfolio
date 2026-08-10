@@ -25,15 +25,15 @@ const SECTION_IDS = [
 
 // hue-rotate degrees (relative to base purple/magenta palette)
 const THEMES: SectionThemeMap = {
-  home:         { hue: 0,   label: "Purple Core" },
-  about:        { hue: -30, label: "Deep Blue" },
-  skills:       { hue: -20, label: "Nebula Blue" },
-  projects:     { hue: 25,  label: "Magenta Cluster" },
-  gallery:      { hue: 15,  label: "Rose Nebula" },
-  education:    { hue: -10, label: "Indigo" },
-  certificates: { hue: 5,   label: "Violet" },
-  experience:   { hue: -40, label: "Deep Space" },
-  contact:      { hue: -20, label: "Aurora" },
+  home:         { hue: 0,   label: "Amber Core" },
+  about:        { hue: -4,  label: "Warm Shadow" },
+  skills:       { hue: 5,   label: "Copper Light" },
+  projects:     { hue: 10,  label: "Amber Cluster" },
+  gallery:      { hue: 7,   label: "Rose Gold" },
+  education:    { hue: -3,  label: "Sepia Space" },
+  certificates: { hue: 3,   label: "Violet Ember" },
+  experience:   { hue: -8,  label: "Deep Space" },
+  contact:      { hue: 4,   label: "Golden Aurora" },
 };
 
 const SpaceBackground = memo(() => {
@@ -97,9 +97,9 @@ const SpaceBackground = memo(() => {
 
       // core glow
       const core = ctx.createRadialGradient(cx, cy, 0, cx, cy, maxR * 0.35);
-      core.addColorStop(0, "rgba(255, 240, 255, 0.9)");
-      core.addColorStop(0.25, "rgba(217, 70, 239, 0.5)");
-      core.addColorStop(0.6, "rgba(124, 58, 237, 0.15)");
+      core.addColorStop(0, "rgba(255, 244, 222, 0.9)");
+      core.addColorStop(0.25, "rgba(226, 155, 74, 0.5)");
+      core.addColorStop(0.6, "rgba(139, 74, 31, 0.15)");
       core.addColorStop(1, "rgba(0,0,0,0)");
       ctx.fillStyle = core;
       ctx.fillRect(0, 0, w, h);
@@ -109,7 +109,7 @@ const SpaceBackground = memo(() => {
         const a = p.a + rot;
         const x = cx + Math.cos(a) * p.r * maxR;
         const y2 = cy + Math.sin(a) * p.r * maxR * 0.55; // flatten
-        const hue = 280 + p.hueShift + p.r * 40;
+        const hue = 28 + p.hueShift + p.r * 18;
         ctx.fillStyle = `hsla(${hue}, 95%, ${65 + (1 - p.r) * 20}%, ${p.alpha * (1 - p.r * 0.4)})`;
         ctx.beginPath();
         ctx.arc(x, y2, p.size * dpr, 0, Math.PI * 2);

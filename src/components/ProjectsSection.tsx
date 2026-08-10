@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { ExternalLink, Calendar, Code2, X } from "lucide-react";
+import { ExternalLink, Calendar, Code2, X, Github } from "lucide-react";
 import projectsData from "@/data/projects.json";
 import type { Project } from "@/data/types";
 import ProjectImageCarousel from "@/components/ProjectImageCarousel";
@@ -103,12 +103,12 @@ const ProjectsSection = () => {
                         : "bg-white/10 text-white/70 border-white/20"
                     }`}
                   >
-                    {project.category === "front-end"
-                      ? "🎨 Front-End"
+                      {project.category === "front-end"
+                      ? "Front-End"
                       : project.category === "back-end-fullstack"
-                      ? "⚙️ Back-end / Full Stack"
+                      ? "Back-end / Full Stack"
                       : project.category === "ia"
-                      ? "🤖 IA"
+                      ? "IA"
                       : project.category}
                   </Badge>
                 </div>
@@ -223,6 +223,21 @@ const ProjectsSection = () => {
                   <div className="space-y-2">
                     <h3 className="text-lg font-semibold flex items-center gap-2">
                       <Code2 size={20} />
+                      Evidências entregues
+                    </h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
+                      {(selectedProject.evidence ?? [selectedProject.description]).map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold flex items-center gap-2">
+                      <Code2 size={20} />
                       Tecnologias Utilizadas
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -246,7 +261,7 @@ const ProjectsSection = () => {
                       <div className="flex items-start gap-2">
                         <ExternalLink size={18} className="text-muted-foreground mt-0.5" />
                         <div className="flex-1">
-                          <span className="text-sm font-medium block mb-1">Link do Projeto:</span>
+                          <span className="text-sm font-medium block mb-1">Demonstração:</span>
                           <a
                             href={selectedProject.link}
                             target="_blank"
@@ -261,6 +276,30 @@ const ProjectsSection = () => {
                           )}
                         </div>
                       </div>
+                    )}
+
+                    {selectedProject.codeLink && (
+                      <div className="flex items-start gap-2">
+                        <Github size={18} className="text-muted-foreground mt-0.5" />
+                        <div className="flex-1">
+                          <span className="text-sm font-medium block mb-1">Código-fonte:</span>
+                          <a
+                            href={selectedProject.codeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline text-sm break-all"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {selectedProject.codeLink}
+                          </a>
+                        </div>
+                      </div>
+                    )}
+
+                    {selectedProject.accessNote && (
+                      <p className="rounded-md border border-white/10 bg-white/[0.03] px-3 py-2 text-xs leading-relaxed text-muted-foreground">
+                        {selectedProject.accessNote}
+                      </p>
                     )}
                   </div>
                 </div>

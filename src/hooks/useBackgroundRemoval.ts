@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { removeBackground, loadImage } from '@/utils/backgroundRemoval';
 
 interface UseBackgroundRemovalResult {
@@ -16,45 +15,45 @@ export const useBackgroundRemoval = (originalImageUrl: string): UseBackgroundRem
   useEffect(() => {
     if (!originalImageUrl) return;
 
+    let cancelled = false;
+    let processedUrl: string | null = null;
+
     const processImage = async () => {
       setIsProcessing(true);
       setError(null);
-      
+
       try {
-        console.log('Loading original image:', originalImageUrl);
-        
-        // Fetch the original image as blob
         const response = await fetch(originalImageUrl);
+        if (!response.ok) {
+          throw new Error(`Não foi possível carregar a imagem (${response.status})`);
+        }
+
         const blob = await response.blob();
-        
-        // Load image element
         const imageElement = await loadImage(blob);
-        console.log('Image loaded successfully');
-        
-        // Remove background
         const processedBlob = await removeBackground(imageElement);
-        console.log('Background removed successfully');
-        
-        // Create URL for processed image
-        const processedUrl = URL.createObjectURL(processedBlob);
-        setProcessedImageUrl(processedUrl);
-        
+        processedUrl = URL.createObjectURL(processedBlob);
+
+        if (!cancelled) {
+          setProcessedImageUrl(processedUrl);
+        }
       } catch (err) {
-        console.error('Failed to process image:', err);
-        setError(err instanceof Error ? err.message : 'Unknown error occurred');
-        // Fallback to original image
-        setProcessedImageUrl(originalImageUrl);
+        if (!cancelled) {
+          setError(err instanceof Error ? err.message : 'Não foi possível processar a imagem');
+          setProcessedImageUrl(originalImageUrl);
+        }
       } finally {
-        setIsProcessing(false);
+        if (!cancelled) {
+          setIsProcessing(false);
+        }
       }
     };
 
-    processImage();
+    void processImage();
 
-    // Cleanup function
     return () => {
-      if (processedImageUrl && processedImageUrl.startsWith('blob:')) {
-        URL.revokeObjectURL(processedImageUrl);
+      cancelled = true;
+      if (processedUrl) {
+        URL.revokeObjectURL(processedUrl);
       }
     };
   }, [originalImageUrl]);

@@ -3,10 +3,16 @@
     "id": 1,
     "title": "My Manhwas",
     "description": "Plataforma pessoal para organizar leituras de manhwas e animes sem perder o ponto onde a história parou. Reúne biblioteca, favoritos, scans, filtros, lixeira e uma área privada de configuração em um único fluxo.",
-    "category": "ia",
-    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "category": "back-end-fullstack",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Autenticação", "Persistência de dados"],
     "status": "Concluído",
     "link": "https://my-manhwas.lovable.app",
+    "accessNote": "Código não publicado. A demonstração e as decisões de produto estão documentadas pelas telas acima.",
+    "evidence": [
+      "Estruturei uma biblioteca com favoritos, filtros, scans e lixeira.",
+      "Modelei fluxos públicos e área privada de configuração.",
+      "Implementei autenticação e organização de dados para uso recorrente."
+    ],
     "images": [
       "./assets/projects/my-manhwas/landing.png",
       "./assets/projects/my-manhwas/login.png",
@@ -27,10 +33,16 @@
     "id": 2,
     "title": "Biblioteca MyManhwa",
     "description": "Gerenciador de imagens que abastece a biblioteca do My Manhwas. Organiza capas por Manhwa e Anime, permite buscar e ordenar títulos e gera links diretos em Markdown ou HTML para reutilização rápida.",
-    "category": "ia",
-    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "category": "back-end-fullstack",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Upload de arquivos", "Filtros"],
     "status": "Concluído",
     "link": "https://biblioteca-mymanhwa.lovable.app",
+    "accessNote": "Código não publicado. A demonstração pública está disponível no link acima.",
+    "evidence": [
+      "Criei uma galeria com busca, ordenação e separação por tipo de conteúdo.",
+      "Implementei geração de links reutilizáveis em Markdown e HTML.",
+      "Organizei o fluxo para abastecer outro produto do mesmo ecossistema."
+    ],
     "images": [
       "./assets/projects/biblioteca-mymanhwa/galeria-manhwa.png",
       "./assets/projects/biblioteca-mymanhwa/galeria-anime.png",
@@ -41,10 +53,16 @@
     "id": 3,
     "title": "Notasplus",
     "description": "Aplicativo de produtividade para centralizar anotações, compromissos, lembretes e tarefas. Inclui categorias, arquivamento, listas de tarefas e autenticação para manter a rotina organizada.",
-    "category": "ia",
-    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "category": "back-end-fullstack",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Autenticação", "CRUD"],
     "status": "Concluído",
     "link": "https://notasplus.lovable.app",
+    "accessNote": "Código não publicado. O produto pode ser explorado pela demonstração pública.",
+    "evidence": [
+      "Modelei operações de criação, edição, arquivamento e categorização.",
+      "Conectei notas, compromissos, lembretes e tarefas em uma experiência única.",
+      "Incluí autenticação para separar o espaço de cada usuário."
+    ],
     "images": [
       "./assets/projects/notasplus/notas.png",
       "./assets/projects/notasplus/categorias.png",
@@ -58,10 +76,16 @@
     "id": 4,
     "title": "Agenda Profissional Marcos e Branca",
     "description": "Sistema de agenda e caixa para salão de beleza. Controla horários por profissional, clientes e serviços, com grade visual, filtros por cor e um caixa integrado a vendas, formas de pagamento e histórico.",
-    "category": "ia",
-    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "category": "back-end-fullstack",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Agenda", "Fluxo de caixa"],
     "status": "Concluído",
     "link": "",
+    "accessNote": "Projeto privado. As telas foram preservadas como evidência visual, mas o código e o acesso operacional não são públicos.",
+    "evidence": [
+      "Modelei agenda por profissional, cliente, serviço e horário.",
+      "Integrei agendamento, vendas, formas de pagamento e histórico.",
+      "Adaptei a interface a uma rotina operacional de negócio local."
+    ],
     "images": [
       "./assets/projects/agenda-marcos-branca/agenda.png",
       "./assets/projects/agenda-marcos-branca/novo-agendamento.png",
@@ -77,6 +101,12 @@
     "technologies": ["HTML5", "CSS3", "JavaScript"],
     "status": "Concluído",
     "link": "https://hey-pablo.github.io/spotify-Front/",
+    "codeLink": "https://github.com/Hey-Pablo/spotify-Front",
+    "evidence": [
+      "Reproduzi uma interface responsiva a partir de uma referência visual.",
+      "Pratiquei composição de layout, CSS e manipulação do DOM.",
+      "Publiquei demo e código-fonte em GitHub Pages e GitHub."
+    ],
     "images": [
       "https://raw.githubusercontent.com/Hey-Pablo/spotify-Front/main/img/preview.png"
     ]
@@ -86,9 +116,15 @@
     "title": "HeyPablo Refri",
     "description": "Landing page interativa para uma marca de refrigerantes, com apresentação de três sabores, troca dinâmica de conteúdo e layout responsivo construído com HTML, CSS e JavaScript.",
     "category": "front-end",
-    "technologies": ["HTML5", "CSS3", "JavaScript"],
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Design responsivo"],
     "status": "Concluído",
     "link": "https://hey-pablo.github.io/HeyPablo-Refri/",
+    "codeLink": "https://github.com/Hey-Pablo/HeyPablo-Refri",
+    "evidence": [
+      "Criei uma landing page com troca dinâmica entre três sabores.",
+      "Trabalhei hierarquia visual, estados de interação e responsividade.",
+      "Publiquei demo e código-fonte para avaliação técnica."
+    ],
     "images": [
       "https://raw.githubusercontent.com/Hey-Pablo/HeyPablo-Refri/main/img/Print-Morango.png",
       "https://raw.githubusercontent.com/Hey-Pablo/HeyPablo-Refri/main/img/Print-Abacate.png",
@@ -99,10 +135,16 @@
     "id": 7,
     "title": "Base de Conhecimento",
     "description": "Portal de suporte para transformar procedimentos recorrentes em conhecimento pesquisável. Possui busca, categorias, artigos e painel administrativo com dashboard, imagens, configurações e backend Supabase/PostgreSQL protegido por RLS.",
-    "category": "ia",
-    "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+    "category": "back-end-fullstack",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "RLS"],
     "status": "Concluído",
     "link": "https://base-conhecimento-pablo.lovable.app",
+    "accessNote": "Código não publicado. A demonstração pública e as telas do painel estão disponíveis acima.",
+    "evidence": [
+      "Modelei busca, categorias, artigos e painel administrativo.",
+      "Estruturei persistência com Supabase/PostgreSQL e políticas RLS.",
+      "Transformei procedimentos recorrentes em conteúdo pesquisável."
+    ],
     "images": [
       "./assets/projects/base-conhecimento/portal-home.png",
       "./assets/projects/base-conhecimento/categorias.png",
@@ -115,10 +157,16 @@
     "id": 8,
     "title": "Bela Agenda",
     "description": "SaaS de gestão para empresas de serviços, com agenda por profissional, horários disponíveis, caixa e separação por empresa. Inclui landing page comercial, planos, área autenticada e painel administrativo.",
-    "category": "ia",
-    "technologies": ["React", "TypeScript", "Tailwind CSS"],
+    "category": "back-end-fullstack",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "SaaS", "Multiempresa"],
     "status": "Em Andamento",
     "link": "https://bela-agenda-magic.lovable.app",
+    "accessNote": "Código não publicado. Projeto em evolução com demonstração pública e telas do produto.",
+    "evidence": [
+      "Estruturei uma experiência SaaS com landing page, planos e área autenticada.",
+      "Modelei agenda, caixa e separação de dados por empresa.",
+      "Organizei fluxos comerciais e operacionais no mesmo produto."
+    ],
     "images": [
       "./assets/projects/bela-agenda/landing.png",
       "./assets/projects/bela-agenda/solucoes.png",
@@ -134,11 +182,17 @@
   {
     "id": 9,
     "title": "Brasil Dev Tools",
-    "description": "Coleção open source de mais de 30 ferramentas úteis para desenvolvedores brasileiros. Reúne geradores e validadores de CPF, CNPJ e CEP, calculadoras, utilidades de texto, criptografia e recursos trabalhistas.",
-    "category": "ia",
-    "technologies": ["HTML5", "CSS3", "JavaScript"],
+    "description": "Coleção de ferramentas úteis para desenvolvedores brasileiros, com geradores e validadores de CPF, CNPJ e CEP, calculadoras, utilidades de texto, criptografia e recursos trabalhistas.",
+    "category": "front-end",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Validação de dados"],
     "status": "Concluído",
-    "link": "https://github.com/Hey-Pablo/brasil-dev-helpers-95",
+    "link": "",
+    "accessNote": "O repositório público informado anteriormente não está disponível no GitHub no momento. As telas e o escopo permanecem documentados como evidência visual.",
+    "evidence": [
+      "Reuni ferramentas práticas em uma interface única.",
+      "Implementei validações, geradores e calculadoras no navegador.",
+      "Trabalhei organização de utilidades e feedback visual para o usuário."
+    ],
     "images": [
       "./assets/projects/brasil-dev-tools/home.png",
       "./assets/projects/brasil-dev-tools/validadores.webp",

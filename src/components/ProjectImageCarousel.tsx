@@ -88,6 +88,7 @@ const ProjectImageCarousel = memo(
     }
 
     const fitClass = objectFit === "contain" ? "object-contain" : "object-cover";
+    const visibleIndices = new Set([index, (index + 1) % list.length]);
 
     return (
       <div
@@ -95,12 +96,13 @@ const ProjectImageCarousel = memo(
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        {list.map((src, i) => (
+        {list.map((src, i) => visibleIndices.has(i) && (
           <img
             key={src + i}
             src={src}
             alt={alt}
             loading="lazy"
+            decoding="async"
             className={`absolute inset-0 h-full w-full ${fitClass} transition-opacity duration-700 ease-in-out ${
               i === index ? "opacity-100" : "opacity-0"
             }`}

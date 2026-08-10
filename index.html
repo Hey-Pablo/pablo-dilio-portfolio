@@ -5,24 +5,18 @@
     <link rel="icon" type="image/png" href="/icon-64.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#050105" />
-    <title>Pablo Dilio — Full Stack Developer & Criador Digital</title>
-    <meta name="description" content="Portfólio de Pablo Adriano Maciel Dilio — desenvolvedor Full Stack que cria sistemas web modernos, interfaces funcionais e experiências digitais cinematográficas." />
+    <title>Pablo Dilio — Implantação ERP, SQL, Dados e Desenvolvimento Web</title>
+    <meta name="description" content="Portfólio de Pablo Adriano Maciel Dilio — Analista de Implantação e Suporte ERP com experiência em SQL, dados e desenvolvimento web." />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Pablo Dilio — Full Stack Developer & Criador Digital" />
-    <meta property="og:description" content="Sistemas web modernos, interfaces funcionais e experiências digitais que unem tecnologia, design e performance." />
+    <meta property="og:title" content="Pablo Dilio — Implantação ERP, SQL, Dados e Desenvolvimento Web" />
+    <meta property="og:description" content="Implantação e suporte ERP, consultas SQL, dados e desenvolvimento de sistemas web orientados a problemas reais." />
     <meta property="og:image" content="/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="/og-image.png" />
     <script>
-      // Anti-flicker: aplica o tema antes do React carregar
-      (function() {
-        var theme = localStorage.getItem('theme');
-        if (theme === 'light') {
-          document.documentElement.classList.remove('dark');
-        } else {
-          document.documentElement.classList.add('dark');
-        }
-      })();
+      // O portfólio usa tema escuro fixo; evita flash de tema claro no carregamento.
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     </script>
   </head>
   <body>

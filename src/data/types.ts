@@ -7,6 +7,9 @@ export interface Project {
   status: string;
   images?: string[];
   link?: string;
+  codeLink?: string;
+  accessNote?: string;
+  evidence?: string[];
   expiresText?: string;
 }
 
@@ -51,6 +54,7 @@ export interface Experience {
 
 export interface Skill {
   name: string;
-  level: number;
+  level?: number;
   category: string;
+  evidence?: string[];
 }

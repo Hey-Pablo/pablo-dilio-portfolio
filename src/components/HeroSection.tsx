@@ -62,7 +62,7 @@ const HeroSection = () => {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-300" />
             </span>
             <span className="text-xs font-mono tracking-wider text-white/75">
-              disponível para novas oportunidades em ERP
+              disponível para oportunidades em implantação ERP, suporte e desenvolvimento web
             </span>
           </div>
 
@@ -78,10 +78,13 @@ const HeroSection = () => {
 
           <h2 className="mb-4 text-xl font-semibold text-white/90 animate-on-scroll stagger-3 md:text-2xl">
             Analista de Implantação e Suporte ERP
+            <span className="block text-base font-normal text-white/60 md:text-lg">
+              SQL, dados e desenvolvimento web
+            </span>
           </h2>
 
           <p className="mb-10 max-w-2xl text-lg leading-relaxed text-white/65 animate-on-scroll stagger-4">
-            Especialista em implantação, configuração, parametrização e suporte de sistemas ERP. Conduzo projetos de implantação B2B do levantamento de necessidades até a homologação e produção, com foco em módulos fiscais, financeiros, compras, vendas, estoque e transporte.
+            Analista de Implantação e Suporte ERP com experiência em SQL, dados e desenvolvimento web. Conduzo implantações B2B, traduzo regras de negócio em processos funcionais e construo interfaces e sistemas para resolver problemas reais.
           </p>
 
           <div className="mb-10 flex flex-col gap-4 animate-on-scroll stagger-5 sm:flex-row">

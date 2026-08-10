@@ -172,6 +172,23 @@
     backdrop-filter: blur(18px) saturate(125%);
     -webkit-backdrop-filter: blur(18px) saturate(125%);
   }
+  .mobile-menu-panel {
+    background: #0d0907;
+    border: 1px solid rgba(240, 196, 119, 0.24);
+    box-shadow: 0 24px 70px -24px rgba(0, 0, 0, 0.95), inset 0 1px 0 rgba(255, 244, 222, 0.08);
+    isolation: isolate;
+  }
+  .mobile-menu-panel a {
+    position: relative;
+    z-index: 1;
+  }
+  .mobile-menu-panel a:hover,
+  .mobile-menu-panel a:focus-visible {
+    background: rgba(240, 196, 119, 0.12);
+    color: #FFF4DE;
+  }
+  .mobile-menu-panel::-webkit-scrollbar { width: 5px; }
+  .mobile-menu-panel::-webkit-scrollbar-thumb { background: rgba(240, 196, 119, 0.55); }
   .nav-limelight-link::after {
     content: "";
     position: absolute;

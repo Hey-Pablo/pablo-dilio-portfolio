@@ -89,7 +89,7 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 mt-2 mx-4 rounded-2xl glass-strong animate-fade-in">
+          <div className="mobile-menu-panel md:hidden absolute top-full left-0 right-0 z-50 mt-2 mx-4 max-h-[calc(100vh-5.5rem)] overflow-y-auto rounded-2xl animate-fade-in">
             <div className="py-3 px-2">
               {menuItems.map((item) => (
                 <a

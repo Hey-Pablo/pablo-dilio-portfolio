@@ -167,6 +167,8 @@
   .hover-lift { @apply transition-all duration-300 hover:-translate-y-2; }
 
   .tech-card {
+    --spotlight-x: 50%;
+    --spotlight-y: 50%;
     @apply relative rounded-2xl p-6 transition-all duration-500;
     background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
     border: 1px solid rgba(255,255,255,0.10);
@@ -178,14 +180,30 @@
     position: absolute; inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(124,58,237,0.6), rgba(217,70,239,0.4), rgba(56,189,248,0.5));
+    background: radial-gradient(180px circle at var(--spotlight-x) var(--spotlight-y), rgba(255,255,255,0.92), rgba(168,85,247,0.72) 28%, rgba(56,189,248,0.28) 55%, transparent 78%);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor; mask-composite: exclude;
-    opacity: 0; transition: opacity 0.4s ease;
+    opacity: 0; transition: opacity 0.35s ease;
     pointer-events: none;
   }
-  .tech-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px -20px rgba(124,58,237,0.45); }
-  .tech-card:hover::before { opacity: 1; }
+  .tech-card::after {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(220px circle at var(--spotlight-x) var(--spotlight-y), rgba(168,85,247,0.08), transparent 72%);
+    opacity: 0; transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+  .tech-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px -20px rgba(124,58,237,0.28); }
+  .tech-card:hover::before,
+  .tech-card:hover::after { opacity: 1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tech-card { transition: none; }
+    .tech-card:hover { transform: none; }
+    .tech-card::before,
+    .tech-card::after { transition: none; }
+  }
 
   :root:not(.dark) .tech-card {
     background: linear-gradient(160deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5));

@@ -73,6 +73,13 @@ const ProjectsSection = () => {
                 key={project.id}
                 className="tech-card group cursor-pointer flex flex-col"
                 onClick={() => setSelectedProject(project)}
+                onMouseMove={(event) => {
+                  const rect = event.currentTarget.getBoundingClientRect();
+                  const x = ((event.clientX - rect.left) / rect.width) * 100;
+                  const y = ((event.clientY - rect.top) / rect.height) * 100;
+                  event.currentTarget.style.setProperty("--spotlight-x", `${x}%`);
+                  event.currentTarget.style.setProperty("--spotlight-y", `${y}%`);
+                }}
               >
                 <div className="relative mb-5 h-48 rounded-xl overflow-hidden">
                   <ProjectImageCarousel

@@ -9,8 +9,11 @@ import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SpaceBackground from "@/components/SpaceBackground";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Index = () => {
+  useScrollReveal();
+
   return (
     <div className="relative min-h-screen text-foreground overflow-x-hidden">
       {/* Global cinematic background (fixed, parallax, section-themed) */}

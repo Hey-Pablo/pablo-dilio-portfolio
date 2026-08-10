@@ -86,7 +86,7 @@ const ExperienceSection = () => {
   };
 
   return (
-    <section id="experience" className="section-padding bg-background">
+    <section id="experience" data-scroll-reveal="section" className="section-padding bg-background">
       <div className="container-custom">
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-4 border-tech-blue/30 text-tech-blue">

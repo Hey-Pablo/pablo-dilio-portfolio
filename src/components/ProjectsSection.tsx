@@ -10,12 +10,12 @@ import ComingSoonCard from "@/components/ComingSoonCard";
 const projects = projectsData as Project[];
 
 const gradients = [
-  "from-[#7C3AED] via-[#D946EF] to-[#EC4899]",
-  "from-[#38BDF8] via-[#7C3AED] to-[#D946EF]",
-  "from-[#EC4899] via-[#7C3AED] to-[#38BDF8]",
-  "from-[#D946EF] via-[#38BDF8] to-[#7C3AED]",
-  "from-[#7C3AED] to-[#38BDF8]",
-  "from-[#EC4899] to-[#7C3AED]",
+  "from-[#6B321A] via-[#B8682D] to-[#F0C477]",
+  "from-[#3A2014] via-[#C47A36] to-[#E8B66D]",
+  "from-[#7A3F20] via-[#D99137] to-[#FFF0CE]",
+  "from-[#4A2817] via-[#B8682D] to-[#D9A15C]",
+  "from-[#8A4B23] to-[#F0C477]",
+  "from-[#B8682D] to-[#FFF0CE]",
 ];
 
 const ProjectsSection = () => {
@@ -35,7 +35,7 @@ const ProjectsSection = () => {
     selectedFilter === "all" ? projects : projects.filter((p) => p.category === selectedFilter);
 
   return (
-    <section id="projects" className="section-padding relative overflow-hidden">
+    <section id="projects" data-scroll-reveal="section" className="section-padding relative overflow-hidden">
       <div className="container-custom relative z-10">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
@@ -71,6 +71,7 @@ const ProjectsSection = () => {
             return (
               <article
                 key={project.id}
+                data-scroll-reveal="project-card"
                 className="tech-card group cursor-pointer flex flex-col"
                 onClick={() => setSelectedProject(project)}
                 onMouseMove={(event) => {
@@ -94,11 +95,11 @@ const ProjectsSection = () => {
                   <Badge
                     className={`absolute top-3 left-3 z-10 text-xs font-medium border ${
                       project.category === "front-end"
-                        ? "bg-sky-500/20 text-sky-300 border-sky-500/30"
+                        ? "bg-amber-500/15 text-amber-200 border-amber-500/30"
                         : project.category === "back-end-fullstack"
-                        ? "bg-purple-500/20 text-purple-300 border-purple-500/30"
+                        ? "bg-orange-700/20 text-orange-200 border-orange-500/30"
                         : project.category === "ia"
-                        ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
+                        ? "bg-yellow-500/15 text-yellow-100 border-yellow-500/30"
                         : "bg-white/10 text-white/70 border-white/20"
                     }`}
                   >
@@ -117,7 +118,7 @@ const ProjectsSection = () => {
                     {project.title}
                   </h3>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">
                     {project.description}
                   </p>
 

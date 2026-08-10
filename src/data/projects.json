@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "My Manhwas",
-    "description": "Projeto pessoal criado para ajudar meus amigos e eu a organizar nossas leituras, séries e outras coisas: saber onde paramos, organizar e lembrar onde estávamos. Plataforma completa com controle de manhwas e animes, biblioteca central, scans favoritos, lixeira e área privada.",
+    "description": "Plataforma pessoal para organizar leituras de manhwas e animes sem perder o ponto onde a história parou. Reúne biblioteca, favoritos, scans, filtros, lixeira e uma área privada de configuração em um único fluxo.",
     "category": "ia",
     "technologies": ["React", "TypeScript", "Tailwind CSS"],
     "status": "Concluído",
@@ -26,7 +26,7 @@
   {
     "id": 2,
     "title": "Biblioteca MyManhwa",
-    "description": "Projeto realizado para armazenar imagens e disponibilizar para o site https://my-manhwas.lovable.app/manhwas. Gerenciador de imagens com galeria organizada por categorias (Manhwa e Anime), busca por título, ordenação e geração de links diretos, Markdown e HTML.",
+    "description": "Gerenciador de imagens que abastece a biblioteca do My Manhwas. Organiza capas por Manhwa e Anime, permite buscar e ordenar títulos e gera links diretos em Markdown ou HTML para reutilização rápida.",
     "category": "ia",
     "technologies": ["React", "TypeScript", "Tailwind CSS"],
     "status": "Concluído",
@@ -40,7 +40,7 @@
   {
     "id": 3,
     "title": "Notasplus",
-    "description": "Projeto realizado para ajudar a organizar compromissos, lembretes e tarefas diárias, juntamente com anotações. Aplicativo de notas completo com categorias, arquivamento, listas de tarefas e autenticação, desenvolvido com IA.",
+    "description": "Aplicativo de produtividade para centralizar anotações, compromissos, lembretes e tarefas. Inclui categorias, arquivamento, listas de tarefas e autenticação para manter a rotina organizada.",
     "category": "ia",
     "technologies": ["React", "TypeScript", "Tailwind CSS"],
     "status": "Concluído",
@@ -57,7 +57,7 @@
   {
     "id": 4,
     "title": "Agenda Profissional Marcos e Branca",
-    "description": "Agenda criada para auxiliar salão de cabeleireiro e caixa de forma simples e rápida. Controle completo de agendamentos por profissional com grade horária, filtro por cores, gestão de clientes, serviços e caixa integrado com registro de vendas, formas de pagamento e histórico.",
+    "description": "Sistema de agenda e caixa para salão de beleza. Controla horários por profissional, clientes e serviços, com grade visual, filtros por cor e um caixa integrado a vendas, formas de pagamento e histórico.",
     "category": "ia",
     "technologies": ["React", "TypeScript", "Tailwind CSS"],
     "status": "Concluído",
@@ -72,7 +72,7 @@
   {
     "id": 5,
     "title": "Spotify Front",
-    "description": "Recriação da interface do Spotify, desenvolvida com HTML, CSS e JavaScript durante os estudos de Front-end. Aplica conceitos de design responsivo, manipulação do DOM e organização de código.",
+    "description": "Recriação responsiva da interface do Spotify desenvolvida durante os estudos de Front-end. O projeto pratica composição visual, organização de CSS, manipulação do DOM e estruturação de uma experiência de música.",
     "category": "front-end",
     "technologies": ["HTML5", "CSS3", "JavaScript"],
     "status": "Concluído",
@@ -84,7 +84,7 @@
   {
     "id": 6,
     "title": "HeyPablo Refri",
-    "description": "Landing Page interativa de uma marca de refrigerantes, desenvolvida com HTML, CSS e JavaScript durante os estudos de Front-end. Apresenta três sabores com design responsivo e visual moderno.",
+    "description": "Landing page interativa para uma marca de refrigerantes, com apresentação de três sabores, troca dinâmica de conteúdo e layout responsivo construído com HTML, CSS e JavaScript.",
     "category": "front-end",
     "technologies": ["HTML5", "CSS3", "JavaScript"],
     "status": "Concluído",
@@ -98,7 +98,7 @@
   {
     "id": 7,
     "title": "Base de Conhecimento",
-    "description": "Base de conhecimento para atendimentos e procedimentos padrões vivenciados por mim no dia a dia. Portal de suporte com busca, categorias organizadas, artigos por categoria e painel administrativo completo (dashboard, categorias, artigos, imagens, cadastro e configurações) com backend Supabase, PostgreSQL e RLS.",
+    "description": "Portal de suporte para transformar procedimentos recorrentes em conhecimento pesquisável. Possui busca, categorias, artigos e painel administrativo com dashboard, imagens, configurações e backend Supabase/PostgreSQL protegido por RLS.",
     "category": "ia",
     "technologies": ["React", "TypeScript", "Tailwind CSS", "Supabase"],
     "status": "Concluído",
@@ -114,7 +114,7 @@
   {
     "id": 8,
     "title": "Bela Agenda",
-    "description": "Site para gerenciar agendamentos de clientes, horários livres dos profissionais, caixa do estabelecimento, separado por empresa. Landing page completa com planos e área logada com agenda, caixa e painel admin. Desenvolvido com IA.",
+    "description": "SaaS de gestão para empresas de serviços, com agenda por profissional, horários disponíveis, caixa e separação por empresa. Inclui landing page comercial, planos, área autenticada e painel administrativo.",
     "category": "ia",
     "technologies": ["React", "TypeScript", "Tailwind CSS"],
     "status": "Em Andamento",
@@ -134,7 +134,7 @@
   {
     "id": 9,
     "title": "Brasil Dev Tools",
-    "description": "Plataforma completa com ferramentas essenciais para desenvolvedores brasileiros: geradores de CPF/CNPJ/CEP, validadores, calculadoras, utilidades de texto, criptografia e ferramentas trabalhistas. Mais de 30 ferramentas gratuitas e open source, desenvolvidas com IA.",
+    "description": "Coleção open source de mais de 30 ferramentas úteis para desenvolvedores brasileiros. Reúne geradores e validadores de CPF, CNPJ e CEP, calculadoras, utilidades de texto, criptografia e recursos trabalhistas.",
     "category": "ia",
     "technologies": ["HTML5", "CSS3", "JavaScript"],
     "status": "Concluído",

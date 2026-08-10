@@ -23,17 +23,29 @@ const SkillsSection = () => {
   const methodologies = skillsData.methodologies as string[];
 
 
+  const getLevelLabel = (level: number) => {
+    if (level >= 80) return "Avançado";
+    if (level >= 50) return "Intermediário";
+    return "Em desenvolvimento";
+  };
+
   const SkillBar = ({ skill }: { skill: { name: string; level: number; category?: string } }) => (
-    <div className="mb-4 group">
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-sm font-medium group-hover:text-primary transition-colors">{skill.name}</span>
-        <span className="text-xs text-muted-foreground">{skill.level}%</span>
+    <div className="skill-row group mb-5" title={`${skill.name}: ${getLevelLabel(skill.level)}`}>
+      <div className="mb-2 flex items-center justify-between gap-3">
+        <span className="text-sm font-medium transition-colors group-hover:text-primary">{skill.name}</span>
+        <span className="shrink-0 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+          {getLevelLabel(skill.level)} · {skill.level}%
+        </span>
       </div>
-      <div className="skill-bar group-hover:scale-105 transition-transform">
-        <div 
-          className="skill-progress" 
-          style={{ width: `${skill.level}%` }}
-        ></div>
+      <div
+        className="skill-bar group-hover:scale-[1.02] transition-transform"
+        role="progressbar"
+        aria-label={`${skill.name}: ${getLevelLabel(skill.level)}`}
+        aria-valuenow={skill.level}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      >
+        <div className="skill-progress" style={{ width: `${skill.level}%` }} />
       </div>
     </div>
   );
@@ -41,7 +53,7 @@ const SkillsSection = () => {
   const currentSkillData = activeTab === "technical" ? technicalSkills : tools;
 
   return (
-    <section id="skills" className="section-padding">
+    <section id="skills" data-scroll-reveal="section" className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -98,7 +110,8 @@ const SkillsSection = () => {
                   {["Frontend", "Backend", "Database"].map((category, index) => (
                     <div 
                       key={category} 
-                      className="tech-card hover:scale-105 transition-all duration-300 animate-slide-in-left"
+                      data-scroll-reveal="skill-card"
+                      className="tech-card hover:scale-[1.02] transition-all duration-300 animate-slide-in-left"
                       style={{ animationDelay: `${index * 0.2}s` }}
                     >
                       <h3 className="text-lg font-semibold mb-4 gradient-text">{category}</h3>

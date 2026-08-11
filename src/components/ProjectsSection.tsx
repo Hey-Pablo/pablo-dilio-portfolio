@@ -6,6 +6,7 @@ import projectsData from "@/data/projects.json";
 import type { Project } from "@/data/types";
 import ProjectImageCarousel from "@/components/ProjectImageCarousel";
 import ComingSoonCard from "@/components/ComingSoonCard";
+import { caseStudies } from "@/data/caseStudies";
 
 const projects = projectsData as Project[];
 
@@ -36,6 +37,9 @@ const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [modalImageIndex, setModalImageIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const selectedCaseStudy = selectedProject
+    ? caseStudies.find((study) => study.projectId === selectedProject.id)
+    : undefined;
 
   const categories = [
     { id: "all", label: "Todos" },
@@ -233,6 +237,32 @@ const ProjectsSection = () => {
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">{selectedProject.description}</p>
                   </div>
+
+                  {selectedCaseStudy && (
+                    <div className="space-y-5 rounded-xl border border-white/10 bg-white/[0.03] p-4 sm:p-5">
+                      <div>
+                        <p className="mb-1 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Contexto do projeto</p>
+                        <h3 className="text-lg font-semibold">{selectedCaseStudy.title}</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{selectedCaseStudy.summary}</p>
+                      </div>
+
+                      <div className="grid gap-5 md:grid-cols-2">
+                        <div>
+                          <h4 className="mb-1 text-sm font-semibold">Contexto</h4>
+                          <p className="text-sm leading-relaxed text-muted-foreground">{selectedCaseStudy.problem}</p>
+                        </div>
+                        <div>
+                          <h4 className="mb-1 text-sm font-semibold">Solução</h4>
+                          <p className="text-sm leading-relaxed text-muted-foreground">{selectedCaseStudy.solution}</p>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="mb-1 text-sm font-semibold">Minha atuação</h4>
+                        <p className="text-sm leading-relaxed text-muted-foreground">{selectedCaseStudy.role}</p>
+                      </div>
+                    </div>
+                  )}
 
                   <div className="space-y-2">
                     <h3 className="text-lg font-semibold flex items-center gap-2">

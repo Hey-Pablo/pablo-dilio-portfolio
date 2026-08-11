@@ -6,7 +6,7 @@ const AboutSection = () => {
     {
       icon: Book,
       title: "Formação Acadêmica",
-      description: "Formado em Análise e Desenvolvimento de Sistemas e cursando pós-graduação em Análise de Dados (Descomplica)"
+      description: "Cursando Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento de sistemas, dados e metodologias ágeis"
     },
     {
       icon: Code,

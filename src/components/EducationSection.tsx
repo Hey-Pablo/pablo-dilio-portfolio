@@ -148,9 +148,8 @@ const EducationSection = () => {
             </div>
             <h3 className="text-lg font-semibold mb-2">Status Atual</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Formado em Análise e Desenvolvimento de Sistemas (2026). Atualmente cursando pós-graduação 
-              em Análise de Dados, com previsão de conclusão em Março/2027. Focado em evoluir na área de 
-              ERP, Business Intelligence e análise de dados aplicados aos processos de negócio.
+              Cursando Análise e Desenvolvimento de Sistemas, com foco em evoluir na área de ERP,
+              desenvolvimento web, Business Intelligence e análise de dados aplicados aos processos de negócio.
             </p>
           </div>
         </div>

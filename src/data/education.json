@@ -2,23 +2,9 @@
   "academic": [
     {
       "institution": "Centro Universitário União das Américas Descomplica",
-      "course": "Pós-graduação – Especialização em Análise de Dados",
-      "period": "2026 – 2027",
-      "status": "Cursando",
-      "description": "Especialização focada em análise de dados, modelagem, ETL, visualização e storytelling com dados. Previsão de conclusão: Março/2027.",
-      "highlights": [
-        "Análise de Dados",
-        "ETL",
-        "Modelagem de Dados",
-        "Visualização de Dados",
-        "Power BI"
-      ]
-    },
-    {
-      "institution": "Centro Universitário União das Américas Descomplica",
       "course": "Análise e Desenvolvimento de Sistemas",
       "period": "2024 – 2026",
-      "status": "Concluído",
+      "status": "Cursando",
       "description": "Formação em Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento de sistemas, modelagem de dados, programação e metodologias ágeis.",
       "highlights": [
         "Desenvolvimento de Sistemas",

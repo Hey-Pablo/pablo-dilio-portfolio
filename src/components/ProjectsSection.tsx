@@ -118,17 +118,13 @@ const ProjectsSection = () => {
                         ? "bg-amber-500/15 text-amber-200 border-amber-500/30"
                         : project.category === "back-end-fullstack"
                         ? "bg-orange-700/20 text-orange-200 border-orange-500/30"
-                        : project.category === "ia"
-                        ? "bg-yellow-500/15 text-yellow-100 border-yellow-500/30"
                         : "bg-white/10 text-white/70 border-white/20"
                     }`}
                   >
-                      {project.category === "front-end"
+                    {project.category === "front-end"
                       ? "Front-End"
                       : project.category === "back-end-fullstack"
                       ? "Back-end / Full Stack"
-                      : project.category === "ia"
-                      ? "IA"
                       : project.category}
                   </Badge>
                 </div>

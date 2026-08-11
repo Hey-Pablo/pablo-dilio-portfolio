@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ExternalLink, Calendar, Code2, X, Github } from "lucide-react";
@@ -16,6 +16,19 @@ const gradients = [
   "from-[#4A2817] via-[#B8682D] to-[#D9A15C]",
   "from-[#8A4B23] to-[#F0C477]",
   "from-[#B8682D] to-[#FFF0CE]",
+];
+
+const borderPalettes = [
+  { a: "#F0C477", b: "#C2410C", c: "#7C2D12" },
+  { a: "#67E8F9", b: "#0E7490", c: "#164E63" },
+  { a: "#FDA4AF", b: "#BE123C", c: "#701A2D" },
+  { a: "#C4B5FD", b: "#7C3AED", c: "#4C1D95" },
+  { a: "#86EFAC", b: "#15803D", c: "#14532D" },
+  { a: "#FDE68A", b: "#CA8A04", c: "#713F12" },
+  { a: "#93C5FD", b: "#2563EB", c: "#1E3A8A" },
+  { a: "#F9A8D4", b: "#DB2777", c: "#831843" },
+  { a: "#A7F3D0", b: "#059669", c: "#064E3B" },
+  { a: "#D8B4FE", b: "#9333EA", c: "#581C87" },
 ];
 
 const ProjectsSection = () => {
@@ -68,18 +81,26 @@ const ProjectsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, idx) => {
             const grad = gradients[idx % gradients.length];
+            const palette = borderPalettes[(project.id - 1) % borderPalettes.length];
             return (
               <article
                 key={project.id}
                 data-scroll-reveal="project-card"
                 className="tech-card group cursor-pointer flex flex-col"
+                style={{
+                  "--card-color-a": palette.a,
+                  "--card-color-b": palette.b,
+                  "--card-color-c": palette.c,
+                } as CSSProperties}
                 onClick={() => setSelectedProject(project)}
                 onMouseMove={(event) => {
                   const rect = event.currentTarget.getBoundingClientRect();
                   const x = ((event.clientX - rect.left) / rect.width) * 100;
                   const y = ((event.clientY - rect.top) / rect.height) * 100;
+                  const angle = Math.atan2(y - 50, x - 50) * (180 / Math.PI) + 90;
                   event.currentTarget.style.setProperty("--spotlight-x", `${x}%`);
                   event.currentTarget.style.setProperty("--spotlight-y", `${y}%`);
+                  event.currentTarget.style.setProperty("--border-angle", `${angle}deg`);
                 }}
               >
                 <div className="relative mb-5 h-48 rounded-xl overflow-hidden">

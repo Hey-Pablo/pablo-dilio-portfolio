@@ -270,6 +270,10 @@
   .tech-card {
     --spotlight-x: 50%;
     --spotlight-y: 50%;
+    --border-angle: 0deg;
+    --card-color-a: #F0C477;
+    --card-color-b: #B8682D;
+    --card-color-c: #7C2D12;
     @apply relative rounded-2xl p-6 transition-all duration-500;
     background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
     border: 1px solid rgba(255,255,255,0.10);
@@ -281,7 +285,7 @@
     position: absolute; inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    background: radial-gradient(180px circle at var(--spotlight-x) var(--spotlight-y), rgba(255,255,255,0.92), rgba(168,85,247,0.72) 28%, rgba(56,189,248,0.28) 55%, transparent 78%);
+    background: conic-gradient(from var(--border-angle), var(--card-color-a), var(--card-color-b) 34%, var(--card-color-c) 66%, var(--card-color-a));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor; mask-composite: exclude;
     opacity: 0; transition: opacity 0.35s ease;
@@ -291,11 +295,11 @@
     content: "";
     position: absolute; inset: 0;
     border-radius: inherit;
-    background: radial-gradient(220px circle at var(--spotlight-x) var(--spotlight-y), rgba(168,85,247,0.08), transparent 72%);
+    background: radial-gradient(220px circle at var(--spotlight-x) var(--spotlight-y), color-mix(in srgb, var(--card-color-b) 18%, transparent), transparent 72%);
     opacity: 0; transition: opacity 0.35s ease;
     pointer-events: none;
   }
-  .tech-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px -20px rgba(124,58,237,0.28); }
+  .tech-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px -20px color-mix(in srgb, var(--card-color-b) 42%, transparent); }
   .tech-card:hover::before,
   .tech-card:hover::after { opacity: 1; }
 

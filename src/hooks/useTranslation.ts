@@ -13,7 +13,7 @@ const translations: Translations = {
     // Hero Section
     'hero.title': 'Pablo Adriano Maciel Dilio',
     'hero.subtitle': 'Analista de Implantação e Suporte ERP',
-    'hero.description': 'Formado em Análise e Desenvolvimento de Sistemas, com experiência na implantação, configuração, parametrização e suporte de sistemas ERP. Conduzo projetos B2B do levantamento de necessidades até a homologação e produção, com foco em módulos fiscais, financeiros, compras, vendas, estoque e transporte.',
+    'hero.description': 'Cursando Análise e Desenvolvimento de Sistemas, com experiência na implantação, configuração, parametrização e suporte de sistemas ERP. Conduzo projetos B2B do levantamento de necessidades até a homologação e produção, com foco em módulos fiscais, financeiros, compras, vendas, estoque e transporte.',
     'hero.downloadCV': 'Download CV',
     'hero.contact': 'Entre em Contato',
     
